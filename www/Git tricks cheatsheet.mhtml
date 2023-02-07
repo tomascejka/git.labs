@@ -1,0 +1,3462 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://devhints.io/git-tricks
+Subject: Git tricks cheatsheet
+Date: Tue, 7 Feb 2023 08:27:37 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq----"
+
+
+------MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq----
+Content-Type: text/html
+Content-ID: <frame-6BB395991419350F137032F1CF5C728E@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://devhints.io/git-tricks
+
+<!DOCTYPE html><html lang=3D"en" class=3D"js "><head><meta http-equiv=3D"Co=
+ntent-Type" content=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet"=
+ type=3D"text/css" href=3D"cid:css-7fd5e689-0675-448d-bd80-06a876292bc5@mht=
+ml.blink" />
+
+<meta content=3D"width=3Ddevice-width, initial-scale=3D1.0" name=3D"viewpor=
+t">
+<link href=3D"https://devhints.io/assets/favicon.png" rel=3D"shortcut icon"=
+>
+<meta content=3D"/git-tricks.html" name=3D"app:pageurl">
+<title>Git tricks cheatsheet</title>
+<meta content=3D"Git tricks cheatsheet" property=3D"og:title">
+<meta content=3D"Git tricks cheatsheet" property=3D"twitter:title">
+<meta content=3D"article" property=3D"og:type">
+<meta content=3D"https://assets.devhints.io/previews/git-tricks.jpg?t=3D202=
+30131085754" property=3D"og:image">
+<meta content=3D"https://assets.devhints.io/previews/git-tricks.jpg?t=3D202=
+30131085754" property=3D"twitter:image">
+<meta content=3D"900" property=3D"og:image:width">
+<meta content=3D"471" property=3D"og:image:height">
+<meta content=3D"The one-page guide to Git tricks: usage, examples, links, =
+snippets, and more." name=3D"description">
+<meta content=3D"The one-page guide to Git tricks: usage, examples, links, =
+snippets, and more." property=3D"og:description">
+<meta content=3D"The one-page guide to Git tricks: usage, examples, links, =
+snippets, and more." property=3D"twitter:description">
+<link rel=3D"canonical" href=3D"https://devhints.io/git-tricks">
+<meta name=3D"og:url" content=3D"https://devhints.io/git-tricks">
+<meta content=3D"Devhints.io cheatsheets" property=3D"og:site_name">
+<meta content=3D"Git" property=3D"article:section">
+
+
+<meta property=3D"page:depth" content=3D"1">
+
+
+
+<!--[if lt IE 9]><script src=3D'https://cdnjs.cloudflare.com/ajax/libs/nwma=
+tcher/1.2.5/nwmatcher.min.js'></script><script src=3D'https://cdnjs.cloudfl=
+are.com/ajax/libs/json2/20140204/json2.js'></script><script src=3D'https://=
+cdn.rawgit.com/gisu/selectivizr/1.0.3/selectivizr.js'></script><script src=
+=3D'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js=
+'></script><script src=3D'https://cdnjs.cloudflare.com/ajax/libs/respond.js=
+/1.4.2/respond.js'></script><![endif]-->
+
+<link rel=3D"stylesheet" href=3D"https://devhints.io/assets/2015/style.css?=
+t=3D20230131085754">
+<link href=3D"https://devhints.io/assets/style.css?t=3D20230131085754" rel=
+=3D"stylesheet">
+<link href=3D"https://devhints.io/assets/print.css?t=3D20230131085754" rel=
+=3D"stylesheet" media=3D"print">
+</head>
+<body>
+<div class=3D"all">
+<div class=3D"site-header">
+<div class=3D"container">
+This is <a href=3D"https://devhints.io/"><em>Devhints.io cheatsheets</em></=
+a> =E2=80=94 a collection of cheatsheets I've written.
+</div>
+</div>
+
+
+<div class=3D"post-list -single -cheatsheet">
+<div class=3D"post-item">
+<div class=3D"post-headline -cheatsheet">
+<p class=3D"prelude"><span></span></p>
+<h1><span>Git&nbsp;tricks</span></h1>
+<div class=3D"pubbox">
+<div class=3D"HeadlinePub" role=3D"complementary">
+
+<span class=3D"placeholder -one"></span>
+<span class=3D"placeholder -two"></span>
+<span class=3D"placeholder -three"></span>
+<span class=3D"placeholder -four"></span>
+</div>
+</div>
+</div>
+<div class=3D"post-content -cheatsheet">
+<h2 id=3D"refs">Refs</h2>
+<pre><code class=3D"hljs sql">HEAD^       # 1 <span class=3D"hljs-operator"=
+><span class=3D"hljs-keyword">commit</span> <span class=3D"hljs-keyword">be=
+fore</span> head
+HEAD^^      # <span class=3D"hljs-number">2</span> commits <span class=3D"h=
+ljs-keyword">before</span> head
+HEAD~<span class=3D"hljs-number">5</span>      # <span class=3D"hljs-number=
+">5</span> commits <span class=3D"hljs-keyword">before</span> head
+</span></code></pre>
+<h2 id=3D"branches">Branches</h2>
+<pre><code class=3D"hljs perl"><span class=3D"hljs-comment"># create a new =
+branch</span>
+  git checkout -b <span class=3D"hljs-variable">$branchname</span>
+  git <span class=3D"hljs-keyword">push</span> origin <span class=3D"hljs-v=
+ariable">$branchname</span> --set-upstream
+
+<span class=3D"hljs-comment"># get a remote branch</span>
+  git fetch origin
+  git checkout --track origin/<span class=3D"hljs-variable">$branchname</sp=
+an>
+
+<span class=3D"hljs-comment"># delete local remote-tracking branches (lol)<=
+/span>
+  git remote prune origin
+
+<span class=3D"hljs-comment"># list merged branches</span>
+  git branch -a --merged
+
+<span class=3D"hljs-comment"># delete remote branch</span>
+  git <span class=3D"hljs-keyword">push</span> origin :<span class=3D"hljs-=
+variable">$branchname</span>
+ =20
+<span class=3D"hljs-comment"># go back to previous branch</span>
+  git checkout -
+</code></pre>
+<h2 id=3D"collaboration">Collaboration</h2>
+<pre><code class=3D"hljs nginx"><span class=3D"hljs-comment"># Rebase your =
+changes on top of the remote master</span>
+  <span class=3D"hljs-title">git</span> pull --rebase upstream master
+ =20
+<span class=3D"hljs-comment"># Squash multiple commits into one for a clean=
+er git log</span>
+<span class=3D"hljs-comment"># (on the following screen change the word pic=
+k to either 'f' or 's')</span>
+  git rebase -i <span class=3D"hljs-variable">$commit_ref</span>
+</code></pre>
+<h2 id=3D"submodules">Submodules</h2>
+<pre><code class=3D"hljs sql"># Import .gitmodules
+  git submodule init
+
+# Clone missing submodules, and checkout commits
+  git submodule <span class=3D"hljs-operator"><span class=3D"hljs-keyword">=
+update</span> <span class=3D"hljs-comment">--init --recursive</span>
+
+# <span class=3D"hljs-keyword">Update</span> remote URLs <span class=3D"hlj=
+s-keyword">in</span> .gitmodules
+# (<span class=3D"hljs-keyword">Use</span> <span class=3D"hljs-keyword">whe=
+n</span> you <span class=3D"hljs-keyword">changed</span> remotes <span clas=
+s=3D"hljs-keyword">in</span> submodules)
+  git submodule sync
+</span></code></pre>
+<h2 id=3D"diff">Diff</h2>
+<h3 id=3D"diff-with-stats">Diff with&nbsp;stats</h3>
+<pre><code class=3D"hljs sql">git diff <span class=3D"hljs-comment">--stat<=
+/span>
+app/a.txt    | 2 +-
+app/b.txt    | 8 ++<span class=3D"hljs-comment">----</span>
+2 files changed, 10 insertions(+), 84 deletions(-)
+</code></pre>
+<h3 id=3D"just-filenames">Just&nbsp;filenames</h3>
+<pre><code class=3D"hljs nginx"><span class=3D"hljs-title">git</span> diff =
+--summary
+</code></pre>
+<h2 id=3D"log-options">Log&nbsp;options</h2>
+<pre><code class=3D"hljs sql"><span class=3D"hljs-comment">--oneline</span>
+  e11e9f9 <span class=3D"hljs-operator"><span class=3D"hljs-keyword">Commit=
+</span> message here
+
+<span class=3D"hljs-comment">--decorate</span>
+  shows <span class=3D"hljs-string">"(origin/master)"</span>
+
+<span class=3D"hljs-comment">--graph</span>
+  shows graph <span class=3D"hljs-keyword">lines</span>
+
+<span class=3D"hljs-comment">--date=3Drelative</span>
+  <span class=3D"hljs-string">"2 hours ago"</span>
+</span></code></pre>
+<h2 id=3D"misc">Misc</h2>
+<h3 id=3D"cherry-pick">Cherry&nbsp;pick</h3>
+<pre><code class=3D"hljs nginx"><span class=3D"hljs-title">git</span> rebas=
+e 76acada^
+</code></pre>
+<h3 id=3D"misc-1">Misc</h3>
+<pre><code class=3D"hljs bash"><span class=3D"hljs-comment"># get current s=
+ha1 (?)</span>
+  git show-ref HEAD <span class=3D"hljs-operator">-s</span>
+
+<span class=3D"hljs-comment"># show single commit info</span>
+  git <span class=3D"hljs-built_in">log</span> -<span class=3D"hljs-number"=
+>1</span> f5a960b5
+
+<span class=3D"hljs-comment"># Go back up to root directory</span>
+  <span class=3D"hljs-built_in">cd</span> <span class=3D"hljs-string">"<spa=
+n class=3D"hljs-variable">$(git rev-parse --show-top-level)</span>"</span>
+</code></pre>
+<h2 id=3D"short-log">Short&nbsp;log</h2>
+<pre><code class=3D"hljs sql"> $ git shortlog
+ $ git shortlog HEAD~20..    # last 20 commits
+
+ James Dean (1):
+     <span class=3D"hljs-operator"><span class=3D"hljs-keyword">Commit</spa=
+n> here
+     <span class=3D"hljs-keyword">Commit</span> there
+
+ Frank Sinatra (<span class=3D"hljs-number">5</span>):
+     Another <span class=3D"hljs-keyword">commit</span>
+     This other <span class=3D"hljs-keyword">commit</span>
+</span></code></pre>
+<h2 id=3D"bisect">Bisect</h2>
+<pre><code class=3D"hljs sql">git bisect <span class=3D"hljs-operator"><spa=
+n class=3D"hljs-keyword">start</span> HEAD HEAD~<span class=3D"hljs-number"=
+>6</span>
+git bisect run npm test
+git checkout refs/bisect/bad   # this <span class=3D"hljs-keyword">is</span=
+> <span class=3D"hljs-keyword">where</span> it screwed up
+git bisect <span class=3D"hljs-keyword">reset</span>
+</span></code></pre>
+<h3 id=3D"manual-bisection">Manual&nbsp;bisection</h3>
+<pre><code class=3D"hljs bash">git bisect start
+git bisect good   <span class=3D"hljs-comment"># current version is good</s=
+pan>
+
+git checkout HEAD~<span class=3D"hljs-number">8</span>
+npm <span class=3D"hljs-built_in">test</span>          <span class=3D"hljs-=
+comment"># see if it's good</span>
+git bisect bad    <span class=3D"hljs-comment"># current version is bad</sp=
+an>
+
+git bisect reset  <span class=3D"hljs-comment"># abort</span>
+</code></pre>
+<h2 id=3D"searching">Searching</h2>
+<pre><code class=3D"hljs perl">git <span class=3D"hljs-keyword">log</span> =
+--<span class=3D"hljs-keyword">grep</span>=3D<span class=3D"hljs-string">"f=
+ixes things"</span>  <span class=3D"hljs-comment"># search in commit messag=
+es</span>
+git <span class=3D"hljs-keyword">log</span> -S<span class=3D"hljs-string">"=
+window.alert"</span>       <span class=3D"hljs-comment"># search in code</s=
+pan>
+git <span class=3D"hljs-keyword">log</span> -G<span class=3D"hljs-string">"=
+foo.*"</span>              <span class=3D"hljs-comment"># search in code (r=
+egex)</span>
+</code></pre>
+<h2 id=3D"gpg-signing">GPG&nbsp;Signing</h2>
+<pre><code class=3D"hljs sql">git config <span class=3D"hljs-operator"><spa=
+n class=3D"hljs-keyword">set</span> <span class=3D"hljs-keyword">user</span=
+>.signingkey &lt;GPG <span class=3D"hljs-keyword">KEY</span> ID&gt;       #=
+ Sets GPG <span class=3D"hljs-keyword">key</span> <span class=3D"hljs-keywo=
+rd">to</span> <span class=3D"hljs-keyword">use</span> <span class=3D"hljs-k=
+eyword">for</span> signing
+
+git <span class=3D"hljs-keyword">commit</span> -m <span class=3D"hljs-strin=
+g">"Implement feature Y"</span> <span class=3D"hljs-comment">--gpg-sign    =
+# Or -S, GPG signs commit</span>
+
+git config <span class=3D"hljs-keyword">set</span> <span class=3D"hljs-keyw=
+ord">commit</span>.gpgsign <span class=3D"hljs-literal">true</span>        =
+        # <span class=3D"hljs-keyword">Sign</span> commits <span class=3D"h=
+ljs-keyword">by</span> <span class=3D"hljs-keyword">default</span>
+git <span class=3D"hljs-keyword">commit</span> -m <span class=3D"hljs-strin=
+g">"Implement feature Y"</span> <span class=3D"hljs-comment">--no-gpg-sign =
+# Do not sign</span>
+</span></code></pre>
+</div>
+<ul class=3D"social-list ">
+<li class=3D"facebook link hint--bottom" data-hint=3D"Share on Facebook"><a=
+ href=3D"https://www.facebook.com/sharer/sharer.php?u=3Dhttps://devhints.io=
+/git-tricks.html" target=3D"share"><span class=3D"text"></span></a></li>
+<li class=3D"twitter link hint--bottom" data-hint=3D"Share on Twitter"><a h=
+ref=3D"https://twitter.com/intent/tweet?text=3DThe%20ultimate%20cheatsheet%=
+20for%20Git%20tricks.%20https://devhints.io/git-tricks.html" target=3D"shar=
+e"><span class=3D"text"></span></a></li>
+</ul>
+</div>
+</div>
+<div class=3D"about-the-site">
+<div class=3D"container">
+<p class=3D"blurb">
+<strong><a href=3D"https://devhints.io/">Devhints.io cheatsheets</a></stron=
+g> is a collection of cheatsheets I've written over the years.
+Suggestions and corrections? <a href=3D"https://github.com/rstacruz/cheatsh=
+eets/issues/907">Send them in</a>.
+<i class=3D"fleuron"></i>
+I'm <a href=3D"http://ricostacruz.com/">Rico Sta. Cruz</a>.
+Check out my <a href=3D"http://ricostacruz.com/til">Today I learned blog</a=
+> for&nbsp;more.
+</p>
+<p class=3D"back">
+<a class=3D"big-button -back -slim" href=3D"https://devhints.io/#toc"></a>
+</p>
+<p>
+</p>
+</div>
+</div>
+
+
+
+
+
+
+
+</div></body></html>
+------MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-7fd5e689-0675-448d-bd80-06a876292bc5@mhtml.blink
+
+@charset "utf-8";
+
+html { opacity: 0; }
+------MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://devhints.io/assets/2015/style.css?t=20230131085754
+
+@charset "utf-8";
+
+@import url("//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"=
+);
+
+@import url("//cdn.jsdelivr.net/hint.css/1.3.2/hint.min.css");
+
+@import url("//brick.a.ssl.fastly.net/Roboto:400,400i,700");
+
+@import url("//fonts.googleapis.com/css?family=3DRaleway:800");
+
+@import url("//fonts.googleapis.com/css?family=3DFira+Mono:400,400i");
+
+@import url("//brick.a.ssl.fastly.net/EB+Garamond:400i");
+
+html { font-family: sans-serif; text-size-adjust: 100%; }
+
+body { margin: 0px; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, =
+menu, nav, section, summary { display: block; }
+
+audio, canvas, progress, video { display: inline-block; vertical-align: bas=
+eline; }
+
+audio:not([controls]) { display: none; height: 0px; }
+
+[hidden], template { display: none; }
+
+a { background-color: transparent; }
+
+a:active, a:hover { outline: 0px; }
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: 700; }
+
+dfn { font-style: italic; }
+
+h1 { font-size: 2em; margin: 0.67em 0px; }
+
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+
+small { font-size: 80%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-ali=
+gn: baseline; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+img { border: 0px; }
+
+svg:not(:root) { overflow: hidden; }
+
+figure { margin: 1em 40px; }
+
+hr { box-sizing: content-box; height: 0px; }
+
+pre { overflow: auto; }
+
+code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }
+
+button, input, optgroup, select, textarea { color: inherit; font: inherit; =
+margin: 0px; }
+
+button { overflow: visible; }
+
+button, select { text-transform: none; }
+
+button, html input[type=3D"button"], input[type=3D"reset"], input[type=3D"s=
+ubmit"] { appearance: button; cursor: pointer; }
+
+button[disabled], html input[disabled] { cursor: default; }
+
+input { line-height: normal; }
+
+input[type=3D"checkbox"], input[type=3D"radio"] { box-sizing: border-box; p=
+adding: 0px; }
+
+input[type=3D"number"]::-webkit-inner-spin-button, input[type=3D"number"]::=
+-webkit-outer-spin-button { height: auto; }
+
+input[type=3D"search"] { appearance: textfield; box-sizing: content-box; }
+
+input[type=3D"search"]::-webkit-search-cancel-button, input[type=3D"search"=
+]::-webkit-search-decoration { appearance: none; }
+
+fieldset { border: 1px solid silver; margin: 0px 2px; padding: 0.35em 0.625=
+em 0.75em; }
+
+legend { border: 0px; padding: 0px; }
+
+textarea { overflow: auto; }
+
+optgroup { font-weight: 700; }
+
+table { border-collapse: collapse; border-spacing: 0px; }
+
+td, th { padding: 0px; }
+
+* { text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased=
+; }
+
+html { font-size: 17px; line-height: 1.7; background: rgb(255, 255, 255); c=
+olor: rgb(85, 85, 85); }
+
+@media (max-width: 768px) {
+  html { font-size: 14px; }
+}
+
+html { transition: opacity 200ms linear 0s; opacity: 1; }
+
+html, input, textarea, td, th { font-family: roboto, sans-serif; font-weigh=
+t: 400; }
+
+html, body { overflow-x: hidden; }
+
+body { transition: opacity 100ms linear 0s; }
+
+html.no-js * { opacity: 0; }
+
+a, a:visited { color: rgb(85, 85, 85); text-decoration: none; box-shadow: r=
+gba(136, 136, 136, 0.3) 0px -1px inset; transition: all 100ms linear 0s; }
+
+a:focus, a:hover { box-shadow: rgb(30, 163, 255) 0px -2px inset; color: rgb=
+(21, 21, 21); }
+
+strong, strong a, strong a:visited, b, b a, b a:visited { color: rgb(21, 21=
+, 21); }
+
+h3, p, ul, ol { margin: 1.5em 0px; }
+
+p > iframe { margin: 0px auto; display: block; }
+
+ul, ol { padding-left: 1.5em; }
+
+ul { list-style: none; }
+
+ul > li { position: relative; }
+
+ul > li::before { content: ""; display: block; position: absolute; left: -1=
+.4em; top: 0px; margin-top: 0.7em; width: 4px; height: 4px; border-radius: =
+50%; border: 2px solid rgb(192, 211, 218); }
+
+@media (max-width: 768px) {
+  ul > li::before { width: 3px; height: 3px; }
+}
+
+h2, h2 a, h2 a:visited { color: rgb(21, 21, 21); }
+
+h2 { text-align: center; font-family: "eb garamond", serif; font-weight: 40=
+0; font-style: italic; font-kerning: auto; font-feature-settings: "kern", "=
+liga", "dlig", "hlig", "cswh"; font-synthesis: weight style; font-size: 2em=
+; line-height: 1.4; margin: 2em auto 0px; }
+
+@media (max-width: 768px) {
+  h2 { font-size: 1.6em; }
+}
+
+@media (min-width: 769px) {
+  h2::before, h2::after { content: ""; display: inline-block; vertical-alig=
+n: middle; width: 46px; height: 1px; background: rgb(192, 211, 218); margin=
+: 0px 30px; }
+}
+
+h3 { font-family: raleway, sans-serif; font-weight: 800; font-size: 1.1em; =
+margin-top: 2em; }
+
+h3, h3 a, h3 a:visited { color: rgb(21, 21, 21); }
+
+@media (max-width: 768px) {
+  h3 { margin-top: 1.5em; }
+}
+
+h3 + p { margin-top: -1.7em; }
+
+p > img:first-child:last-child { display: block; margin: 0px auto; max-widt=
+h: 100%; }
+
+code { font-family: "fira mono", monospace; font-weight: 400; letter-spacin=
+g: -0.5px; text-rendering: auto; -webkit-font-smoothing: subpixel-antialias=
+ed; font-size: 0.9em; }
+
+hr { width: 200px; height: 1px; border: 0px; background: rgb(192, 211, 218)=
+; margin: 3em auto; display: block; }
+
+table { min-width: 100%; margin-top: 2em; margin-bottom: 2em; font-size: 0.=
+9em; border-bottom: 1px solid rgb(147, 154, 161); }
+
+thead > tr:first-child > th, thead > tr:first-child > td, tbody > tr:first-=
+child > th, tbody > tr:first-child > td { border-top: 1px solid rgb(147, 15=
+4, 161); }
+
+td, th { text-align: left; border-top: 1px solid rgb(238, 243, 250); paddin=
+g: 8px 10px; }
+
+th { font-family: raleway, sans-serif; font-weight: 800; color: rgb(21, 21,=
+ 21); }
+
+td:first-child, th:first-child { text-align: left; padding-left: 0px; }
+
+td:last-child, th:last-child { padding-right: 0px; }
+
+table.no-head thead { display: none; }
+
+table.shortcuts { table-layout: fixed; }
+
+table.shortcuts thead { display: none; }
+
+table.shortcuts th:nth-child(1), table.shortcuts td:nth-child(1) { width: 2=
+5%; }
+
+table.shortcuts th:nth-child(2), table.shortcuts td:nth-child(2) { width: 7=
+5%; }
+
+table.shortcuts td:first-child > code { background: rgb(252, 252, 252); pad=
+ding: 5px 10px; border-radius: 2px; }
+
+table.lite-headings { border-bottom: 1px solid rgb(170, 183, 190); }
+
+table.lite-headings th { color: rgb(170, 183, 190); font-size: 0.9em; }
+
+table.lite-headings thead > tr:first-child > td, table.lite-headings thead =
+> tr:first-child > th { border-top: 1px solid rgb(170, 183, 190); }
+
+table.lite-headings tbody > tr:first-child > td, table.lite-headings tbody =
+> tr:first-child > th { border-top: 1px solid rgb(238, 243, 250); }
+
+pre > code { font-family: "fira mono", monospace; font-weight: 400; letter-=
+spacing: -0.5px; text-rendering: auto; -webkit-font-smoothing: subpixel-ant=
+ialiased; font-size: 0.82em; color: rgb(85, 85, 85); padding-right: 20px; }
+
+pre { padding: 20px 50px; border-radius: 4px; background: rgb(244, 246, 248=
+); margin: 2.2em -50px; line-height: 1.2em; }
+
+@media (min-width: 768px) {
+  pre { border-top: 1px solid rgb(238, 243, 250); border-bottom: 1px solid =
+rgb(199, 215, 238); border-radius: 4px; }
+}
+
+@media (max-width: 768px) {
+  pre { padding: 20px; margin: 2em -20px; background: rgb(235, 238, 242); }
+}
+
+@media (max-width: 660px) {
+  pre { border-radius: 0px; }
+}
+
+pre + pre { margin-top: -1.5em; }
+
+pre.medium > code { font-size: 1em; }
+
+@media (min-width: 768px) {
+  pre.medium { padding-top: 30px; padding-bottom: 30px; }
+}
+
+pre.large > code { font-size: 1.1em; line-height: 1.4em; }
+
+@media (min-width: 768px) {
+  pre.large { padding-top: 30px; padding-bottom: 30px; }
+}
+
+pre.terminal, pre.light { background: rgb(255, 255, 255); border: 1px solid=
+ rgb(143, 209, 255); position: relative; }
+
+pre.light { background: rgb(253, 253, 255); }
+
+pre.terminal { padding-top: 56px; }
+
+pre.terminal.large { padding-top: 65px; }
+
+pre.terminal::before { content: ""; display: block; height: 34px; line-heig=
+ht: 34px; background: rgb(255, 255, 255); border-bottom: 1px solid rgb(143,=
+ 209, 255); border-top-left-radius: 3px; border-top-right-radius: 3px; posi=
+tion: absolute; top: 0px; left: 0px; right: 0px; font-family: raleway, sans=
+-serif; font-weight: 800; }
+
+pre.terminal::after { content: ""; position: absolute; display: block; widt=
+h: 4px; height: 4px; border-radius: 50%; left: 15px; top: 15px; font-size: =
+20px; background-color: rgb(143, 209, 255); box-shadow: rgb(143, 209, 255) =
+20px 0px, rgb(143, 209, 255) 40px 0px; }
+
+@media (max-width: 768px) {
+  pre.terminal { margin-left: 0px; margin-right: 0px; }
+}
+
+pre + pre { margin-top: -1.7em; }
+
+@media (min-width: 769px) {
+  pre.cursor > code > :last-child::after { content: ""; display: inline-blo=
+ck; width: 3px; height: 1em; transform: scaleY(1.5) translateY(0.1em); marg=
+in-left: 0.4em; background-color: rgb(30, 163, 255); animation: 700ms steps=
+(2) 0s infinite normal none running blink; }
+}
+
+h3 + pre, h3 + table { margin-top: -1em; }
+
+.about-the-site { position: relative; }
+
+.about-the-site .container { text-align: center; padding: 3em 80px; margin:=
+ 0px auto; }
+
+.about-the-site .container::after { display: table; content: ""; clear: bot=
+h; height: 0px; zoom: 1; }
+
+@media (max-width: 768px) {
+  .about-the-site .container { padding-left: 40px; padding-right: 40px; }
+}
+
+.about-the-site::before { content: ""; position: absolute; display: block; =
+left: 20px; right: 20px; top: 0px; border-top: 1px solid rgb(238, 243, 250)=
+; }
+
+.about-the-site { font-family: roboto, sans-serif; font-weight: 400; font-s=
+ize: 0.85em; color: rgb(202, 205, 208); }
+
+.about-the-site a, .about-the-site a:visited { color: rgb(174, 180, 185); b=
+ox-shadow: rgba(0, 0, 0, 0.05) 0px -1px inset; padding-bottom: 2px; }
+
+.about-the-site a:hover, .about-the-site a:focus { color: rgb(21, 21, 21); =
+box-shadow: rgb(30, 163, 255) 0px -2px inset; }
+
+.about-the-site strong { font-family: raleway, sans-serif; font-weight: 800=
+; }
+
+.about-the-site strong a, .about-the-site strong a:visited { color: rgb(21,=
+ 21, 21); box-shadow: none; }
+
+.about-the-site strong a:hover, .about-the-site strong a:focus { color: rgb=
+(21, 21, 21); box-shadow: rgb(30, 163, 255) 0px -2px inset; }
+
+.about-the-site .identity { margin: 0.2em 0px 0px; float: right; font-famil=
+y: "eb garamond", serif; font-weight: 400; font-style: italic; font-kerning=
+: auto; font-feature-settings: "kern", "liga", "dlig", "hlig", "cswh"; font=
+-synthesis: weight style; font-size: 2.5em; }
+
+.about-the-site .identity a, .about-the-site .identity a:visited { color: r=
+gb(21, 21, 21); box-shadow: none; }
+
+.about-the-site .identity a:hover, .about-the-site .identity a:focus { colo=
+r: rgb(30, 163, 255); }
+
+.about-the-site .blurb { margin: 0px; max-width: 500px; text-align: left; f=
+loat: left; line-height: 1.55; }
+
+.about-the-site .back { float: right; margin-top: 0.4em; margin-right: 2em;=
+ }
+
+.about-the-site .fleuron::before { content: "=EF=92=92"; font-family: Ionic=
+ons; font-size: 16px; font-weight: 400; font-style: normal; display: inline=
+-block; vertical-align: middle; color: rgb(21, 21, 21); margin: 0px 7px; }
+
+@media (max-width: 768px) {
+  .about-the-site .fleuron::before { display: none; }
+}
+
+@media (max-width: 768px) {
+  .about-the-site .identity { float: left; clear: both; }
+  .about-the-site .blurb { float: none; margin-bottom: 1em; width: auto; }
+  .about-the-site .back { float: right; margin-right: 0px; }
+}
+
+.big-button, a.big-button { display: inline-block; width: 180px; height: 50=
+px; line-height: 48px; padding: 0px; border-radius: 30px; font-size: 0.85em=
+; box-shadow: none; background: 0px 0px; }
+
+@media (max-width: 768px) {
+  .big-button, a.big-button { width: 140px; height: 40px; line-height: 38px=
+; }
+}
+
+.big-button, .big-button:visited, a.big-button, a.big-button:visited { bord=
+er: 2px solid rgb(30, 163, 255); color: rgb(30, 163, 255); }
+
+.big-button.-back, .big-button.-back:visited, a.big-button.-back, a.big-but=
+ton.-back:visited { border: 1px solid rgba(147, 154, 161, 0.2); color: rgb(=
+147, 154, 161); }
+
+.big-button.-back::before, .big-button.-next::after, a.big-button.-back::be=
+fore, a.big-button.-next::after { font-family: Ionicons; font-size: 20px; d=
+isplay: inline-block; vertical-align: middle; position: relative; top: -1px=
+; }
+
+.big-button.-back::before, a.big-button.-back::before { content: "=EF=8E=8F=
+"; }
+
+.big-button.-next::after, a.big-button.-next::after { content: "=EF=8F=91";=
+ margin-left: 16px; top: 0px; }
+
+.big-button.-slim, a.big-button.-slim { width: 60px; border-width: 2px; hei=
+ght: 60px; line-height: 60px; border-radius: 50%; }
+
+@media (max-width: 768px) {
+  .big-button.-slim, a.big-button.-slim { width: 40px; height: 40px; line-h=
+eight: 40px; }
+}
+
+.big-button:hover, .big-button:focus, a.big-button:hover, a.big-button:focu=
+s { background: rgb(30, 163, 255); border-color: transparent; color: rgb(25=
+5, 255, 255); box-shadow: none; }
+
+.big-button.-back:hover, .big-button.-back:focus, a.big-button.-back:hover,=
+ a.big-button.-back:focus { background: rgb(30, 163, 255); color: rgb(255, =
+255, 255); }
+
+.brief-intro { font-size: 1.1em; color: rgb(147, 154, 161); }
+
+.full-image { overflow: hidden; text-align: center; position: relative; }
+
+.full-image img { background: rgb(252, 252, 252); }
+
+.full-image.cropped img, .full-image.cropped img:first-child:last-child { m=
+argin-bottom: -50px; display: block; background: 0px 0px; }
+
+.full-image.cropped::after { content: ""; display: block; position: absolut=
+e; bottom: 0px; left: 20px; right: 20px; border-bottom: 1px solid rgb(192, =
+211, 218); }
+
+.full-image.stretched img { width: 100%; }
+
+@media (max-width: 768px) {
+  .full-image { margin-left: -20px; margin-right: -20px; }
+}
+
+@media (min-width: 769px) {
+  .full-image { width: 100vw; margin-left: calc(-50vw + 310px); }
+}
+
+.hint--top::before, .hint--bottom::before { margin-top: -14px; margin-left:=
+ -8px; border-radius: 2px; }
+
+.hint--top::before, .hint--top::after, .hint--bottom::before, .hint--bottom=
+::after { transition-duration: 10ms; }
+
+.hint--top::after, .hint--bottom::after { box-shadow: none; border-radius: =
+2px; text-shadow: none; margin-left: -55px; }
+
+.hljs-literal, .hljs-number, .hljs-string, .hljs-symbol, .hljs-value { colo=
+r: rgb(30, 163, 255); }
+
+.hljs-key, .hljs-attribute { color: rgb(0, 108, 183); }
+
+.hljs-keyword, .hljs-constant { color: rgb(21, 21, 21); }
+
+.hljs-comment { color: rgb(147, 154, 161); font-style: italic; }
+
+.token.comment, .token.prolog, .token.doctype, .token.cdata { color: rgb(14=
+7, 154, 161); font-style: italic; }
+
+.token.punctuation { color: rgb(153, 153, 153); }
+
+.token.property, .token.tag, .token.boolean, .token.number, .token.constant=
+, .token.symbol, .token.deleted { color: rgb(153, 0, 85); }
+
+.token.selector, .token.attr-name, .token.string, .token.char, .token.built=
+in, .token.inserted { color: rgb(30, 163, 255); }
+
+.token.operator, .token.entity, .token.url, .language-css .token.string, .s=
+tyle .token.string { color: rgb(166, 127, 89); }
+
+.token.atrule, .token.attr-value, .token.keyword { color: rgb(0, 119, 170);=
+ }
+
+.token.function { color: rgb(221, 74, 104); }
+
+.token.regex, .token.important, .token.variable { color: rgb(238, 153, 0); =
+}
+
+.token.important, .token.bold { font-weight: 700; }
+
+.token.italic { font-style: italic; }
+
+.token.entity { cursor: help; }
+
+.next-article { display: block; padding: 0px; margin-left: 40px; margin-rig=
+ht: 40px; position: relative; }
+
+.next-article, .next-article:hover, .next-article:focus { box-shadow: none;=
+ }
+
+.next-article::after { content: ""; display: block; position: absolute; lef=
+t: -20px; right: -20px; bottom: 0px; border-bottom: 1px solid rgb(238, 243,=
+ 250); }
+
+.next-article + .about-the-site::before { display: none; }
+
+@media (max-width: 768px) {
+  .next-article { margin-left: 0px; margin-right: 0px; }
+  .next-article + .about-the-site::before { display: none; }
+}
+
+.next-article .container { display: block; text-align: center; padding: 10e=
+m 20px; }
+
+@media (min-width: 769px) {
+  .next-article .container { margin-top: 8em; padding: 8em 20px; }
+}
+
+.next-article .h3 { display: block; margin: 0px auto auto; padding: 0px; fo=
+nt-size: 2.2em; line-height: 1.3em; font-family: raleway, sans-serif; font-=
+weight: 800; color: rgb(255, 255, 255); transition: all 250ms linear 0s; }
+
+@media (max-width: 768px) {
+  .next-article .h3 { font-size: 1.5em; }
+}
+
+.next-article .h3, .next-article .excerpt { max-width: 558px; }
+
+.next-article .h3 + .excerpt { margin-top: 0.5em; }
+
+.next-article .excerpt { display: block; margin-left: auto; margin-right: a=
+uto; font-size: 1em; line-height: 1.6em; }
+
+.next-article .big-button { margin-top: 2em; }
+
+.next-article h3 a:hover, .next-article h3 a:focus { color: rgb(30, 163, 25=
+5); }
+
+.next-article .heading { display: block; text-transform: uppercase; letter-=
+spacing: 2px; font-size: 0.7em; margin-bottom: 1em; }
+
+.next-article .heading::before { font-family: Ionicons; content: "=EF=92=A8=
+"; margin-right: 15px; font-size: 16px; display: inline-block; vertical-ali=
+gn: middle; color: rgb(30, 163, 255); }
+
+.next-article .big-button, .next-article a.big-button { background: 0px 0px=
+; }
+
+.next-article .big-button, .next-article .big-button:visited, .next-article=
+ a.big-button, .next-article a.big-button:visited { border-color: rgb(30, 1=
+63, 255); color: rgb(255, 255, 255); }
+
+.next-article .big-button:hover, .next-article .big-button:focus, .next-art=
+icle a.big-button:hover, .next-article a.big-button:focus { background: rgb=
+(30, 163, 255); border-color: transparent; }
+
+.next-article { background: url("data:image/svg+xml;utf8,<svg xmlns=3D'http=
+://www.w3.org/2000/svg' width=3D'1500' height=3D'10' version=3D'1.1'><polyl=
+ine fill=3D'white' points=3D'1500,0 0,0 0,10'/></svg>") -50px top / 110% no=
+-repeat, linear-gradient(to right, rgba(97, 46, 118, 0.9), rgba(88, 103, 20=
+4, 0.9)), linear-gradient(177deg, rgba(97, 46, 118, 0), rgba(97, 46, 118, 0=
+.9)), url("") center center / cover, rgb(97, 46, 118); }
+
+.next-article:hover, .next-article:focus { background: url("data:image/svg+=
+xml;utf8,<svg xmlns=3D'http://www.w3.org/2000/svg' width=3D'1500' height=3D=
+'10' version=3D'1.1'><polyline fill=3D'white' points=3D'1500,0 0,0 0,10'/><=
+/svg>") -50px top / 110% no-repeat, linear-gradient(to right, rgba(100, 47,=
+ 122, 0.9), rgba(92, 107, 205, 0.9)), linear-gradient(177deg, rgba(97, 46, =
+118, 0), rgba(97, 46, 118, 0.9)), url("") center center / cover, rgb(97, 46=
+, 118); }
+
+.next-article .excerpt, .next-article .heading { color: rgb(216, 203, 221);=
+ }
+
+.next-article.-v2 { text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px; }
+
+.next-article.-v2 { background: url("data:image/svg+xml;utf8,<svg xmlns=3D'=
+http://www.w3.org/2000/svg' width=3D'1500' height=3D'10' version=3D'1.1'><p=
+olyline fill=3D'white' points=3D'1500,0 0,0 0,10'/></svg>") -50px top / 110=
+% no-repeat, linear-gradient(to right, rgba(2, 125, 101, 0.7), rgba(0, 83, =
+107, 0.7)), linear-gradient(35deg, rgba(2, 125, 101, 0), rgba(2, 125, 101, =
+0.9)), url("bg/pebbles.jpg") center center / cover, rgb(2, 125, 101); }
+
+.next-article.-v2:hover, .next-article.-v2:focus { background: url("data:im=
+age/svg+xml;utf8,<svg xmlns=3D'http://www.w3.org/2000/svg' width=3D'1500' h=
+eight=3D'10' version=3D'1.1'><polyline fill=3D'white' points=3D'1500,0 0,0 =
+0,10'/></svg>") -50px top / 110% no-repeat, linear-gradient(to right, rgba(=
+2, 130, 105, 0.7), rgba(0, 87, 112, 0.7)), linear-gradient(35deg, rgba(2, 1=
+25, 101, 0), rgba(2, 125, 101, 0.9)), url("bg/pebbles.jpg") center center /=
+ cover, rgb(2, 125, 101); }
+
+.next-article.-v2 .excerpt, .next-article.-v2 .heading { color: rgb(192, 22=
+3, 217); }
+
+.next-article.-v3 { text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px; }
+
+.next-article.-v3 { background: url("data:image/svg+xml;utf8,<svg xmlns=3D'=
+http://www.w3.org/2000/svg' width=3D'1500' height=3D'10' version=3D'1.1'><p=
+olyline fill=3D'white' points=3D'1500,0 0,0 0,10'/></svg>") -50px top / 110=
+% no-repeat, linear-gradient(to right, rgba(29, 36, 52, 0.9), rgba(32, 42, =
+62, 0.9)), linear-gradient(1deg, rgba(29, 36, 52, 0), rgba(29, 36, 52, 0.9)=
+), url("bg/roughwall.jpg") center center / cover, rgb(29, 36, 52); }
+
+.next-article.-v3:hover, .next-article.-v3:focus { background: url("data:im=
+age/svg+xml;utf8,<svg xmlns=3D'http://www.w3.org/2000/svg' width=3D'1500' h=
+eight=3D'10' version=3D'1.1'><polyline fill=3D'white' points=3D'1500,0 0,0 =
+0,10'/></svg>") -50px top / 110% no-repeat, linear-gradient(to right, rgba(=
+31, 38, 55, 0.9), rgba(34, 44, 65, 0.9)), linear-gradient(1deg, rgba(29, 36=
+, 52, 0), rgba(29, 36, 52, 0.9)), url("bg/roughwall.jpg") center center / c=
+over, rgb(29, 36, 52); }
+
+.next-article.-v3 .excerpt, .next-article.-v3 .heading { color: rgb(199, 20=
+0, 204); }
+
+.next-article.-v4 { text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px; }
+
+.next-article.-v4 { background: url("data:image/svg+xml;utf8,<svg xmlns=3D'=
+http://www.w3.org/2000/svg' width=3D'1500' height=3D'10' version=3D'1.1'><p=
+olyline fill=3D'white' points=3D'1500,0 0,0 0,10'/></svg>") -50px top / 110=
+% no-repeat, linear-gradient(to right, rgba(144, 32, 20, 0.45), rgba(199, 1=
+26, 10, 0.45)), linear-gradient(1deg, rgba(144, 32, 20, 0), rgba(144, 32, 2=
+0, 0.9)), url("bg/woodfloor.jpg") center center / cover, rgb(144, 32, 20); =
+}
+
+.next-article.-v4:hover, .next-article.-v4:focus { background: url("data:im=
+age/svg+xml;utf8,<svg xmlns=3D'http://www.w3.org/2000/svg' width=3D'1500' h=
+eight=3D'10' version=3D'1.1'><polyline fill=3D'white' points=3D'1500,0 0,0 =
+0,10'/></svg>") -50px top / 110% no-repeat, linear-gradient(to right, rgba(=
+148, 33, 21, 0.45), rgba(204, 129, 10, 0.45)), linear-gradient(1deg, rgba(1=
+44, 32, 20, 0), rgba(144, 32, 20, 0.9)), url("bg/woodfloor.jpg") center cen=
+ter / cover, rgb(144, 32, 20); }
+
+.next-article.-v4 .excerpt, .next-article.-v4 .heading { color: rgb(227, 19=
+9, 196); }
+
+.next-article.-v5 { text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px; }
+
+.next-article.-v5 { background: url("data:image/svg+xml;utf8,<svg xmlns=3D'=
+http://www.w3.org/2000/svg' width=3D'1500' height=3D'10' version=3D'1.1'><p=
+olyline fill=3D'white' points=3D'1500,0 0,0 0,10'/></svg>") -50px top / 110=
+% no-repeat, linear-gradient(to right, rgba(23, 40, 58, 0.85), rgba(37, 41,=
+ 94, 0.85)), linear-gradient(1deg, rgba(23, 40, 58, 0), rgba(23, 40, 58, 0.=
+9)), url("bg/stairs.jpg") center center / cover, rgb(23, 40, 58); }
+
+.next-article.-v5:hover, .next-article.-v5:focus { background: url("data:im=
+age/svg+xml;utf8,<svg xmlns=3D'http://www.w3.org/2000/svg' width=3D'1500' h=
+eight=3D'10' version=3D'1.1'><polyline fill=3D'white' points=3D'1500,0 0,0 =
+0,10'/></svg>") -50px top / 110% no-repeat, linear-gradient(to right, rgba(=
+24, 43, 62, 0.85), rgba(38, 43, 98, 0.85)), linear-gradient(1deg, rgba(23, =
+40, 58, 0), rgba(23, 40, 58, 0.9)), url("bg/stairs.jpg") center center / co=
+ver, rgb(23, 40, 58); }
+
+.next-article.-v5 .excerpt, .next-article.-v5 .heading { color: rgb(197, 20=
+1, 206); }
+
+.post-headline { margin: 1.5em auto 3em; text-align: center; }
+
+.post-headline .post-icon { margin-bottom: 2px; }
+
+.post-headline h1 { text-align: center; margin-bottom: 0px; font-family: "e=
+b garamond", serif; font-weight: 400; font-style: italic; font-kerning: aut=
+o; font-feature-settings: "kern", "liga", "dlig", "hlig", "cswh"; font-synt=
+hesis: weight style; font-size: 2.8em; line-height: 1.2; width: 80%; margin=
+-left: auto; margin-right: auto; }
+
+@media (max-width: 768px) {
+  .post-headline h1 { font-size: 2em; }
+}
+
+.post-headline .meta { display: block; text-align: center; margin: 1em 0px =
+0px; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; font=
+-size: 0.8em; }
+
+.post-headline .meta .author, .post-headline .meta .date { margin: 0px 5px;=
+ padding-bottom: 2px; }
+
+.post-headline .meta a, .post-headline .meta a:visited { color: rgb(147, 15=
+4, 161); }
+
+.post-headline .meta a:hover, .post-headline .meta a:hover span, .post-head=
+line .meta a:focus, .post-headline .meta a:focus span { color: rgb(147, 154=
+, 161); }
+
+.post-headline .meta a:hover time, .post-headline .meta a:focus time { colo=
+r: rgb(21, 21, 21); box-shadow: rgb(30, 163, 255) 0px -2px inset; }
+
+.post-headline a, .post-headline a:visited, .post-headline a:focus, .post-h=
+eadline a:hover { color: rgb(21, 21, 21); text-decoration: none; box-shadow=
+: none; }
+
+.post-headline .pubbox { margin-top: 32px; font-size: 16px; line-height: 1.=
+5; }
+
+.post-headline .carbon-img { margin-top: 4px; }
+
+.post-icon, abbr.post-icon { border: 0px; margin: 0px; display: inline-bloc=
+k; width: 56px; height: 56px; line-height: 58px; text-align: center; border=
+-radius: 50%; color: rgb(170, 170, 170); background: rgb(238, 238, 238); fo=
+nt-family: roboto, sans-serif; font-weight: 400; font-size: 16px; letter-sp=
+acing: 1px; }
+
+.post-icon span::after, abbr.post-icon span::after { content: attr(data-lab=
+el); font-size: 0.9em; position: relative; top: -1px; }
+
+@media (max-width: 480px) {
+  .post-icon, abbr.post-icon { transform: scale(0.75); }
+}
+
+.post-icon.-icon-css, abbr.post-icon.-icon-css { font-size: 14px; line-heig=
+ht: 58px; }
+
+.post-icon.-icon-css, abbr.post-icon.-icon-css { background: rgb(52, 152, 2=
+19); color: rgb(255, 255, 255); box-shadow: rgb(230, 126, 34) -2px 2px, rgb=
+(241, 196, 15) 2px -2px, rgba(52, 152, 219, 0.2) 1px -2px, rgba(52, 152, 21=
+9, 0.3) 1px 3px; }
+
+.post-icon.-icon-css span::after, abbr.post-icon.-icon-css span::after { co=
+ntent: "CSS"; }
+
+.post-icon.-icon-development, abbr.post-icon.-icon-development { font-size:=
+ 14px; line-height: 58px; }
+
+.post-icon.-icon-development, abbr.post-icon.-icon-development { background=
+: rgb(52, 73, 94); color: rgb(185, 201, 216); box-shadow: rgb(230, 126, 34)=
+ -2px 2px, rgb(241, 196, 15) 2px -2px, rgba(52, 73, 94, 0.2) 1px -2px, rgba=
+(52, 73, 94, 0.3) 1px 3px; }
+
+.post-icon.-icon-development span::after, abbr.post-icon.-icon-development =
+span::after { content: "DEV"; }
+
+.post-icon.-icon-ruby, abbr.post-icon.-icon-ruby { text-indent: 2px; }
+
+.post-icon.-icon-ruby, abbr.post-icon.-icon-ruby { background: rgb(231, 76,=
+ 60); color: rgb(255, 255, 255); box-shadow: rgb(230, 126, 34) -2px 2px, rg=
+b(241, 196, 15) 2px -2px, rgba(231, 76, 60, 0.2) 1px -2px, rgba(231, 76, 60=
+, 0.3) 1px 3px; }
+
+.post-icon.-icon-ruby span::after, abbr.post-icon.-icon-ruby span::after { =
+content: "RB"; }
+
+.post-icon.-icon-javascript, abbr.post-icon.-icon-javascript { text-indent:=
+ 1px; }
+
+.post-icon.-icon-javascript, abbr.post-icon.-icon-javascript { background: =
+rgb(46, 204, 113); color: rgb(251, 254, 252); box-shadow: rgb(230, 126, 34)=
+ -2px 2px, rgb(241, 196, 15) 2px -2px, rgba(46, 204, 113, 0.2) 1px -2px, rg=
+ba(46, 204, 113, 0.3) 1px 3px; }
+
+.post-icon.-icon-javascript span::after, abbr.post-icon.-icon-javascript sp=
+an::after { content: "JS"; }
+
+.post-icon.-icon-productivity, abbr.post-icon.-icon-productivity { text-ind=
+ent: 1px; }
+
+.post-icon.-icon-productivity, abbr.post-icon.-icon-productivity { backgrou=
+nd: rgb(46, 204, 113); color: rgb(251, 254, 252); box-shadow: rgb(230, 126,=
+ 34) -2px 2px, rgb(241, 196, 15) 2px -2px, rgba(46, 204, 113, 0.2) 1px -2px=
+, rgba(46, 204, 113, 0.3) 1px 3px; }
+
+.post-icon.-icon-productivity span::after, abbr.post-icon.-icon-productivit=
+y span::after { content: "PROD"; }
+
+.post-index { margin: 0px auto 4em; position: relative; padding-top: 4em; f=
+ont-size: 0.9em; }
+
+.post-index .container { overflow: hidden; max-width: 620px; margin: 0px au=
+to; }
+
+.post-index h3 { text-transform: uppercase; letter-spacing: 2px; color: rgb=
+(147, 154, 161); font-size: 1em; }
+
+.post-index-item { display: block; overflow: hidden; padding: 6px 20px; bor=
+der-top: 1px solid rgb(238, 243, 250); }
+
+.post-index-item, .post-index-item:hover, .post-index-item:focus { box-shad=
+ow: none; }
+
+.post-index-item:hover .article, .post-index-item:focus .article { transiti=
+on: none 0s ease 0s; }
+
+.post-index-item .date { display: block; }
+
+.post-index-item .date { width: 100px; font-size: 0.8em; color: rgb(147, 15=
+4, 161); }
+
+@media (min-width: 768px) {
+  .post-index-item { padding-left: 0px; padding-right: 0px; }
+  .post-index-item .date, .post-index-item .tag { margin-top: 0.2em; }
+  .post-index-item .date, .post-index-item article { float: left; }
+  .post-index-item .tag { float: right; }
+}
+
+.post-index-item .article { color: rgb(85, 85, 85); margin-right: 3px; tran=
+sition: all 100ms linear 0s; }
+
+.post-index-item:hover .article { color: rgb(30, 163, 255); }
+
+.post-index-item:nth-of-type(1) .article, .post-index-item:nth-of-type(2) .=
+article, .post-index-item:nth-of-type(3) .article, .post-index-item:nth-of-=
+type(4) .article { font-family: raleway, sans-serif; font-weight: 800; }
+
+.post-index-item .tag { color: rgb(147, 154, 161); font-weight: 400; font-s=
+ize: 0.8em; }
+
+.post-item { max-width: 620px; margin: 0px auto; }
+
+.post-list { margin: 40px auto; padding: 20px; }
+
+@media (max-width: 768px) {
+  .post-list { margin: 0px auto; }
+}
+
+.post-list > .post-item:not(:first-child)::before { content: ""; display: b=
+lock; width: 150px; height: 1px; background: rgb(238, 243, 250); margin: 7e=
+m auto; }
+
+@media (max-width: 768px) {
+  .post-list > .post-item:not(:first-child)::before { margin: 4em auto; }
+}
+
+.site-header { text-align: center; padding: 0px 20px; }
+
+.site-header .container { padding: 15px 20px; font-size: 0.9em; color: rgba=
+(147, 154, 161, 0.6); border-bottom: 1px solid rgb(238, 243, 250); }
+
+.site-header em { font-family: "eb garamond", serif; font-weight: 400; font=
+-style: italic; font-kerning: auto; font-feature-settings: "kern", "liga", =
+"dlig", "hlig", "cswh"; font-synthesis: weight style; font-size: 1.1em; col=
+or: rgb(85, 85, 85); }
+
+.social-list, .social-list li { margin: 0px; padding: 0px; }
+
+.social-list { display: block; text-align: center; width: 100%; margin-top:=
+ 2em; }
+
+@media (min-width: 768px) {
+  .social-list { margin-top: 4em; }
+}
+
+.social-list.-top { margin-top: -2em; }
+
+@media (min-width: 768px) {
+  .social-list.-top { margin-top: -1em; }
+}
+
+.social-list li { display: inline-block; }
+
+.social-list a { display: inline-block; padding: 6px; text-align: center; b=
+ox-shadow: none; }
+
+.social-list a::before, .social-list a::after { transition: all 100ms linea=
+r 0s; }
+
+.social-list .text { display: none; }
+
+.social-list a::before { font-family: ionicons; font-weight: 400; font-styl=
+e: normal; font-size: 18px; width: 40px; height: 40px; line-height: 40px; d=
+isplay: inline-block; text-align: center; border: 2px solid transparent; bo=
+rder-radius: 50%; }
+
+.social-list .facebook a { color: rgb(160, 189, 199); }
+
+.social-list .facebook a:hover, .social-list .facebook a:focus { color: rgb=
+(76, 102, 164); }
+
+.social-list .facebook a::before { content: "=EF=88=B1"; }
+
+.social-list .facebook a:hover::before, .social-list .facebook a:focus::bef=
+ore { border-color: rgb(76, 102, 164); content: "=EF=88=B1"; }
+
+.social-list .twitter a { color: rgb(160, 189, 199); }
+
+.social-list .twitter a:hover, .social-list .twitter a:focus { color: rgb(3=
+0, 144, 255); }
+
+.social-list .twitter a::before { content: "=EF=89=83"; }
+
+.social-list .twitter a:hover::before, .social-list .twitter a:focus::befor=
+e { border-color: rgb(30, 144, 255); content: "=EF=89=83"; }
+
+.social-list .googleplus a { color: rgb(160, 189, 199); }
+
+.social-list .googleplus a:hover, .social-list .googleplus a:focus { color:=
+ rgb(255, 85, 51); }
+
+.social-list .googleplus a::before { content: "=EF=88=B5"; }
+
+.social-list .googleplus a:hover::before, .social-list .googleplus a:focus:=
+:before { border-color: rgb(255, 85, 51); content: "=EF=88=B5"; }
+
+.center { text-align: center; }
+
+@media (min-width: 769px) {
+  .spaced { margin-top: 4em; margin-bottom: 4em; }
+}
+
+@media (min-width: 769px) {
+  .spaced-more { margin-top: 6em; margin-bottom: 6em; }
+}
+
+@media (min-width: 769px) {
+  .spaced-less { margin-top: 2em; margin-bottom: 2em; }
+}
+
+@media (min-width: 920px) {
+  .wide { width: 140%; margin-left: -25%; }
+}
+
+.top-collapse-0 { margin-top: 0px; }
+
+.top-collapse-1 { margin-top: -1em; }
+
+.top-collapse-2 { margin-top: -2em; }
+
+.top-collapse-4 { margin-top: -4em; }
+
+.top-space-0 { margin-top: 0px; }
+
+.top-space-1 { margin-top: 1em; }
+
+.top-space-2 { margin-top: 2em; }
+
+.top-space-4 { margin-top: 2em; }
+
+@media (min-width: 769px) {
+  .top-space-4 { margin-top: 4em; }
+}
+
+.bottom-collapse-0 { margin-bottom: 0px; }
+
+.bottom-collapse-1 { margin-bottom: -1em; }
+
+.bottom-collapse-2 { margin-bottom: -2em; }
+
+.bottom-collapse-4 { margin-bottom: -4em; }
+
+.bottom-space-0 { margin-bottom: 0px; }
+
+.bottom-space-1 { margin-bottom: 1em; }
+
+.bottom-space-2 { margin-bottom: 2em; }
+
+.bottom-space-4 { margin-bottom: 2em; }
+
+@media (min-width: 769px) {
+  .bottom-space-4 { margin-bottom: 4em; }
+}
+
+@keyframes blink {=20
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes blink {=20
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.HeadlinePub .carbon-img, .HeadlinePub .carbon-text, .HeadlinePub .carbon-p=
+oweredby { text-decoration: none; }
+
+.HeadlinePub .carbon-text, .HeadlinePub .carbon-poweredby { padding-top: 4p=
+x; padding-bottom: 4px; }
+
+.HeadlinePub .carbon-img > img { width: 130px; height: 100px; box-shadow: r=
+gba(102, 119, 136, 0.03) 0px 6px 8px, rgba(102, 119, 136, 0.3) 0px 1px 2px;=
+ border-radius: 3px; background: rgba(102, 119, 136, 0.2); color: transpare=
+nt; }
+
+.HeadlinePub .carbon-img:hover img { transform: translate3d(0px, -1px, 0px)=
+; box-shadow: rgba(102, 119, 136, 0.03) 0px 6px 8px, rgba(102, 119, 136, 0.=
+3) 0px 1px 2px, rgba(102, 119, 136, 0.1) 0px 8px 12px; }
+
+.HeadlinePub .carbon-text, .HeadlinePub .carbon-text:visited { color: rgb(5=
+1, 51, 51); }
+
+.HeadlinePub .carbon-text::after { content: "  "; }
+
+.HeadlinePub .carbon-text:hover, .HeadlinePub .carbon-poweredby:hover { col=
+or: rgb(51, 51, 51); }
+
+.HeadlinePub .carbon-poweredby, .HeadlinePub .carbon-poweredby:visited { di=
+splay: block; margin-top: 8px; white-space: nowrap; color: rgb(102, 119, 13=
+6); }
+
+.HeadlinePub { position: relative; display: block; margin-left: auto; margi=
+n-right: auto; }
+
+.HeadlinePub #carbonads ~ .placeholder { opacity: 0; transition: opacity 25=
+0ms linear 0s; pointer-events: none; }
+
+.HeadlinePub > .placeholder { background-image: linear-gradient(92deg, rgba=
+(102, 119, 136, 0.1), rgba(102, 119, 136, 0.17) 15%, rgba(102, 119, 136, 0.=
+1) 30%); background-size: 450px 100%; animation: 2.5s ease-in-out 0s infini=
+te normal none running placeholder-swish; border-radius: 3px; position: abs=
+olute; display: block; }
+
+.HeadlinePub > .placeholder.-one { left: 0px; top: 0px; width: 130px; heigh=
+t: 100px; }
+
+.HeadlinePub > .placeholder.-two, .HeadlinePub > .placeholder.-three, .Head=
+linePub > .placeholder.-four { left: 154px; top: 6px; height: 8px; width: 2=
+26px; }
+
+.HeadlinePub > .placeholder.-three { top: 28px; }
+
+.HeadlinePub > .placeholder.-four { top: 50px; width: 63.28px; }
+
+.HeadlinePub #carbonads { position: relative; z-index: 1; }
+
+.HeadlinePub, .HeadlinePub > div > span { display: block; width: 380px; hei=
+ght: 100px; text-align: left; }
+
+.HighlightPubFirstLine .HeadlinePub > div > span::first-line { font-weight:=
+ 700; }
+
+.HeadlinePub > div > span::after { content: ""; display: table; clear: both=
+; zoom: 1; }
+
+.HeadlinePub .carbon-img { float: left; margin-right: 24px; }
+
+#carbonads { animation: 500ms ease-out 0s 1 normal none running pub-text-en=
+ter; }
+
+@keyframes placeholder-swish {=20
+  0% { background-position: -150px 0%; }
+  50% { background-position: 300px 0%; }
+  100% { background-position: 300px 0%; }
+}
+
+@keyframes pub-text-enter {=20
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; }
+}
+------MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css
+
+@charset "utf-8";
+
+@font-face { font-family: Ionicons; src: url("../fonts/ionicons.ttf?v=3D2.0=
+.1") format("truetype"), url("../fonts/ionicons.woff?v=3D2.0.1") format("wo=
+ff"); font-weight: normal; font-style: normal; }
+
+.ion, .ionicons, .ion-alert::before, .ion-alert-circled::before, .ion-andro=
+id-add::before, .ion-android-add-circle::before, .ion-android-alarm-clock::=
+before, .ion-android-alert::before, .ion-android-apps::before, .ion-android=
+-archive::before, .ion-android-arrow-back::before, .ion-android-arrow-down:=
+:before, .ion-android-arrow-dropdown::before, .ion-android-arrow-dropdown-c=
+ircle::before, .ion-android-arrow-dropleft::before, .ion-android-arrow-drop=
+left-circle::before, .ion-android-arrow-dropright::before, .ion-android-arr=
+ow-dropright-circle::before, .ion-android-arrow-dropup::before, .ion-androi=
+d-arrow-dropup-circle::before, .ion-android-arrow-forward::before, .ion-and=
+roid-arrow-up::before, .ion-android-attach::before, .ion-android-bar::befor=
+e, .ion-android-bicycle::before, .ion-android-boat::before, .ion-android-bo=
+okmark::before, .ion-android-bulb::before, .ion-android-bus::before, .ion-a=
+ndroid-calendar::before, .ion-android-call::before, .ion-android-camera::be=
+fore, .ion-android-cancel::before, .ion-android-car::before, .ion-android-c=
+art::before, .ion-android-chat::before, .ion-android-checkbox::before, .ion=
+-android-checkbox-blank::before, .ion-android-checkbox-outline::before, .io=
+n-android-checkbox-outline-blank::before, .ion-android-checkmark-circle::be=
+fore, .ion-android-clipboard::before, .ion-android-close::before, .ion-andr=
+oid-cloud::before, .ion-android-cloud-circle::before, .ion-android-cloud-do=
+ne::before, .ion-android-cloud-outline::before, .ion-android-color-palette:=
+:before, .ion-android-compass::before, .ion-android-contact::before, .ion-a=
+ndroid-contacts::before, .ion-android-contract::before, .ion-android-create=
+::before, .ion-android-delete::before, .ion-android-desktop::before, .ion-a=
+ndroid-document::before, .ion-android-done::before, .ion-android-done-all::=
+before, .ion-android-download::before, .ion-android-drafts::before, .ion-an=
+droid-exit::before, .ion-android-expand::before, .ion-android-favorite::bef=
+ore, .ion-android-favorite-outline::before, .ion-android-film::before, .ion=
+-android-folder::before, .ion-android-folder-open::before, .ion-android-fun=
+nel::before, .ion-android-globe::before, .ion-android-hand::before, .ion-an=
+droid-hangout::before, .ion-android-happy::before, .ion-android-home::befor=
+e, .ion-android-image::before, .ion-android-laptop::before, .ion-android-li=
+st::before, .ion-android-locate::before, .ion-android-lock::before, .ion-an=
+droid-mail::before, .ion-android-map::before, .ion-android-menu::before, .i=
+on-android-microphone::before, .ion-android-microphone-off::before, .ion-an=
+droid-more-horizontal::before, .ion-android-more-vertical::before, .ion-and=
+roid-navigate::before, .ion-android-notifications::before, .ion-android-not=
+ifications-none::before, .ion-android-notifications-off::before, .ion-andro=
+id-open::before, .ion-android-options::before, .ion-android-people::before,=
+ .ion-android-person::before, .ion-android-person-add::before, .ion-android=
+-phone-landscape::before, .ion-android-phone-portrait::before, .ion-android=
+-pin::before, .ion-android-plane::before, .ion-android-playstore::before, .=
+ion-android-print::before, .ion-android-radio-button-off::before, .ion-andr=
+oid-radio-button-on::before, .ion-android-refresh::before, .ion-android-rem=
+ove::before, .ion-android-remove-circle::before, .ion-android-restaurant::b=
+efore, .ion-android-sad::before, .ion-android-search::before, .ion-android-=
+send::before, .ion-android-settings::before, .ion-android-share::before, .i=
+on-android-share-alt::before, .ion-android-star::before, .ion-android-star-=
+half::before, .ion-android-star-outline::before, .ion-android-stopwatch::be=
+fore, .ion-android-subway::before, .ion-android-sunny::before, .ion-android=
+-sync::before, .ion-android-textsms::before, .ion-android-time::before, .io=
+n-android-train::before, .ion-android-unlock::before, .ion-android-upload::=
+before, .ion-android-volume-down::before, .ion-android-volume-mute::before,=
+ .ion-android-volume-off::before, .ion-android-volume-up::before, .ion-andr=
+oid-walk::before, .ion-android-warning::before, .ion-android-watch::before,=
+ .ion-android-wifi::before, .ion-aperture::before, .ion-archive::before, .i=
+on-arrow-down-a::before, .ion-arrow-down-b::before, .ion-arrow-down-c::befo=
+re, .ion-arrow-expand::before, .ion-arrow-graph-down-left::before, .ion-arr=
+ow-graph-down-right::before, .ion-arrow-graph-up-left::before, .ion-arrow-g=
+raph-up-right::before, .ion-arrow-left-a::before, .ion-arrow-left-b::before=
+, .ion-arrow-left-c::before, .ion-arrow-move::before, .ion-arrow-resize::be=
+fore, .ion-arrow-return-left::before, .ion-arrow-return-right::before, .ion=
+-arrow-right-a::before, .ion-arrow-right-b::before, .ion-arrow-right-c::bef=
+ore, .ion-arrow-shrink::before, .ion-arrow-swap::before, .ion-arrow-up-a::b=
+efore, .ion-arrow-up-b::before, .ion-arrow-up-c::before, .ion-asterisk::bef=
+ore, .ion-at::before, .ion-backspace::before, .ion-backspace-outline::befor=
+e, .ion-bag::before, .ion-battery-charging::before, .ion-battery-empty::bef=
+ore, .ion-battery-full::before, .ion-battery-half::before, .ion-battery-low=
+::before, .ion-beaker::before, .ion-beer::before, .ion-bluetooth::before, .=
+ion-bonfire::before, .ion-bookmark::before, .ion-bowtie::before, .ion-brief=
+case::before, .ion-bug::before, .ion-calculator::before, .ion-calendar::bef=
+ore, .ion-camera::before, .ion-card::before, .ion-cash::before, .ion-chatbo=
+x::before, .ion-chatbox-working::before, .ion-chatboxes::before, .ion-chatb=
+ubble::before, .ion-chatbubble-working::before, .ion-chatbubbles::before, .=
+ion-checkmark::before, .ion-checkmark-circled::before, .ion-checkmark-round=
+::before, .ion-chevron-down::before, .ion-chevron-left::before, .ion-chevro=
+n-right::before, .ion-chevron-up::before, .ion-clipboard::before, .ion-cloc=
+k::before, .ion-close::before, .ion-close-circled::before, .ion-close-round=
+::before, .ion-closed-captioning::before, .ion-cloud::before, .ion-code::be=
+fore, .ion-code-download::before, .ion-code-working::before, .ion-coffee::b=
+efore, .ion-compass::before, .ion-compose::before, .ion-connection-bars::be=
+fore, .ion-contrast::before, .ion-crop::before, .ion-cube::before, .ion-dis=
+c::before, .ion-document::before, .ion-document-text::before, .ion-drag::be=
+fore, .ion-earth::before, .ion-easel::before, .ion-edit::before, .ion-egg::=
+before, .ion-eject::before, .ion-email::before, .ion-email-unread::before, =
+.ion-erlenmeyer-flask::before, .ion-erlenmeyer-flask-bubbles::before, .ion-=
+eye::before, .ion-eye-disabled::before, .ion-female::before, .ion-filing::b=
+efore, .ion-film-marker::before, .ion-fireball::before, .ion-flag::before, =
+.ion-flame::before, .ion-flash::before, .ion-flash-off::before, .ion-folder=
+::before, .ion-fork::before, .ion-fork-repo::before, .ion-forward::before, =
+.ion-funnel::before, .ion-gear-a::before, .ion-gear-b::before, .ion-grid::b=
+efore, .ion-hammer::before, .ion-happy::before, .ion-happy-outline::before,=
+ .ion-headphone::before, .ion-heart::before, .ion-heart-broken::before, .io=
+n-help::before, .ion-help-buoy::before, .ion-help-circled::before, .ion-hom=
+e::before, .ion-icecream::before, .ion-image::before, .ion-images::before, =
+.ion-information::before, .ion-information-circled::before, .ion-ionic::bef=
+ore, .ion-ios-alarm::before, .ion-ios-alarm-outline::before, .ion-ios-album=
+s::before, .ion-ios-albums-outline::before, .ion-ios-americanfootball::befo=
+re, .ion-ios-americanfootball-outline::before, .ion-ios-analytics::before, =
+.ion-ios-analytics-outline::before, .ion-ios-arrow-back::before, .ion-ios-a=
+rrow-down::before, .ion-ios-arrow-forward::before, .ion-ios-arrow-left::bef=
+ore, .ion-ios-arrow-right::before, .ion-ios-arrow-thin-down::before, .ion-i=
+os-arrow-thin-left::before, .ion-ios-arrow-thin-right::before, .ion-ios-arr=
+ow-thin-up::before, .ion-ios-arrow-up::before, .ion-ios-at::before, .ion-io=
+s-at-outline::before, .ion-ios-barcode::before, .ion-ios-barcode-outline::b=
+efore, .ion-ios-baseball::before, .ion-ios-baseball-outline::before, .ion-i=
+os-basketball::before, .ion-ios-basketball-outline::before, .ion-ios-bell::=
+before, .ion-ios-bell-outline::before, .ion-ios-body::before, .ion-ios-body=
+-outline::before, .ion-ios-bolt::before, .ion-ios-bolt-outline::before, .io=
+n-ios-book::before, .ion-ios-book-outline::before, .ion-ios-bookmarks::befo=
+re, .ion-ios-bookmarks-outline::before, .ion-ios-box::before, .ion-ios-box-=
+outline::before, .ion-ios-briefcase::before, .ion-ios-briefcase-outline::be=
+fore, .ion-ios-browsers::before, .ion-ios-browsers-outline::before, .ion-io=
+s-calculator::before, .ion-ios-calculator-outline::before, .ion-ios-calenda=
+r::before, .ion-ios-calendar-outline::before, .ion-ios-camera::before, .ion=
+-ios-camera-outline::before, .ion-ios-cart::before, .ion-ios-cart-outline::=
+before, .ion-ios-chatboxes::before, .ion-ios-chatboxes-outline::before, .io=
+n-ios-chatbubble::before, .ion-ios-chatbubble-outline::before, .ion-ios-che=
+ckmark::before, .ion-ios-checkmark-empty::before, .ion-ios-checkmark-outlin=
+e::before, .ion-ios-circle-filled::before, .ion-ios-circle-outline::before,=
+ .ion-ios-clock::before, .ion-ios-clock-outline::before, .ion-ios-close::be=
+fore, .ion-ios-close-empty::before, .ion-ios-close-outline::before, .ion-io=
+s-cloud::before, .ion-ios-cloud-download::before, .ion-ios-cloud-download-o=
+utline::before, .ion-ios-cloud-outline::before, .ion-ios-cloud-upload::befo=
+re, .ion-ios-cloud-upload-outline::before, .ion-ios-cloudy::before, .ion-io=
+s-cloudy-night::before, .ion-ios-cloudy-night-outline::before, .ion-ios-clo=
+udy-outline::before, .ion-ios-cog::before, .ion-ios-cog-outline::before, .i=
+on-ios-color-filter::before, .ion-ios-color-filter-outline::before, .ion-io=
+s-color-wand::before, .ion-ios-color-wand-outline::before, .ion-ios-compose=
+::before, .ion-ios-compose-outline::before, .ion-ios-contact::before, .ion-=
+ios-contact-outline::before, .ion-ios-copy::before, .ion-ios-copy-outline::=
+before, .ion-ios-crop::before, .ion-ios-crop-strong::before, .ion-ios-downl=
+oad::before, .ion-ios-download-outline::before, .ion-ios-drag::before, .ion=
+-ios-email::before, .ion-ios-email-outline::before, .ion-ios-eye::before, .=
+ion-ios-eye-outline::before, .ion-ios-fastforward::before, .ion-ios-fastfor=
+ward-outline::before, .ion-ios-filing::before, .ion-ios-filing-outline::bef=
+ore, .ion-ios-film::before, .ion-ios-film-outline::before, .ion-ios-flag::b=
+efore, .ion-ios-flag-outline::before, .ion-ios-flame::before, .ion-ios-flam=
+e-outline::before, .ion-ios-flask::before, .ion-ios-flask-outline::before, =
+.ion-ios-flower::before, .ion-ios-flower-outline::before, .ion-ios-folder::=
+before, .ion-ios-folder-outline::before, .ion-ios-football::before, .ion-io=
+s-football-outline::before, .ion-ios-game-controller-a::before, .ion-ios-ga=
+me-controller-a-outline::before, .ion-ios-game-controller-b::before, .ion-i=
+os-game-controller-b-outline::before, .ion-ios-gear::before, .ion-ios-gear-=
+outline::before, .ion-ios-glasses::before, .ion-ios-glasses-outline::before=
+, .ion-ios-grid-view::before, .ion-ios-grid-view-outline::before, .ion-ios-=
+heart::before, .ion-ios-heart-outline::before, .ion-ios-help::before, .ion-=
+ios-help-empty::before, .ion-ios-help-outline::before, .ion-ios-home::befor=
+e, .ion-ios-home-outline::before, .ion-ios-infinite::before, .ion-ios-infin=
+ite-outline::before, .ion-ios-information::before, .ion-ios-information-emp=
+ty::before, .ion-ios-information-outline::before, .ion-ios-ionic-outline::b=
+efore, .ion-ios-keypad::before, .ion-ios-keypad-outline::before, .ion-ios-l=
+ightbulb::before, .ion-ios-lightbulb-outline::before, .ion-ios-list::before=
+, .ion-ios-list-outline::before, .ion-ios-location::before, .ion-ios-locati=
+on-outline::before, .ion-ios-locked::before, .ion-ios-locked-outline::befor=
+e, .ion-ios-loop::before, .ion-ios-loop-strong::before, .ion-ios-medical::b=
+efore, .ion-ios-medical-outline::before, .ion-ios-medkit::before, .ion-ios-=
+medkit-outline::before, .ion-ios-mic::before, .ion-ios-mic-off::before, .io=
+n-ios-mic-outline::before, .ion-ios-minus::before, .ion-ios-minus-empty::be=
+fore, .ion-ios-minus-outline::before, .ion-ios-monitor::before, .ion-ios-mo=
+nitor-outline::before, .ion-ios-moon::before, .ion-ios-moon-outline::before=
+, .ion-ios-more::before, .ion-ios-more-outline::before, .ion-ios-musical-no=
+te::before, .ion-ios-musical-notes::before, .ion-ios-navigate::before, .ion=
+-ios-navigate-outline::before, .ion-ios-nutrition::before, .ion-ios-nutriti=
+on-outline::before, .ion-ios-paper::before, .ion-ios-paper-outline::before,=
+ .ion-ios-paperplane::before, .ion-ios-paperplane-outline::before, .ion-ios=
+-partlysunny::before, .ion-ios-partlysunny-outline::before, .ion-ios-pause:=
+:before, .ion-ios-pause-outline::before, .ion-ios-paw::before, .ion-ios-paw=
+-outline::before, .ion-ios-people::before, .ion-ios-people-outline::before,=
+ .ion-ios-person::before, .ion-ios-person-outline::before, .ion-ios-persona=
+dd::before, .ion-ios-personadd-outline::before, .ion-ios-photos::before, .i=
+on-ios-photos-outline::before, .ion-ios-pie::before, .ion-ios-pie-outline::=
+before, .ion-ios-pint::before, .ion-ios-pint-outline::before, .ion-ios-play=
+::before, .ion-ios-play-outline::before, .ion-ios-plus::before, .ion-ios-pl=
+us-empty::before, .ion-ios-plus-outline::before, .ion-ios-pricetag::before,=
+ .ion-ios-pricetag-outline::before, .ion-ios-pricetags::before, .ion-ios-pr=
+icetags-outline::before, .ion-ios-printer::before, .ion-ios-printer-outline=
+::before, .ion-ios-pulse::before, .ion-ios-pulse-strong::before, .ion-ios-r=
+ainy::before, .ion-ios-rainy-outline::before, .ion-ios-recording::before, .=
+ion-ios-recording-outline::before, .ion-ios-redo::before, .ion-ios-redo-out=
+line::before, .ion-ios-refresh::before, .ion-ios-refresh-empty::before, .io=
+n-ios-refresh-outline::before, .ion-ios-reload::before, .ion-ios-reverse-ca=
+mera::before, .ion-ios-reverse-camera-outline::before, .ion-ios-rewind::bef=
+ore, .ion-ios-rewind-outline::before, .ion-ios-rose::before, .ion-ios-rose-=
+outline::before, .ion-ios-search::before, .ion-ios-search-strong::before, .=
+ion-ios-settings::before, .ion-ios-settings-strong::before, .ion-ios-shuffl=
+e::before, .ion-ios-shuffle-strong::before, .ion-ios-skipbackward::before, =
+.ion-ios-skipbackward-outline::before, .ion-ios-skipforward::before, .ion-i=
+os-skipforward-outline::before, .ion-ios-snowy::before, .ion-ios-speedomete=
+r::before, .ion-ios-speedometer-outline::before, .ion-ios-star::before, .io=
+n-ios-star-half::before, .ion-ios-star-outline::before, .ion-ios-stopwatch:=
+:before, .ion-ios-stopwatch-outline::before, .ion-ios-sunny::before, .ion-i=
+os-sunny-outline::before, .ion-ios-telephone::before, .ion-ios-telephone-ou=
+tline::before, .ion-ios-tennisball::before, .ion-ios-tennisball-outline::be=
+fore, .ion-ios-thunderstorm::before, .ion-ios-thunderstorm-outline::before,=
+ .ion-ios-time::before, .ion-ios-time-outline::before, .ion-ios-timer::befo=
+re, .ion-ios-timer-outline::before, .ion-ios-toggle::before, .ion-ios-toggl=
+e-outline::before, .ion-ios-trash::before, .ion-ios-trash-outline::before, =
+.ion-ios-undo::before, .ion-ios-undo-outline::before, .ion-ios-unlocked::be=
+fore, .ion-ios-unlocked-outline::before, .ion-ios-upload::before, .ion-ios-=
+upload-outline::before, .ion-ios-videocam::before, .ion-ios-videocam-outlin=
+e::before, .ion-ios-volume-high::before, .ion-ios-volume-low::before, .ion-=
+ios-wineglass::before, .ion-ios-wineglass-outline::before, .ion-ios-world::=
+before, .ion-ios-world-outline::before, .ion-ipad::before, .ion-iphone::bef=
+ore, .ion-ipod::before, .ion-jet::before, .ion-key::before, .ion-knife::bef=
+ore, .ion-laptop::before, .ion-leaf::before, .ion-levels::before, .ion-ligh=
+tbulb::before, .ion-link::before, .ion-load-a::before, .ion-load-b::before,=
+ .ion-load-c::before, .ion-load-d::before, .ion-location::before, .ion-lock=
+-combination::before, .ion-locked::before, .ion-log-in::before, .ion-log-ou=
+t::before, .ion-loop::before, .ion-magnet::before, .ion-male::before, .ion-=
+man::before, .ion-map::before, .ion-medkit::before, .ion-merge::before, .io=
+n-mic-a::before, .ion-mic-b::before, .ion-mic-c::before, .ion-minus::before=
+, .ion-minus-circled::before, .ion-minus-round::before, .ion-model-s::befor=
+e, .ion-monitor::before, .ion-more::before, .ion-mouse::before, .ion-music-=
+note::before, .ion-navicon::before, .ion-navicon-round::before, .ion-naviga=
+te::before, .ion-network::before, .ion-no-smoking::before, .ion-nuclear::be=
+fore, .ion-outlet::before, .ion-paintbrush::before, .ion-paintbucket::befor=
+e, .ion-paper-airplane::before, .ion-paperclip::before, .ion-pause::before,=
+ .ion-person::before, .ion-person-add::before, .ion-person-stalker::before,=
+ .ion-pie-graph::before, .ion-pin::before, .ion-pinpoint::before, .ion-pizz=
+a::before, .ion-plane::before, .ion-planet::before, .ion-play::before, .ion=
+-playstation::before, .ion-plus::before, .ion-plus-circled::before, .ion-pl=
+us-round::before, .ion-podium::before, .ion-pound::before, .ion-power::befo=
+re, .ion-pricetag::before, .ion-pricetags::before, .ion-printer::before, .i=
+on-pull-request::before, .ion-qr-scanner::before, .ion-quote::before, .ion-=
+radio-waves::before, .ion-record::before, .ion-refresh::before, .ion-reply:=
+:before, .ion-reply-all::before, .ion-ribbon-a::before, .ion-ribbon-b::befo=
+re, .ion-sad::before, .ion-sad-outline::before, .ion-scissors::before, .ion=
+-search::before, .ion-settings::before, .ion-share::before, .ion-shuffle::b=
+efore, .ion-skip-backward::before, .ion-skip-forward::before, .ion-social-a=
+ndroid::before, .ion-social-android-outline::before, .ion-social-angular::b=
+efore, .ion-social-angular-outline::before, .ion-social-apple::before, .ion=
+-social-apple-outline::before, .ion-social-bitcoin::before, .ion-social-bit=
+coin-outline::before, .ion-social-buffer::before, .ion-social-buffer-outlin=
+e::before, .ion-social-chrome::before, .ion-social-chrome-outline::before, =
+.ion-social-codepen::before, .ion-social-codepen-outline::before, .ion-soci=
+al-css3::before, .ion-social-css3-outline::before, .ion-social-designernews=
+::before, .ion-social-designernews-outline::before, .ion-social-dribbble::b=
+efore, .ion-social-dribbble-outline::before, .ion-social-dropbox::before, .=
+ion-social-dropbox-outline::before, .ion-social-euro::before, .ion-social-e=
+uro-outline::before, .ion-social-facebook::before, .ion-social-facebook-out=
+line::before, .ion-social-foursquare::before, .ion-social-foursquare-outlin=
+e::before, .ion-social-freebsd-devil::before, .ion-social-github::before, .=
+ion-social-github-outline::before, .ion-social-google::before, .ion-social-=
+google-outline::before, .ion-social-googleplus::before, .ion-social-googlep=
+lus-outline::before, .ion-social-hackernews::before, .ion-social-hackernews=
+-outline::before, .ion-social-html5::before, .ion-social-html5-outline::bef=
+ore, .ion-social-instagram::before, .ion-social-instagram-outline::before, =
+.ion-social-javascript::before, .ion-social-javascript-outline::before, .io=
+n-social-linkedin::before, .ion-social-linkedin-outline::before, .ion-socia=
+l-markdown::before, .ion-social-nodejs::before, .ion-social-octocat::before=
+, .ion-social-pinterest::before, .ion-social-pinterest-outline::before, .io=
+n-social-python::before, .ion-social-reddit::before, .ion-social-reddit-out=
+line::before, .ion-social-rss::before, .ion-social-rss-outline::before, .io=
+n-social-sass::before, .ion-social-skype::before, .ion-social-skype-outline=
+::before, .ion-social-snapchat::before, .ion-social-snapchat-outline::befor=
+e, .ion-social-tumblr::before, .ion-social-tumblr-outline::before, .ion-soc=
+ial-tux::before, .ion-social-twitch::before, .ion-social-twitch-outline::be=
+fore, .ion-social-twitter::before, .ion-social-twitter-outline::before, .io=
+n-social-usd::before, .ion-social-usd-outline::before, .ion-social-vimeo::b=
+efore, .ion-social-vimeo-outline::before, .ion-social-whatsapp::before, .io=
+n-social-whatsapp-outline::before, .ion-social-windows::before, .ion-social=
+-windows-outline::before, .ion-social-wordpress::before, .ion-social-wordpr=
+ess-outline::before, .ion-social-yahoo::before, .ion-social-yahoo-outline::=
+before, .ion-social-yen::before, .ion-social-yen-outline::before, .ion-soci=
+al-youtube::before, .ion-social-youtube-outline::before, .ion-soup-can::bef=
+ore, .ion-soup-can-outline::before, .ion-speakerphone::before, .ion-speedom=
+eter::before, .ion-spoon::before, .ion-star::before, .ion-stats-bars::befor=
+e, .ion-steam::before, .ion-stop::before, .ion-thermometer::before, .ion-th=
+umbsdown::before, .ion-thumbsup::before, .ion-toggle::before, .ion-toggle-f=
+illed::before, .ion-transgender::before, .ion-trash-a::before, .ion-trash-b=
+::before, .ion-trophy::before, .ion-tshirt::before, .ion-tshirt-outline::be=
+fore, .ion-umbrella::before, .ion-university::before, .ion-unlocked::before=
+, .ion-upload::before, .ion-usb::before, .ion-videocamera::before, .ion-vol=
+ume-high::before, .ion-volume-low::before, .ion-volume-medium::before, .ion=
+-volume-mute::before, .ion-wand::before, .ion-waterdrop::before, .ion-wifi:=
+:before, .ion-wineglass::before, .ion-woman::before, .ion-wrench::before, .=
+ion-xbox::before { display: inline-block; font-family: Ionicons; speak: non=
+e; font-style: normal; font-weight: normal; font-variant: normal; text-tran=
+sform: none; text-rendering: auto; line-height: 1; -webkit-font-smoothing: =
+antialiased; }
+
+.ion-alert::before { content: "=EF=84=81"; }
+
+.ion-alert-circled::before { content: "=EF=84=80"; }
+
+.ion-android-add::before { content: "=EF=8B=87"; }
+
+.ion-android-add-circle::before { content: "=EF=8D=99"; }
+
+.ion-android-alarm-clock::before { content: "=EF=8D=9A"; }
+
+.ion-android-alert::before { content: "=EF=8D=9B"; }
+
+.ion-android-apps::before { content: "=EF=8D=9C"; }
+
+.ion-android-archive::before { content: "=EF=8B=89"; }
+
+.ion-android-arrow-back::before { content: "=EF=8B=8A"; }
+
+.ion-android-arrow-down::before { content: "=EF=8D=9D"; }
+
+.ion-android-arrow-dropdown::before { content: "=EF=8D=9F"; }
+
+.ion-android-arrow-dropdown-circle::before { content: "=EF=8D=9E"; }
+
+.ion-android-arrow-dropleft::before { content: "=EF=8D=A1"; }
+
+.ion-android-arrow-dropleft-circle::before { content: "=EF=8D=A0"; }
+
+.ion-android-arrow-dropright::before { content: "=EF=8D=A3"; }
+
+.ion-android-arrow-dropright-circle::before { content: "=EF=8D=A2"; }
+
+.ion-android-arrow-dropup::before { content: "=EF=8D=A5"; }
+
+.ion-android-arrow-dropup-circle::before { content: "=EF=8D=A4"; }
+
+.ion-android-arrow-forward::before { content: "=EF=8C=8F"; }
+
+.ion-android-arrow-up::before { content: "=EF=8D=A6"; }
+
+.ion-android-attach::before { content: "=EF=8D=A7"; }
+
+.ion-android-bar::before { content: "=EF=8D=A8"; }
+
+.ion-android-bicycle::before { content: "=EF=8D=A9"; }
+
+.ion-android-boat::before { content: "=EF=8D=AA"; }
+
+.ion-android-bookmark::before { content: "=EF=8D=AB"; }
+
+.ion-android-bulb::before { content: "=EF=8D=AC"; }
+
+.ion-android-bus::before { content: "=EF=8D=AD"; }
+
+.ion-android-calendar::before { content: "=EF=8B=91"; }
+
+.ion-android-call::before { content: "=EF=8B=92"; }
+
+.ion-android-camera::before { content: "=EF=8B=93"; }
+
+.ion-android-cancel::before { content: "=EF=8D=AE"; }
+
+.ion-android-car::before { content: "=EF=8D=AF"; }
+
+.ion-android-cart::before { content: "=EF=8D=B0"; }
+
+.ion-android-chat::before { content: "=EF=8B=94"; }
+
+.ion-android-checkbox::before { content: "=EF=8D=B4"; }
+
+.ion-android-checkbox-blank::before { content: "=EF=8D=B1"; }
+
+.ion-android-checkbox-outline::before { content: "=EF=8D=B3"; }
+
+.ion-android-checkbox-outline-blank::before { content: "=EF=8D=B2"; }
+
+.ion-android-checkmark-circle::before { content: "=EF=8D=B5"; }
+
+.ion-android-clipboard::before { content: "=EF=8D=B6"; }
+
+.ion-android-close::before { content: "=EF=8B=97"; }
+
+.ion-android-cloud::before { content: "=EF=8D=BA"; }
+
+.ion-android-cloud-circle::before { content: "=EF=8D=B7"; }
+
+.ion-android-cloud-done::before { content: "=EF=8D=B8"; }
+
+.ion-android-cloud-outline::before { content: "=EF=8D=B9"; }
+
+.ion-android-color-palette::before { content: "=EF=8D=BB"; }
+
+.ion-android-compass::before { content: "=EF=8D=BC"; }
+
+.ion-android-contact::before { content: "=EF=8B=98"; }
+
+.ion-android-contacts::before { content: "=EF=8B=99"; }
+
+.ion-android-contract::before { content: "=EF=8D=BD"; }
+
+.ion-android-create::before { content: "=EF=8D=BE"; }
+
+.ion-android-delete::before { content: "=EF=8D=BF"; }
+
+.ion-android-desktop::before { content: "=EF=8E=80"; }
+
+.ion-android-document::before { content: "=EF=8E=81"; }
+
+.ion-android-done::before { content: "=EF=8E=83"; }
+
+.ion-android-done-all::before { content: "=EF=8E=82"; }
+
+.ion-android-download::before { content: "=EF=8B=9D"; }
+
+.ion-android-drafts::before { content: "=EF=8E=84"; }
+
+.ion-android-exit::before { content: "=EF=8E=85"; }
+
+.ion-android-expand::before { content: "=EF=8E=86"; }
+
+.ion-android-favorite::before { content: "=EF=8E=88"; }
+
+.ion-android-favorite-outline::before { content: "=EF=8E=87"; }
+
+.ion-android-film::before { content: "=EF=8E=89"; }
+
+.ion-android-folder::before { content: "=EF=8B=A0"; }
+
+.ion-android-folder-open::before { content: "=EF=8E=8A"; }
+
+.ion-android-funnel::before { content: "=EF=8E=8B"; }
+
+.ion-android-globe::before { content: "=EF=8E=8C"; }
+
+.ion-android-hand::before { content: "=EF=8B=A3"; }
+
+.ion-android-hangout::before { content: "=EF=8E=8D"; }
+
+.ion-android-happy::before { content: "=EF=8E=8E"; }
+
+.ion-android-home::before { content: "=EF=8E=8F"; }
+
+.ion-android-image::before { content: "=EF=8B=A4"; }
+
+.ion-android-laptop::before { content: "=EF=8E=90"; }
+
+.ion-android-list::before { content: "=EF=8E=91"; }
+
+.ion-android-locate::before { content: "=EF=8B=A9"; }
+
+.ion-android-lock::before { content: "=EF=8E=92"; }
+
+.ion-android-mail::before { content: "=EF=8B=AB"; }
+
+.ion-android-map::before { content: "=EF=8E=93"; }
+
+.ion-android-menu::before { content: "=EF=8E=94"; }
+
+.ion-android-microphone::before { content: "=EF=8B=AC"; }
+
+.ion-android-microphone-off::before { content: "=EF=8E=95"; }
+
+.ion-android-more-horizontal::before { content: "=EF=8E=96"; }
+
+.ion-android-more-vertical::before { content: "=EF=8E=97"; }
+
+.ion-android-navigate::before { content: "=EF=8E=98"; }
+
+.ion-android-notifications::before { content: "=EF=8E=9B"; }
+
+.ion-android-notifications-none::before { content: "=EF=8E=99"; }
+
+.ion-android-notifications-off::before { content: "=EF=8E=9A"; }
+
+.ion-android-open::before { content: "=EF=8E=9C"; }
+
+.ion-android-options::before { content: "=EF=8E=9D"; }
+
+.ion-android-people::before { content: "=EF=8E=9E"; }
+
+.ion-android-person::before { content: "=EF=8E=A0"; }
+
+.ion-android-person-add::before { content: "=EF=8E=9F"; }
+
+.ion-android-phone-landscape::before { content: "=EF=8E=A1"; }
+
+.ion-android-phone-portrait::before { content: "=EF=8E=A2"; }
+
+.ion-android-pin::before { content: "=EF=8E=A3"; }
+
+.ion-android-plane::before { content: "=EF=8E=A4"; }
+
+.ion-android-playstore::before { content: "=EF=8B=B0"; }
+
+.ion-android-print::before { content: "=EF=8E=A5"; }
+
+.ion-android-radio-button-off::before { content: "=EF=8E=A6"; }
+
+.ion-android-radio-button-on::before { content: "=EF=8E=A7"; }
+
+.ion-android-refresh::before { content: "=EF=8E=A8"; }
+
+.ion-android-remove::before { content: "=EF=8B=B4"; }
+
+.ion-android-remove-circle::before { content: "=EF=8E=A9"; }
+
+.ion-android-restaurant::before { content: "=EF=8E=AA"; }
+
+.ion-android-sad::before { content: "=EF=8E=AB"; }
+
+.ion-android-search::before { content: "=EF=8B=B5"; }
+
+.ion-android-send::before { content: "=EF=8B=B6"; }
+
+.ion-android-settings::before { content: "=EF=8B=B7"; }
+
+.ion-android-share::before { content: "=EF=8B=B8"; }
+
+.ion-android-share-alt::before { content: "=EF=8E=AC"; }
+
+.ion-android-star::before { content: "=EF=8B=BC"; }
+
+.ion-android-star-half::before { content: "=EF=8E=AD"; }
+
+.ion-android-star-outline::before { content: "=EF=8E=AE"; }
+
+.ion-android-stopwatch::before { content: "=EF=8B=BD"; }
+
+.ion-android-subway::before { content: "=EF=8E=AF"; }
+
+.ion-android-sunny::before { content: "=EF=8E=B0"; }
+
+.ion-android-sync::before { content: "=EF=8E=B1"; }
+
+.ion-android-textsms::before { content: "=EF=8E=B2"; }
+
+.ion-android-time::before { content: "=EF=8E=B3"; }
+
+.ion-android-train::before { content: "=EF=8E=B4"; }
+
+.ion-android-unlock::before { content: "=EF=8E=B5"; }
+
+.ion-android-upload::before { content: "=EF=8E=B6"; }
+
+.ion-android-volume-down::before { content: "=EF=8E=B7"; }
+
+.ion-android-volume-mute::before { content: "=EF=8E=B8"; }
+
+.ion-android-volume-off::before { content: "=EF=8E=B9"; }
+
+.ion-android-volume-up::before { content: "=EF=8E=BA"; }
+
+.ion-android-walk::before { content: "=EF=8E=BB"; }
+
+.ion-android-warning::before { content: "=EF=8E=BC"; }
+
+.ion-android-watch::before { content: "=EF=8E=BD"; }
+
+.ion-android-wifi::before { content: "=EF=8C=85"; }
+
+.ion-aperture::before { content: "=EF=8C=93"; }
+
+.ion-archive::before { content: "=EF=84=82"; }
+
+.ion-arrow-down-a::before { content: "=EF=84=83"; }
+
+.ion-arrow-down-b::before { content: "=EF=84=84"; }
+
+.ion-arrow-down-c::before { content: "=EF=84=85"; }
+
+.ion-arrow-expand::before { content: "=EF=89=9E"; }
+
+.ion-arrow-graph-down-left::before { content: "=EF=89=9F"; }
+
+.ion-arrow-graph-down-right::before { content: "=EF=89=A0"; }
+
+.ion-arrow-graph-up-left::before { content: "=EF=89=A1"; }
+
+.ion-arrow-graph-up-right::before { content: "=EF=89=A2"; }
+
+.ion-arrow-left-a::before { content: "=EF=84=86"; }
+
+.ion-arrow-left-b::before { content: "=EF=84=87"; }
+
+.ion-arrow-left-c::before { content: "=EF=84=88"; }
+
+.ion-arrow-move::before { content: "=EF=89=A3"; }
+
+.ion-arrow-resize::before { content: "=EF=89=A4"; }
+
+.ion-arrow-return-left::before { content: "=EF=89=A5"; }
+
+.ion-arrow-return-right::before { content: "=EF=89=A6"; }
+
+.ion-arrow-right-a::before { content: "=EF=84=89"; }
+
+.ion-arrow-right-b::before { content: "=EF=84=8A"; }
+
+.ion-arrow-right-c::before { content: "=EF=84=8B"; }
+
+.ion-arrow-shrink::before { content: "=EF=89=A7"; }
+
+.ion-arrow-swap::before { content: "=EF=89=A8"; }
+
+.ion-arrow-up-a::before { content: "=EF=84=8C"; }
+
+.ion-arrow-up-b::before { content: "=EF=84=8D"; }
+
+.ion-arrow-up-c::before { content: "=EF=84=8E"; }
+
+.ion-asterisk::before { content: "=EF=8C=94"; }
+
+.ion-at::before { content: "=EF=84=8F"; }
+
+.ion-backspace::before { content: "=EF=8E=BF"; }
+
+.ion-backspace-outline::before { content: "=EF=8E=BE"; }
+
+.ion-bag::before { content: "=EF=84=90"; }
+
+.ion-battery-charging::before { content: "=EF=84=91"; }
+
+.ion-battery-empty::before { content: "=EF=84=92"; }
+
+.ion-battery-full::before { content: "=EF=84=93"; }
+
+.ion-battery-half::before { content: "=EF=84=94"; }
+
+.ion-battery-low::before { content: "=EF=84=95"; }
+
+.ion-beaker::before { content: "=EF=89=A9"; }
+
+.ion-beer::before { content: "=EF=89=AA"; }
+
+.ion-bluetooth::before { content: "=EF=84=96"; }
+
+.ion-bonfire::before { content: "=EF=8C=95"; }
+
+.ion-bookmark::before { content: "=EF=89=AB"; }
+
+.ion-bowtie::before { content: "=EF=8F=80"; }
+
+.ion-briefcase::before { content: "=EF=89=AC"; }
+
+.ion-bug::before { content: "=EF=8A=BE"; }
+
+.ion-calculator::before { content: "=EF=89=AD"; }
+
+.ion-calendar::before { content: "=EF=84=97"; }
+
+.ion-camera::before { content: "=EF=84=98"; }
+
+.ion-card::before { content: "=EF=84=99"; }
+
+.ion-cash::before { content: "=EF=8C=96"; }
+
+.ion-chatbox::before { content: "=EF=84=9B"; }
+
+.ion-chatbox-working::before { content: "=EF=84=9A"; }
+
+.ion-chatboxes::before { content: "=EF=84=9C"; }
+
+.ion-chatbubble::before { content: "=EF=84=9E"; }
+
+.ion-chatbubble-working::before { content: "=EF=84=9D"; }
+
+.ion-chatbubbles::before { content: "=EF=84=9F"; }
+
+.ion-checkmark::before { content: "=EF=84=A2"; }
+
+.ion-checkmark-circled::before { content: "=EF=84=A0"; }
+
+.ion-checkmark-round::before { content: "=EF=84=A1"; }
+
+.ion-chevron-down::before { content: "=EF=84=A3"; }
+
+.ion-chevron-left::before { content: "=EF=84=A4"; }
+
+.ion-chevron-right::before { content: "=EF=84=A5"; }
+
+.ion-chevron-up::before { content: "=EF=84=A6"; }
+
+.ion-clipboard::before { content: "=EF=84=A7"; }
+
+.ion-clock::before { content: "=EF=89=AE"; }
+
+.ion-close::before { content: "=EF=84=AA"; }
+
+.ion-close-circled::before { content: "=EF=84=A8"; }
+
+.ion-close-round::before { content: "=EF=84=A9"; }
+
+.ion-closed-captioning::before { content: "=EF=8C=97"; }
+
+.ion-cloud::before { content: "=EF=84=AB"; }
+
+.ion-code::before { content: "=EF=89=B1"; }
+
+.ion-code-download::before { content: "=EF=89=AF"; }
+
+.ion-code-working::before { content: "=EF=89=B0"; }
+
+.ion-coffee::before { content: "=EF=89=B2"; }
+
+.ion-compass::before { content: "=EF=89=B3"; }
+
+.ion-compose::before { content: "=EF=84=AC"; }
+
+.ion-connection-bars::before { content: "=EF=89=B4"; }
+
+.ion-contrast::before { content: "=EF=89=B5"; }
+
+.ion-crop::before { content: "=EF=8F=81"; }
+
+.ion-cube::before { content: "=EF=8C=98"; }
+
+.ion-disc::before { content: "=EF=84=AD"; }
+
+.ion-document::before { content: "=EF=84=AF"; }
+
+.ion-document-text::before { content: "=EF=84=AE"; }
+
+.ion-drag::before { content: "=EF=84=B0"; }
+
+.ion-earth::before { content: "=EF=89=B6"; }
+
+.ion-easel::before { content: "=EF=8F=82"; }
+
+.ion-edit::before { content: "=EF=8A=BF"; }
+
+.ion-egg::before { content: "=EF=89=B7"; }
+
+.ion-eject::before { content: "=EF=84=B1"; }
+
+.ion-email::before { content: "=EF=84=B2"; }
+
+.ion-email-unread::before { content: "=EF=8F=83"; }
+
+.ion-erlenmeyer-flask::before { content: "=EF=8F=85"; }
+
+.ion-erlenmeyer-flask-bubbles::before { content: "=EF=8F=84"; }
+
+.ion-eye::before { content: "=EF=84=B3"; }
+
+.ion-eye-disabled::before { content: "=EF=8C=86"; }
+
+.ion-female::before { content: "=EF=89=B8"; }
+
+.ion-filing::before { content: "=EF=84=B4"; }
+
+.ion-film-marker::before { content: "=EF=84=B5"; }
+
+.ion-fireball::before { content: "=EF=8C=99"; }
+
+.ion-flag::before { content: "=EF=89=B9"; }
+
+.ion-flame::before { content: "=EF=8C=9A"; }
+
+.ion-flash::before { content: "=EF=84=B7"; }
+
+.ion-flash-off::before { content: "=EF=84=B6"; }
+
+.ion-folder::before { content: "=EF=84=B9"; }
+
+.ion-fork::before { content: "=EF=89=BA"; }
+
+.ion-fork-repo::before { content: "=EF=8B=80"; }
+
+.ion-forward::before { content: "=EF=84=BA"; }
+
+.ion-funnel::before { content: "=EF=8C=9B"; }
+
+.ion-gear-a::before { content: "=EF=84=BD"; }
+
+.ion-gear-b::before { content: "=EF=84=BE"; }
+
+.ion-grid::before { content: "=EF=84=BF"; }
+
+.ion-hammer::before { content: "=EF=89=BB"; }
+
+.ion-happy::before { content: "=EF=8C=9C"; }
+
+.ion-happy-outline::before { content: "=EF=8F=86"; }
+
+.ion-headphone::before { content: "=EF=85=80"; }
+
+.ion-heart::before { content: "=EF=85=81"; }
+
+.ion-heart-broken::before { content: "=EF=8C=9D"; }
+
+.ion-help::before { content: "=EF=85=83"; }
+
+.ion-help-buoy::before { content: "=EF=89=BC"; }
+
+.ion-help-circled::before { content: "=EF=85=82"; }
+
+.ion-home::before { content: "=EF=85=84"; }
+
+.ion-icecream::before { content: "=EF=89=BD"; }
+
+.ion-image::before { content: "=EF=85=87"; }
+
+.ion-images::before { content: "=EF=85=88"; }
+
+.ion-information::before { content: "=EF=85=8A"; }
+
+.ion-information-circled::before { content: "=EF=85=89"; }
+
+.ion-ionic::before { content: "=EF=85=8B"; }
+
+.ion-ios-alarm::before { content: "=EF=8F=88"; }
+
+.ion-ios-alarm-outline::before { content: "=EF=8F=87"; }
+
+.ion-ios-albums::before { content: "=EF=8F=8A"; }
+
+.ion-ios-albums-outline::before { content: "=EF=8F=89"; }
+
+.ion-ios-americanfootball::before { content: "=EF=8F=8C"; }
+
+.ion-ios-americanfootball-outline::before { content: "=EF=8F=8B"; }
+
+.ion-ios-analytics::before { content: "=EF=8F=8E"; }
+
+.ion-ios-analytics-outline::before { content: "=EF=8F=8D"; }
+
+.ion-ios-arrow-back::before { content: "=EF=8F=8F"; }
+
+.ion-ios-arrow-down::before { content: "=EF=8F=90"; }
+
+.ion-ios-arrow-forward::before { content: "=EF=8F=91"; }
+
+.ion-ios-arrow-left::before { content: "=EF=8F=92"; }
+
+.ion-ios-arrow-right::before { content: "=EF=8F=93"; }
+
+.ion-ios-arrow-thin-down::before { content: "=EF=8F=94"; }
+
+.ion-ios-arrow-thin-left::before { content: "=EF=8F=95"; }
+
+.ion-ios-arrow-thin-right::before { content: "=EF=8F=96"; }
+
+.ion-ios-arrow-thin-up::before { content: "=EF=8F=97"; }
+
+.ion-ios-arrow-up::before { content: "=EF=8F=98"; }
+
+.ion-ios-at::before { content: "=EF=8F=9A"; }
+
+.ion-ios-at-outline::before { content: "=EF=8F=99"; }
+
+.ion-ios-barcode::before { content: "=EF=8F=9C"; }
+
+.ion-ios-barcode-outline::before { content: "=EF=8F=9B"; }
+
+.ion-ios-baseball::before { content: "=EF=8F=9E"; }
+
+.ion-ios-baseball-outline::before { content: "=EF=8F=9D"; }
+
+.ion-ios-basketball::before { content: "=EF=8F=A0"; }
+
+.ion-ios-basketball-outline::before { content: "=EF=8F=9F"; }
+
+.ion-ios-bell::before { content: "=EF=8F=A2"; }
+
+.ion-ios-bell-outline::before { content: "=EF=8F=A1"; }
+
+.ion-ios-body::before { content: "=EF=8F=A4"; }
+
+.ion-ios-body-outline::before { content: "=EF=8F=A3"; }
+
+.ion-ios-bolt::before { content: "=EF=8F=A6"; }
+
+.ion-ios-bolt-outline::before { content: "=EF=8F=A5"; }
+
+.ion-ios-book::before { content: "=EF=8F=A8"; }
+
+.ion-ios-book-outline::before { content: "=EF=8F=A7"; }
+
+.ion-ios-bookmarks::before { content: "=EF=8F=AA"; }
+
+.ion-ios-bookmarks-outline::before { content: "=EF=8F=A9"; }
+
+.ion-ios-box::before { content: "=EF=8F=AC"; }
+
+.ion-ios-box-outline::before { content: "=EF=8F=AB"; }
+
+.ion-ios-briefcase::before { content: "=EF=8F=AE"; }
+
+.ion-ios-briefcase-outline::before { content: "=EF=8F=AD"; }
+
+.ion-ios-browsers::before { content: "=EF=8F=B0"; }
+
+.ion-ios-browsers-outline::before { content: "=EF=8F=AF"; }
+
+.ion-ios-calculator::before { content: "=EF=8F=B2"; }
+
+.ion-ios-calculator-outline::before { content: "=EF=8F=B1"; }
+
+.ion-ios-calendar::before { content: "=EF=8F=B4"; }
+
+.ion-ios-calendar-outline::before { content: "=EF=8F=B3"; }
+
+.ion-ios-camera::before { content: "=EF=8F=B6"; }
+
+.ion-ios-camera-outline::before { content: "=EF=8F=B5"; }
+
+.ion-ios-cart::before { content: "=EF=8F=B8"; }
+
+.ion-ios-cart-outline::before { content: "=EF=8F=B7"; }
+
+.ion-ios-chatboxes::before { content: "=EF=8F=BA"; }
+
+.ion-ios-chatboxes-outline::before { content: "=EF=8F=B9"; }
+
+.ion-ios-chatbubble::before { content: "=EF=8F=BC"; }
+
+.ion-ios-chatbubble-outline::before { content: "=EF=8F=BB"; }
+
+.ion-ios-checkmark::before { content: "=EF=8F=BF"; }
+
+.ion-ios-checkmark-empty::before { content: "=EF=8F=BD"; }
+
+.ion-ios-checkmark-outline::before { content: "=EF=8F=BE"; }
+
+.ion-ios-circle-filled::before { content: "=EF=90=80"; }
+
+.ion-ios-circle-outline::before { content: "=EF=90=81"; }
+
+.ion-ios-clock::before { content: "=EF=90=83"; }
+
+.ion-ios-clock-outline::before { content: "=EF=90=82"; }
+
+.ion-ios-close::before { content: "=EF=90=86"; }
+
+.ion-ios-close-empty::before { content: "=EF=90=84"; }
+
+.ion-ios-close-outline::before { content: "=EF=90=85"; }
+
+.ion-ios-cloud::before { content: "=EF=90=8C"; }
+
+.ion-ios-cloud-download::before { content: "=EF=90=88"; }
+
+.ion-ios-cloud-download-outline::before { content: "=EF=90=87"; }
+
+.ion-ios-cloud-outline::before { content: "=EF=90=89"; }
+
+.ion-ios-cloud-upload::before { content: "=EF=90=8B"; }
+
+.ion-ios-cloud-upload-outline::before { content: "=EF=90=8A"; }
+
+.ion-ios-cloudy::before { content: "=EF=90=90"; }
+
+.ion-ios-cloudy-night::before { content: "=EF=90=8E"; }
+
+.ion-ios-cloudy-night-outline::before { content: "=EF=90=8D"; }
+
+.ion-ios-cloudy-outline::before { content: "=EF=90=8F"; }
+
+.ion-ios-cog::before { content: "=EF=90=92"; }
+
+.ion-ios-cog-outline::before { content: "=EF=90=91"; }
+
+.ion-ios-color-filter::before { content: "=EF=90=94"; }
+
+.ion-ios-color-filter-outline::before { content: "=EF=90=93"; }
+
+.ion-ios-color-wand::before { content: "=EF=90=96"; }
+
+.ion-ios-color-wand-outline::before { content: "=EF=90=95"; }
+
+.ion-ios-compose::before { content: "=EF=90=98"; }
+
+.ion-ios-compose-outline::before { content: "=EF=90=97"; }
+
+.ion-ios-contact::before { content: "=EF=90=9A"; }
+
+.ion-ios-contact-outline::before { content: "=EF=90=99"; }
+
+.ion-ios-copy::before { content: "=EF=90=9C"; }
+
+.ion-ios-copy-outline::before { content: "=EF=90=9B"; }
+
+.ion-ios-crop::before { content: "=EF=90=9E"; }
+
+.ion-ios-crop-strong::before { content: "=EF=90=9D"; }
+
+.ion-ios-download::before { content: "=EF=90=A0"; }
+
+.ion-ios-download-outline::before { content: "=EF=90=9F"; }
+
+.ion-ios-drag::before { content: "=EF=90=A1"; }
+
+.ion-ios-email::before { content: "=EF=90=A3"; }
+
+.ion-ios-email-outline::before { content: "=EF=90=A2"; }
+
+.ion-ios-eye::before { content: "=EF=90=A5"; }
+
+.ion-ios-eye-outline::before { content: "=EF=90=A4"; }
+
+.ion-ios-fastforward::before { content: "=EF=90=A7"; }
+
+.ion-ios-fastforward-outline::before { content: "=EF=90=A6"; }
+
+.ion-ios-filing::before { content: "=EF=90=A9"; }
+
+.ion-ios-filing-outline::before { content: "=EF=90=A8"; }
+
+.ion-ios-film::before { content: "=EF=90=AB"; }
+
+.ion-ios-film-outline::before { content: "=EF=90=AA"; }
+
+.ion-ios-flag::before { content: "=EF=90=AD"; }
+
+.ion-ios-flag-outline::before { content: "=EF=90=AC"; }
+
+.ion-ios-flame::before { content: "=EF=90=AF"; }
+
+.ion-ios-flame-outline::before { content: "=EF=90=AE"; }
+
+.ion-ios-flask::before { content: "=EF=90=B1"; }
+
+.ion-ios-flask-outline::before { content: "=EF=90=B0"; }
+
+.ion-ios-flower::before { content: "=EF=90=B3"; }
+
+.ion-ios-flower-outline::before { content: "=EF=90=B2"; }
+
+.ion-ios-folder::before { content: "=EF=90=B5"; }
+
+.ion-ios-folder-outline::before { content: "=EF=90=B4"; }
+
+.ion-ios-football::before { content: "=EF=90=B7"; }
+
+.ion-ios-football-outline::before { content: "=EF=90=B6"; }
+
+.ion-ios-game-controller-a::before { content: "=EF=90=B9"; }
+
+.ion-ios-game-controller-a-outline::before { content: "=EF=90=B8"; }
+
+.ion-ios-game-controller-b::before { content: "=EF=90=BB"; }
+
+.ion-ios-game-controller-b-outline::before { content: "=EF=90=BA"; }
+
+.ion-ios-gear::before { content: "=EF=90=BD"; }
+
+.ion-ios-gear-outline::before { content: "=EF=90=BC"; }
+
+.ion-ios-glasses::before { content: "=EF=90=BF"; }
+
+.ion-ios-glasses-outline::before { content: "=EF=90=BE"; }
+
+.ion-ios-grid-view::before { content: "=EF=91=81"; }
+
+.ion-ios-grid-view-outline::before { content: "=EF=91=80"; }
+
+.ion-ios-heart::before { content: "=EF=91=83"; }
+
+.ion-ios-heart-outline::before { content: "=EF=91=82"; }
+
+.ion-ios-help::before { content: "=EF=91=86"; }
+
+.ion-ios-help-empty::before { content: "=EF=91=84"; }
+
+.ion-ios-help-outline::before { content: "=EF=91=85"; }
+
+.ion-ios-home::before { content: "=EF=91=88"; }
+
+.ion-ios-home-outline::before { content: "=EF=91=87"; }
+
+.ion-ios-infinite::before { content: "=EF=91=8A"; }
+
+.ion-ios-infinite-outline::before { content: "=EF=91=89"; }
+
+.ion-ios-information::before { content: "=EF=91=8D"; }
+
+.ion-ios-information-empty::before { content: "=EF=91=8B"; }
+
+.ion-ios-information-outline::before { content: "=EF=91=8C"; }
+
+.ion-ios-ionic-outline::before { content: "=EF=91=8E"; }
+
+.ion-ios-keypad::before { content: "=EF=91=90"; }
+
+.ion-ios-keypad-outline::before { content: "=EF=91=8F"; }
+
+.ion-ios-lightbulb::before { content: "=EF=91=92"; }
+
+.ion-ios-lightbulb-outline::before { content: "=EF=91=91"; }
+
+.ion-ios-list::before { content: "=EF=91=94"; }
+
+.ion-ios-list-outline::before { content: "=EF=91=93"; }
+
+.ion-ios-location::before { content: "=EF=91=96"; }
+
+.ion-ios-location-outline::before { content: "=EF=91=95"; }
+
+.ion-ios-locked::before { content: "=EF=91=98"; }
+
+.ion-ios-locked-outline::before { content: "=EF=91=97"; }
+
+.ion-ios-loop::before { content: "=EF=91=9A"; }
+
+.ion-ios-loop-strong::before { content: "=EF=91=99"; }
+
+.ion-ios-medical::before { content: "=EF=91=9C"; }
+
+.ion-ios-medical-outline::before { content: "=EF=91=9B"; }
+
+.ion-ios-medkit::before { content: "=EF=91=9E"; }
+
+.ion-ios-medkit-outline::before { content: "=EF=91=9D"; }
+
+.ion-ios-mic::before { content: "=EF=91=A1"; }
+
+.ion-ios-mic-off::before { content: "=EF=91=9F"; }
+
+.ion-ios-mic-outline::before { content: "=EF=91=A0"; }
+
+.ion-ios-minus::before { content: "=EF=91=A4"; }
+
+.ion-ios-minus-empty::before { content: "=EF=91=A2"; }
+
+.ion-ios-minus-outline::before { content: "=EF=91=A3"; }
+
+.ion-ios-monitor::before { content: "=EF=91=A6"; }
+
+.ion-ios-monitor-outline::before { content: "=EF=91=A5"; }
+
+.ion-ios-moon::before { content: "=EF=91=A8"; }
+
+.ion-ios-moon-outline::before { content: "=EF=91=A7"; }
+
+.ion-ios-more::before { content: "=EF=91=AA"; }
+
+.ion-ios-more-outline::before { content: "=EF=91=A9"; }
+
+.ion-ios-musical-note::before { content: "=EF=91=AB"; }
+
+.ion-ios-musical-notes::before { content: "=EF=91=AC"; }
+
+.ion-ios-navigate::before { content: "=EF=91=AE"; }
+
+.ion-ios-navigate-outline::before { content: "=EF=91=AD"; }
+
+.ion-ios-nutrition::before { content: "=EF=91=B0"; }
+
+.ion-ios-nutrition-outline::before { content: "=EF=91=AF"; }
+
+.ion-ios-paper::before { content: "=EF=91=B2"; }
+
+.ion-ios-paper-outline::before { content: "=EF=91=B1"; }
+
+.ion-ios-paperplane::before { content: "=EF=91=B4"; }
+
+.ion-ios-paperplane-outline::before { content: "=EF=91=B3"; }
+
+.ion-ios-partlysunny::before { content: "=EF=91=B6"; }
+
+.ion-ios-partlysunny-outline::before { content: "=EF=91=B5"; }
+
+.ion-ios-pause::before { content: "=EF=91=B8"; }
+
+.ion-ios-pause-outline::before { content: "=EF=91=B7"; }
+
+.ion-ios-paw::before { content: "=EF=91=BA"; }
+
+.ion-ios-paw-outline::before { content: "=EF=91=B9"; }
+
+.ion-ios-people::before { content: "=EF=91=BC"; }
+
+.ion-ios-people-outline::before { content: "=EF=91=BB"; }
+
+.ion-ios-person::before { content: "=EF=91=BE"; }
+
+.ion-ios-person-outline::before { content: "=EF=91=BD"; }
+
+.ion-ios-personadd::before { content: "=EF=92=80"; }
+
+.ion-ios-personadd-outline::before { content: "=EF=91=BF"; }
+
+.ion-ios-photos::before { content: "=EF=92=82"; }
+
+.ion-ios-photos-outline::before { content: "=EF=92=81"; }
+
+.ion-ios-pie::before { content: "=EF=92=84"; }
+
+.ion-ios-pie-outline::before { content: "=EF=92=83"; }
+
+.ion-ios-pint::before { content: "=EF=92=86"; }
+
+.ion-ios-pint-outline::before { content: "=EF=92=85"; }
+
+.ion-ios-play::before { content: "=EF=92=88"; }
+
+.ion-ios-play-outline::before { content: "=EF=92=87"; }
+
+.ion-ios-plus::before { content: "=EF=92=8B"; }
+
+.ion-ios-plus-empty::before { content: "=EF=92=89"; }
+
+.ion-ios-plus-outline::before { content: "=EF=92=8A"; }
+
+.ion-ios-pricetag::before { content: "=EF=92=8D"; }
+
+.ion-ios-pricetag-outline::before { content: "=EF=92=8C"; }
+
+.ion-ios-pricetags::before { content: "=EF=92=8F"; }
+
+.ion-ios-pricetags-outline::before { content: "=EF=92=8E"; }
+
+.ion-ios-printer::before { content: "=EF=92=91"; }
+
+.ion-ios-printer-outline::before { content: "=EF=92=90"; }
+
+.ion-ios-pulse::before { content: "=EF=92=93"; }
+
+.ion-ios-pulse-strong::before { content: "=EF=92=92"; }
+
+.ion-ios-rainy::before { content: "=EF=92=95"; }
+
+.ion-ios-rainy-outline::before { content: "=EF=92=94"; }
+
+.ion-ios-recording::before { content: "=EF=92=97"; }
+
+.ion-ios-recording-outline::before { content: "=EF=92=96"; }
+
+.ion-ios-redo::before { content: "=EF=92=99"; }
+
+.ion-ios-redo-outline::before { content: "=EF=92=98"; }
+
+.ion-ios-refresh::before { content: "=EF=92=9C"; }
+
+.ion-ios-refresh-empty::before { content: "=EF=92=9A"; }
+
+.ion-ios-refresh-outline::before { content: "=EF=92=9B"; }
+
+.ion-ios-reload::before { content: "=EF=92=9D"; }
+
+.ion-ios-reverse-camera::before { content: "=EF=92=9F"; }
+
+.ion-ios-reverse-camera-outline::before { content: "=EF=92=9E"; }
+
+.ion-ios-rewind::before { content: "=EF=92=A1"; }
+
+.ion-ios-rewind-outline::before { content: "=EF=92=A0"; }
+
+.ion-ios-rose::before { content: "=EF=92=A3"; }
+
+.ion-ios-rose-outline::before { content: "=EF=92=A2"; }
+
+.ion-ios-search::before { content: "=EF=92=A5"; }
+
+.ion-ios-search-strong::before { content: "=EF=92=A4"; }
+
+.ion-ios-settings::before { content: "=EF=92=A7"; }
+
+.ion-ios-settings-strong::before { content: "=EF=92=A6"; }
+
+.ion-ios-shuffle::before { content: "=EF=92=A9"; }
+
+.ion-ios-shuffle-strong::before { content: "=EF=92=A8"; }
+
+.ion-ios-skipbackward::before { content: "=EF=92=AB"; }
+
+.ion-ios-skipbackward-outline::before { content: "=EF=92=AA"; }
+
+.ion-ios-skipforward::before { content: "=EF=92=AD"; }
+
+.ion-ios-skipforward-outline::before { content: "=EF=92=AC"; }
+
+.ion-ios-snowy::before { content: "=EF=92=AE"; }
+
+.ion-ios-speedometer::before { content: "=EF=92=B0"; }
+
+.ion-ios-speedometer-outline::before { content: "=EF=92=AF"; }
+
+.ion-ios-star::before { content: "=EF=92=B3"; }
+
+.ion-ios-star-half::before { content: "=EF=92=B1"; }
+
+.ion-ios-star-outline::before { content: "=EF=92=B2"; }
+
+.ion-ios-stopwatch::before { content: "=EF=92=B5"; }
+
+.ion-ios-stopwatch-outline::before { content: "=EF=92=B4"; }
+
+.ion-ios-sunny::before { content: "=EF=92=B7"; }
+
+.ion-ios-sunny-outline::before { content: "=EF=92=B6"; }
+
+.ion-ios-telephone::before { content: "=EF=92=B9"; }
+
+.ion-ios-telephone-outline::before { content: "=EF=92=B8"; }
+
+.ion-ios-tennisball::before { content: "=EF=92=BB"; }
+
+.ion-ios-tennisball-outline::before { content: "=EF=92=BA"; }
+
+.ion-ios-thunderstorm::before { content: "=EF=92=BD"; }
+
+.ion-ios-thunderstorm-outline::before { content: "=EF=92=BC"; }
+
+.ion-ios-time::before { content: "=EF=92=BF"; }
+
+.ion-ios-time-outline::before { content: "=EF=92=BE"; }
+
+.ion-ios-timer::before { content: "=EF=93=81"; }
+
+.ion-ios-timer-outline::before { content: "=EF=93=80"; }
+
+.ion-ios-toggle::before { content: "=EF=93=83"; }
+
+.ion-ios-toggle-outline::before { content: "=EF=93=82"; }
+
+.ion-ios-trash::before { content: "=EF=93=85"; }
+
+.ion-ios-trash-outline::before { content: "=EF=93=84"; }
+
+.ion-ios-undo::before { content: "=EF=93=87"; }
+
+.ion-ios-undo-outline::before { content: "=EF=93=86"; }
+
+.ion-ios-unlocked::before { content: "=EF=93=89"; }
+
+.ion-ios-unlocked-outline::before { content: "=EF=93=88"; }
+
+.ion-ios-upload::before { content: "=EF=93=8B"; }
+
+.ion-ios-upload-outline::before { content: "=EF=93=8A"; }
+
+.ion-ios-videocam::before { content: "=EF=93=8D"; }
+
+.ion-ios-videocam-outline::before { content: "=EF=93=8C"; }
+
+.ion-ios-volume-high::before { content: "=EF=93=8E"; }
+
+.ion-ios-volume-low::before { content: "=EF=93=8F"; }
+
+.ion-ios-wineglass::before { content: "=EF=93=91"; }
+
+.ion-ios-wineglass-outline::before { content: "=EF=93=90"; }
+
+.ion-ios-world::before { content: "=EF=93=93"; }
+
+.ion-ios-world-outline::before { content: "=EF=93=92"; }
+
+.ion-ipad::before { content: "=EF=87=B9"; }
+
+.ion-iphone::before { content: "=EF=87=BA"; }
+
+.ion-ipod::before { content: "=EF=87=BB"; }
+
+.ion-jet::before { content: "=EF=8A=95"; }
+
+.ion-key::before { content: "=EF=8A=96"; }
+
+.ion-knife::before { content: "=EF=8A=97"; }
+
+.ion-laptop::before { content: "=EF=87=BC"; }
+
+.ion-leaf::before { content: "=EF=87=BD"; }
+
+.ion-levels::before { content: "=EF=8A=98"; }
+
+.ion-lightbulb::before { content: "=EF=8A=99"; }
+
+.ion-link::before { content: "=EF=87=BE"; }
+
+.ion-load-a::before { content: "=EF=8A=9A"; }
+
+.ion-load-b::before { content: "=EF=8A=9B"; }
+
+.ion-load-c::before { content: "=EF=8A=9C"; }
+
+.ion-load-d::before { content: "=EF=8A=9D"; }
+
+.ion-location::before { content: "=EF=87=BF"; }
+
+.ion-lock-combination::before { content: "=EF=93=94"; }
+
+.ion-locked::before { content: "=EF=88=80"; }
+
+.ion-log-in::before { content: "=EF=8A=9E"; }
+
+.ion-log-out::before { content: "=EF=8A=9F"; }
+
+.ion-loop::before { content: "=EF=88=81"; }
+
+.ion-magnet::before { content: "=EF=8A=A0"; }
+
+.ion-male::before { content: "=EF=8A=A1"; }
+
+.ion-man::before { content: "=EF=88=82"; }
+
+.ion-map::before { content: "=EF=88=83"; }
+
+.ion-medkit::before { content: "=EF=8A=A2"; }
+
+.ion-merge::before { content: "=EF=8C=BF"; }
+
+.ion-mic-a::before { content: "=EF=88=84"; }
+
+.ion-mic-b::before { content: "=EF=88=85"; }
+
+.ion-mic-c::before { content: "=EF=88=86"; }
+
+.ion-minus::before { content: "=EF=88=89"; }
+
+.ion-minus-circled::before { content: "=EF=88=87"; }
+
+.ion-minus-round::before { content: "=EF=88=88"; }
+
+.ion-model-s::before { content: "=EF=8B=81"; }
+
+.ion-monitor::before { content: "=EF=88=8A"; }
+
+.ion-more::before { content: "=EF=88=8B"; }
+
+.ion-mouse::before { content: "=EF=8D=80"; }
+
+.ion-music-note::before { content: "=EF=88=8C"; }
+
+.ion-navicon::before { content: "=EF=88=8E"; }
+
+.ion-navicon-round::before { content: "=EF=88=8D"; }
+
+.ion-navigate::before { content: "=EF=8A=A3"; }
+
+.ion-network::before { content: "=EF=8D=81"; }
+
+.ion-no-smoking::before { content: "=EF=8B=82"; }
+
+.ion-nuclear::before { content: "=EF=8A=A4"; }
+
+.ion-outlet::before { content: "=EF=8D=82"; }
+
+.ion-paintbrush::before { content: "=EF=93=95"; }
+
+.ion-paintbucket::before { content: "=EF=93=96"; }
+
+.ion-paper-airplane::before { content: "=EF=8B=83"; }
+
+.ion-paperclip::before { content: "=EF=88=8F"; }
+
+.ion-pause::before { content: "=EF=88=90"; }
+
+.ion-person::before { content: "=EF=88=93"; }
+
+.ion-person-add::before { content: "=EF=88=91"; }
+
+.ion-person-stalker::before { content: "=EF=88=92"; }
+
+.ion-pie-graph::before { content: "=EF=8A=A5"; }
+
+.ion-pin::before { content: "=EF=8A=A6"; }
+
+.ion-pinpoint::before { content: "=EF=8A=A7"; }
+
+.ion-pizza::before { content: "=EF=8A=A8"; }
+
+.ion-plane::before { content: "=EF=88=94"; }
+
+.ion-planet::before { content: "=EF=8D=83"; }
+
+.ion-play::before { content: "=EF=88=95"; }
+
+.ion-playstation::before { content: "=EF=8C=8A"; }
+
+.ion-plus::before { content: "=EF=88=98"; }
+
+.ion-plus-circled::before { content: "=EF=88=96"; }
+
+.ion-plus-round::before { content: "=EF=88=97"; }
+
+.ion-podium::before { content: "=EF=8D=84"; }
+
+.ion-pound::before { content: "=EF=88=99"; }
+
+.ion-power::before { content: "=EF=8A=A9"; }
+
+.ion-pricetag::before { content: "=EF=8A=AA"; }
+
+.ion-pricetags::before { content: "=EF=8A=AB"; }
+
+.ion-printer::before { content: "=EF=88=9A"; }
+
+.ion-pull-request::before { content: "=EF=8D=85"; }
+
+.ion-qr-scanner::before { content: "=EF=8D=86"; }
+
+.ion-quote::before { content: "=EF=8D=87"; }
+
+.ion-radio-waves::before { content: "=EF=8A=AC"; }
+
+.ion-record::before { content: "=EF=88=9B"; }
+
+.ion-refresh::before { content: "=EF=88=9C"; }
+
+.ion-reply::before { content: "=EF=88=9E"; }
+
+.ion-reply-all::before { content: "=EF=88=9D"; }
+
+.ion-ribbon-a::before { content: "=EF=8D=88"; }
+
+.ion-ribbon-b::before { content: "=EF=8D=89"; }
+
+.ion-sad::before { content: "=EF=8D=8A"; }
+
+.ion-sad-outline::before { content: "=EF=93=97"; }
+
+.ion-scissors::before { content: "=EF=8D=8B"; }
+
+.ion-search::before { content: "=EF=88=9F"; }
+
+.ion-settings::before { content: "=EF=8A=AD"; }
+
+.ion-share::before { content: "=EF=88=A0"; }
+
+.ion-shuffle::before { content: "=EF=88=A1"; }
+
+.ion-skip-backward::before { content: "=EF=88=A2"; }
+
+.ion-skip-forward::before { content: "=EF=88=A3"; }
+
+.ion-social-android::before { content: "=EF=88=A5"; }
+
+.ion-social-android-outline::before { content: "=EF=88=A4"; }
+
+.ion-social-angular::before { content: "=EF=93=99"; }
+
+.ion-social-angular-outline::before { content: "=EF=93=98"; }
+
+.ion-social-apple::before { content: "=EF=88=A7"; }
+
+.ion-social-apple-outline::before { content: "=EF=88=A6"; }
+
+.ion-social-bitcoin::before { content: "=EF=8A=AF"; }
+
+.ion-social-bitcoin-outline::before { content: "=EF=8A=AE"; }
+
+.ion-social-buffer::before { content: "=EF=88=A9"; }
+
+.ion-social-buffer-outline::before { content: "=EF=88=A8"; }
+
+.ion-social-chrome::before { content: "=EF=93=9B"; }
+
+.ion-social-chrome-outline::before { content: "=EF=93=9A"; }
+
+.ion-social-codepen::before { content: "=EF=93=9D"; }
+
+.ion-social-codepen-outline::before { content: "=EF=93=9C"; }
+
+.ion-social-css3::before { content: "=EF=93=9F"; }
+
+.ion-social-css3-outline::before { content: "=EF=93=9E"; }
+
+.ion-social-designernews::before { content: "=EF=88=AB"; }
+
+.ion-social-designernews-outline::before { content: "=EF=88=AA"; }
+
+.ion-social-dribbble::before { content: "=EF=88=AD"; }
+
+.ion-social-dribbble-outline::before { content: "=EF=88=AC"; }
+
+.ion-social-dropbox::before { content: "=EF=88=AF"; }
+
+.ion-social-dropbox-outline::before { content: "=EF=88=AE"; }
+
+.ion-social-euro::before { content: "=EF=93=A1"; }
+
+.ion-social-euro-outline::before { content: "=EF=93=A0"; }
+
+.ion-social-facebook::before { content: "=EF=88=B1"; }
+
+.ion-social-facebook-outline::before { content: "=EF=88=B0"; }
+
+.ion-social-foursquare::before { content: "=EF=8D=8D"; }
+
+.ion-social-foursquare-outline::before { content: "=EF=8D=8C"; }
+
+.ion-social-freebsd-devil::before { content: "=EF=8B=84"; }
+
+.ion-social-github::before { content: "=EF=88=B3"; }
+
+.ion-social-github-outline::before { content: "=EF=88=B2"; }
+
+.ion-social-google::before { content: "=EF=8D=8F"; }
+
+.ion-social-google-outline::before { content: "=EF=8D=8E"; }
+
+.ion-social-googleplus::before { content: "=EF=88=B5"; }
+
+.ion-social-googleplus-outline::before { content: "=EF=88=B4"; }
+
+.ion-social-hackernews::before { content: "=EF=88=B7"; }
+
+.ion-social-hackernews-outline::before { content: "=EF=88=B6"; }
+
+.ion-social-html5::before { content: "=EF=93=A3"; }
+
+.ion-social-html5-outline::before { content: "=EF=93=A2"; }
+
+.ion-social-instagram::before { content: "=EF=8D=91"; }
+
+.ion-social-instagram-outline::before { content: "=EF=8D=90"; }
+
+.ion-social-javascript::before { content: "=EF=93=A5"; }
+
+.ion-social-javascript-outline::before { content: "=EF=93=A4"; }
+
+.ion-social-linkedin::before { content: "=EF=88=B9"; }
+
+.ion-social-linkedin-outline::before { content: "=EF=88=B8"; }
+
+.ion-social-markdown::before { content: "=EF=93=A6"; }
+
+.ion-social-nodejs::before { content: "=EF=93=A7"; }
+
+.ion-social-octocat::before { content: "=EF=93=A8"; }
+
+.ion-social-pinterest::before { content: "=EF=8A=B1"; }
+
+.ion-social-pinterest-outline::before { content: "=EF=8A=B0"; }
+
+.ion-social-python::before { content: "=EF=93=A9"; }
+
+.ion-social-reddit::before { content: "=EF=88=BB"; }
+
+.ion-social-reddit-outline::before { content: "=EF=88=BA"; }
+
+.ion-social-rss::before { content: "=EF=88=BD"; }
+
+.ion-social-rss-outline::before { content: "=EF=88=BC"; }
+
+.ion-social-sass::before { content: "=EF=93=AA"; }
+
+.ion-social-skype::before { content: "=EF=88=BF"; }
+
+.ion-social-skype-outline::before { content: "=EF=88=BE"; }
+
+.ion-social-snapchat::before { content: "=EF=93=AC"; }
+
+.ion-social-snapchat-outline::before { content: "=EF=93=AB"; }
+
+.ion-social-tumblr::before { content: "=EF=89=81"; }
+
+.ion-social-tumblr-outline::before { content: "=EF=89=80"; }
+
+.ion-social-tux::before { content: "=EF=8B=85"; }
+
+.ion-social-twitch::before { content: "=EF=93=AE"; }
+
+.ion-social-twitch-outline::before { content: "=EF=93=AD"; }
+
+.ion-social-twitter::before { content: "=EF=89=83"; }
+
+.ion-social-twitter-outline::before { content: "=EF=89=82"; }
+
+.ion-social-usd::before { content: "=EF=8D=93"; }
+
+.ion-social-usd-outline::before { content: "=EF=8D=92"; }
+
+.ion-social-vimeo::before { content: "=EF=89=85"; }
+
+.ion-social-vimeo-outline::before { content: "=EF=89=84"; }
+
+.ion-social-whatsapp::before { content: "=EF=93=B0"; }
+
+.ion-social-whatsapp-outline::before { content: "=EF=93=AF"; }
+
+.ion-social-windows::before { content: "=EF=89=87"; }
+
+.ion-social-windows-outline::before { content: "=EF=89=86"; }
+
+.ion-social-wordpress::before { content: "=EF=89=89"; }
+
+.ion-social-wordpress-outline::before { content: "=EF=89=88"; }
+
+.ion-social-yahoo::before { content: "=EF=89=8B"; }
+
+.ion-social-yahoo-outline::before { content: "=EF=89=8A"; }
+
+.ion-social-yen::before { content: "=EF=93=B2"; }
+
+.ion-social-yen-outline::before { content: "=EF=93=B1"; }
+
+.ion-social-youtube::before { content: "=EF=89=8D"; }
+
+.ion-social-youtube-outline::before { content: "=EF=89=8C"; }
+
+.ion-soup-can::before { content: "=EF=93=B4"; }
+
+.ion-soup-can-outline::before { content: "=EF=93=B3"; }
+
+.ion-speakerphone::before { content: "=EF=8A=B2"; }
+
+.ion-speedometer::before { content: "=EF=8A=B3"; }
+
+.ion-spoon::before { content: "=EF=8A=B4"; }
+
+.ion-star::before { content: "=EF=89=8E"; }
+
+.ion-stats-bars::before { content: "=EF=8A=B5"; }
+
+.ion-steam::before { content: "=EF=8C=8B"; }
+
+.ion-stop::before { content: "=EF=89=8F"; }
+
+.ion-thermometer::before { content: "=EF=8A=B6"; }
+
+.ion-thumbsdown::before { content: "=EF=89=90"; }
+
+.ion-thumbsup::before { content: "=EF=89=91"; }
+
+.ion-toggle::before { content: "=EF=8D=95"; }
+
+.ion-toggle-filled::before { content: "=EF=8D=94"; }
+
+.ion-transgender::before { content: "=EF=93=B5"; }
+
+.ion-trash-a::before { content: "=EF=89=92"; }
+
+.ion-trash-b::before { content: "=EF=89=93"; }
+
+.ion-trophy::before { content: "=EF=8D=96"; }
+
+.ion-tshirt::before { content: "=EF=93=B7"; }
+
+.ion-tshirt-outline::before { content: "=EF=93=B6"; }
+
+.ion-umbrella::before { content: "=EF=8A=B7"; }
+
+.ion-university::before { content: "=EF=8D=97"; }
+
+.ion-unlocked::before { content: "=EF=89=94"; }
+
+.ion-upload::before { content: "=EF=89=95"; }
+
+.ion-usb::before { content: "=EF=8A=B8"; }
+
+.ion-videocamera::before { content: "=EF=89=96"; }
+
+.ion-volume-high::before { content: "=EF=89=97"; }
+
+.ion-volume-low::before { content: "=EF=89=98"; }
+
+.ion-volume-medium::before { content: "=EF=89=99"; }
+
+.ion-volume-mute::before { content: "=EF=89=9A"; }
+
+.ion-wand::before { content: "=EF=8D=98"; }
+
+.ion-waterdrop::before { content: "=EF=89=9B"; }
+
+.ion-wifi::before { content: "=EF=89=9C"; }
+
+.ion-wineglass::before { content: "=EF=8A=B9"; }
+
+.ion-woman::before { content: "=EF=89=9D"; }
+
+.ion-wrench::before { content: "=EF=8A=BA"; }
+
+.ion-xbox::before { content: "=EF=8C=8C"; }
+------MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://cdn.jsdelivr.net/hint.css/1.3.2/hint.min.css
+
+@charset "utf-8";
+
+.hint, [data-hint] { position: relative; display: inline-block; }
+
+.hint::before, .hint::after, [data-hint]::before, [data-hint]::after { posi=
+tion: absolute; transform: translate3d(0px, 0px, 0px); visibility: hidden; =
+opacity: 0; z-index: 1000000; pointer-events: none; transition: all 0.3s ea=
+se 0ms; }
+
+.hint:hover::before, .hint:hover::after, .hint:focus::before, .hint:focus::=
+after, [data-hint]:hover::before, [data-hint]:hover::after, [data-hint]:foc=
+us::before, [data-hint]:focus::after { visibility: visible; opacity: 1; }
+
+.hint:hover::before, .hint:hover::after, [data-hint]:hover::before, [data-h=
+int]:hover::after { transition-delay: 100ms; }
+
+.hint::before, [data-hint]::before { content: ""; position: absolute; backg=
+round: transparent; border: 6px solid transparent; z-index: 1000001; }
+
+.hint::after, [data-hint]::after { content: attr(data-hint); background: rg=
+b(56, 56, 56); color: rgb(255, 255, 255); text-shadow: rgb(0, 0, 0) 0px -1p=
+x 0px; padding: 8px 10px; font-size: 12px; line-height: 12px; white-space: =
+nowrap; box-shadow: rgba(0, 0, 0, 0.3) 4px 4px 8px; }
+
+.hint--top::before { border-top-color: rgb(56, 56, 56); }
+
+.hint--bottom::before { border-bottom-color: rgb(56, 56, 56); }
+
+.hint--left::before { border-left-color: rgb(56, 56, 56); }
+
+.hint--right::before { border-right-color: rgb(56, 56, 56); }
+
+.hint--top::before { margin-bottom: -12px; }
+
+.hint--top::after { margin-left: -18px; }
+
+.hint--top::before, .hint--top::after { bottom: 100%; left: 50%; }
+
+.hint--top:hover::after, .hint--top:hover::before, .hint--top:focus::after,=
+ .hint--top:focus::before { transform: translateY(-8px); }
+
+.hint--bottom::before { margin-top: -12px; }
+
+.hint--bottom::after { margin-left: -18px; }
+
+.hint--bottom::before, .hint--bottom::after { top: 100%; left: 50%; }
+
+.hint--bottom:hover::after, .hint--bottom:hover::before, .hint--bottom:focu=
+s::after, .hint--bottom:focus::before { transform: translateY(8px); }
+
+.hint--right::before { margin-left: -12px; margin-bottom: -6px; }
+
+.hint--right::after { margin-bottom: -14px; }
+
+.hint--right::before, .hint--right::after { left: 100%; bottom: 50%; }
+
+.hint--right:hover::after, .hint--right:hover::before, .hint--right:focus::=
+after, .hint--right:focus::before { transform: translateX(8px); }
+
+.hint--left::before { margin-right: -12px; margin-bottom: -6px; }
+
+.hint--left::after { margin-bottom: -14px; }
+
+.hint--left::before, .hint--left::after { right: 100%; bottom: 50%; }
+
+.hint--left:hover::after, .hint--left:hover::before, .hint--left:focus::aft=
+er, .hint--left:focus::before { transform: translateX(-8px); }
+
+.hint--error::after { background-color: rgb(179, 78, 77); text-shadow: rgb(=
+89, 39, 38) 0px -1px 0px; }
+
+.hint--error.hint--top::before { border-top-color: rgb(179, 78, 77); }
+
+.hint--error.hint--bottom::before { border-bottom-color: rgb(179, 78, 77); =
+}
+
+.hint--error.hint--left::before { border-left-color: rgb(179, 78, 77); }
+
+.hint--error.hint--right::before { border-right-color: rgb(179, 78, 77); }
+
+.hint--warning::after { background-color: rgb(192, 152, 84); text-shadow: r=
+gb(108, 83, 40) 0px -1px 0px; }
+
+.hint--warning.hint--top::before { border-top-color: rgb(192, 152, 84); }
+
+.hint--warning.hint--bottom::before { border-bottom-color: rgb(192, 152, 84=
+); }
+
+.hint--warning.hint--left::before { border-left-color: rgb(192, 152, 84); }
+
+.hint--warning.hint--right::before { border-right-color: rgb(192, 152, 84);=
+ }
+
+.hint--info::after { background-color: rgb(57, 134, 172); text-shadow: rgb(=
+25, 59, 77) 0px -1px 0px; }
+
+.hint--info.hint--top::before { border-top-color: rgb(57, 134, 172); }
+
+.hint--info.hint--bottom::before { border-bottom-color: rgb(57, 134, 172); =
+}
+
+.hint--info.hint--left::before { border-left-color: rgb(57, 134, 172); }
+
+.hint--info.hint--right::before { border-right-color: rgb(57, 134, 172); }
+
+.hint--success::after { background-color: rgb(69, 135, 70); text-shadow: rg=
+b(26, 50, 26) 0px -1px 0px; }
+
+.hint--success.hint--top::before { border-top-color: rgb(69, 135, 70); }
+
+.hint--success.hint--bottom::before { border-bottom-color: rgb(69, 135, 70)=
+; }
+
+.hint--success.hint--left::before { border-left-color: rgb(69, 135, 70); }
+
+.hint--success.hint--right::before { border-right-color: rgb(69, 135, 70); =
+}
+
+.hint--always::after, .hint--always::before { opacity: 1; visibility: visib=
+le; }
+
+.hint--always.hint--top::after, .hint--always.hint--top::before { transform=
+: translateY(-8px); }
+
+.hint--always.hint--bottom::after, .hint--always.hint--bottom::before { tra=
+nsform: translateY(8px); }
+
+.hint--always.hint--left::after, .hint--always.hint--left::before { transfo=
+rm: translateX(-8px); }
+
+.hint--always.hint--right::after, .hint--always.hint--right::before { trans=
+form: translateX(8px); }
+
+.hint--rounded::after { border-radius: 4px; }
+
+.hint--no-animate::before, .hint--no-animate::after { transition-duration: =
+0ms; }
+
+.hint--bounce::before, .hint--bounce::after { transition: opacity 0.3s ease=
+ 0s, visibility 0.3s ease 0s, transform 0.3s cubic-bezier(0.71, 1.7, 0.77, =
+1.24) 0s; }
+------MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://brick.a.ssl.fastly.net/Roboto:400,400i,700
+
+@charset "utf-8";
+
+@font-face { font-family: Roboto; font-style: normal; font-weight: 400; src=
+: local("Roboto-Regular"), url("//brick.freetls.fastly.net/fonts/roboto/400=
+.woff") format("woff"); }
+
+@font-face { font-family: Roboto; font-style: italic; font-weight: 400; src=
+: local("Roboto-Italic"), url("//brick.freetls.fastly.net/fonts/roboto/400i=
+.woff") format("woff"); }
+
+@font-face { font-family: Roboto; font-style: normal; font-weight: 700; src=
+: local("Roboto-Bold"), url("//brick.freetls.fastly.net/fonts/roboto/700.wo=
+ff") format("woff"); }
+------MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://fonts.googleapis.com/css?family=Raleway:800
+
+@charset "utf-8";
+
+@font-face { font-family: Raleway; font-style: normal; font-weight: 800; sr=
+c: url("https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvve=
+LxVtapbCFPrEHJA.woff2") format("woff2"); unicode-range: U+460-52F, U+1C80-1=
+C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Raleway; font-style: normal; font-weight: 800; sr=
+c: url("https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvve=
+LxVtapbCMPrEHJA.woff2") format("woff2"); unicode-range: U+301, U+400-45F, U=
++490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Raleway; font-style: normal; font-weight: 800; sr=
+c: url("https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvve=
+LxVtapbCHPrEHJA.woff2") format("woff2"); unicode-range: U+102-103, U+110-11=
+1, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Raleway; font-style: normal; font-weight: 800; sr=
+c: url("https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvve=
+LxVtapbCGPrEHJA.woff2") format("woff2"); unicode-range: U+100-24F, U+259, U=
++1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A=
+7FF; }
+
+@font-face { font-family: Raleway; font-style: normal; font-weight: 800; sr=
+c: url("https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvve=
+LxVtapbCIPrE.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-1=
+53, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+=
+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+------MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://fonts.googleapis.com/css?family=Fira+Mono:400,400i
+
+@charset "utf-8";
+
+@font-face { font-family: "Fira Mono"; font-style: normal; font-weight: 400=
+; src: url("https://fonts.gstatic.com/s/firamono/v14/N0bX2SlFPv1weGeLZDtgK_=
+7SodY.woff2") format("woff2"); unicode-range: U+460-52F, U+1C80-1C88, U+20B=
+4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: "Fira Mono"; font-style: normal; font-weight: 400=
+; src: url("https://fonts.gstatic.com/s/firamono/v14/N0bX2SlFPv1weGeLZDtgIv=
+7SodY.woff2") format("woff2"); unicode-range: U+301, U+400-45F, U+490-491, =
+U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "Fira Mono"; font-style: normal; font-weight: 400=
+; src: url("https://fonts.gstatic.com/s/firamono/v14/N0bX2SlFPv1weGeLZDtgKv=
+7SodY.woff2") format("woff2"); unicode-range: U+1F00-1FFF; }
+
+@font-face { font-family: "Fira Mono"; font-style: normal; font-weight: 400=
+; src: url("https://fonts.gstatic.com/s/firamono/v14/N0bX2SlFPv1weGeLZDtgJf=
+7SodY.woff2") format("woff2"); unicode-range: U+370-3FF; }
+
+@font-face { font-family: "Fira Mono"; font-style: normal; font-weight: 400=
+; src: url("https://fonts.gstatic.com/s/firamono/v14/N0bX2SlFPv1weGeLZDtgKP=
+7SodY.woff2") format("woff2"); unicode-range: U+100-24F, U+259, U+1E00-1EFF=
+, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Fira Mono"; font-style: normal; font-weight: 400=
+; src: url("https://fonts.gstatic.com/s/firamono/v14/N0bX2SlFPv1weGeLZDtgJv=
+7S.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-=
+2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+21=
+93, U+2212, U+2215, U+FEFF, U+FFFD; }
+------MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://brick.a.ssl.fastly.net/EB+Garamond:400i
+
+@charset "utf-8";
+
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 4=
+00; src: local("EB Garamond 12 Italic"), url("//brick.freetls.fastly.net/fo=
+nts/ebgaramond/400i.woff") format("woff"); }
+------MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://devhints.io/assets/style.css?t=20230131085754
+
+@charset "utf-8";
+
+.pages-list { font-size: 0.9em; max-width: 800px; margin: 60px auto; overfl=
+ow: hidden; }
+
+.pages-list a { display: block; padding: 6px 0px; text-align: left; float: =
+left; width: 44%; margin: 0px 3%; box-shadow: none; transition: all 100ms l=
+inear 0s; }
+
+.pages-list a .title, .pages-list a .date { display: block; }
+
+.pages-list a .title { font-weight: 700; color: rgb(17, 17, 17); float: lef=
+t; }
+
+.pages-list a .date { color: rgb(170, 170, 170); font-size: 0.9em; float: r=
+ight; }
+
+.pages-list a:hover .title, .pages-list a:focus .title { color: rgb(30, 144=
+, 255); }
+
+.post-headline.-cheatsheet .prelude { color: rgb(17, 17, 17); font-size: 0.=
+85em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0px; f=
+ont-weight: 700; }
+
+.post-headline.-cheatsheet .prelude span::before { content: "Cheatsheet for=
+"; }
+
+@media (min-width: 769px) {
+  .post-headline.-cheatsheet .prelude { max-width: 230px; margin-left: auto=
+; margin-right: auto; }
+  .post-headline.-cheatsheet .prelude span { display: inline-block; }
+}
+
+.post-headline.-cheatsheet h1 { color: rgb(17, 17, 17); font-size: 3.5em; t=
+ext-shadow: rgb(255, 255, 255) 2px 2px 0px, rgb(221, 221, 221) 3px 3px 0px;=
+ margin-top: 20px; }
+
+.about-the-site { margin-top: 8em; }
+
+.about-the-site .back { margin-right: 0px; }
+
+@media (min-width: 768px) {
+  h2 { margin-top: 3em; }
+}
+
+.greycode td:first-child code, .greycode th:first-child code { background: =
+rgb(255, 255, 255); padding: 6px 8px 5px; border-radius: 3px; }
+
+.greycode td:first-child code + em, .greycode th:first-child code + em { co=
+lor: rgb(128, 136, 144); font-size: 0.9em; margin: 0px 5px; }
+
+.greycode a { margin: 0px 5px; }
+
+@media (min-width: 768px) {
+  table.greycode { background: rgb(252, 252, 252); border-radius: 4px; bord=
+er-top: 0px; border-bottom: 1px solid rgb(199, 215, 238); }
+  table.greycode:not(.wide) { width: calc(720px); margin-left: -50px; }
+  table.greycode thead:first-child > tr:first-child > th, table.greycode th=
+ead:first-child > tr:first-child > td, table.greycode tbody:first-child > t=
+r:first-child > th, table.greycode tbody:first-child > tr:first-child > td,=
+ table.greycode.no-head thead:nth-child(2) > tr:first-child > th, table.gre=
+ycode.no-head thead:nth-child(2) > tr:first-child > td, table.greycode.no-h=
+ead tbody:nth-child(2) > tr:first-child > th, table.greycode.no-head tbody:=
+nth-child(2) > tr:first-child > td { border-top: 0px; }
+  table.greycode thead > tr:first-child > th, table.greycode thead > tr:fir=
+st-child > td, table.greycode tbody > tr:first-child > th, table.greycode t=
+body > tr:first-child > td { border-top: 1px solid rgb(199, 215, 238); }
+  table.greycode td:first-child, table.greycode th:first-child { padding-le=
+ft: 50px; }
+  table.greycode td:last-child, table.greycode th:last-child { padding-righ=
+t: 50px; }
+}
+
+.hljs-comment { font-style: normal; }
+
+.key-codes code { background: rgb(253, 253, 255); padding: 3px 8px; border-=
+radius: 3px; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px inset; margin: =
+0px 5px; }
+
+.key-codes code + code { margin-left: 0px; }
+
+.key-codes pre code { background: 0px 0px; padding: 0px; box-shadow: none; =
+margin: 0px; }
+
+.social-list.-collapse { margin-top: 0px; position: absolute; top: 40vh; le=
+ft: 30px; width: 32px; }
+
+@media (max-width: 480px) {
+  .social-list.-collapse { display: none; }
+}
+------MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://devhints.io/assets/print.css?t=20230131085754
+
+@charset "utf-8";
+
+.site-header, .social-list, .about-the-site, #see-also, #see-also + ul { di=
+splay: none; }
+
+.post-list { margin: 0px; padding-top: 0px; padding-bottom: 0px; }
+
+.post-item { max-width: 100%; }
+
+.post-headline.-cheatsheet .prelude { max-width: 300px; }
+
+.post-headline, p.prelude { margin-top: 0px; }
+
+.post-headline.-cheatsheet .prelude { font-size: 0.6em; letter-spacing: 1px=
+; }
+
+.post-headline { margin-bottom: 1.5em; }
+
+.post-headline.-cheatsheet .prelude span { padding: 0.75em 20px; border-bot=
+tom: 1.5px solid rgb(17, 17, 17); }
+
+.post-headline.-cheatsheet h1 { font-size: 1.75em; text-shadow: none; }
+
+pre { border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rg=
+b(221, 221, 221); background: 0px 0px; }
+
+h3 { margin: 1em 0px; }
+
+pre { margin-top: 1.1em; margin-bottom: 1.1em; }
+------MultipartBoundary--wqDGjd2heWYkmCYHycTAoDKF150LKrsTA21wA3wCDq------
