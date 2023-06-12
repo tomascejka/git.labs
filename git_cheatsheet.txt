@@ -1,0 +1,48 @@
+## branch
+
+LIST
+	# show local branches
+	$ git branch
+
+	# show remote branches
+	$ git branch -r
+
+	# show all (fetched) branches
+	$ git branch -a
+
+CLONE
+	# to clone a specific git branch
+	$ git clone -b <branch-name> https://github.com/username/repository.git
+
+FETCH
+    # fetch specific remote branch; $ git branch -r, origin/main, eg. origin=remote_name, main=branch_name
+	$ git fetch <remote_name> <branch_name>
+
+CREATE
+	# create local branch
+	git branch <new-branch-name>
+
+	# create and switch to the new branch
+	$ git checkout -b <new-branch-name>
+
+	# create branch based on a specific revision hash, vytvorni novou vetev ze specifickeho komitu:
+	$ git checkout -b <new-branch-name> <commit-hash>
+
+	# ... create remote branch, see https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches
+	$ git push -u origin <branch-name>
+	$ git push --set-upstream origin <branch-name>
+
+SWITCH	
+	git switch <existing_branch> # prepne do existujici vetve
+
+	git switch -c <non_existing_branch> # vytvorni novou vetev a prepne do ni
+
+DELETE
+	git branch -d <existing-branch-name> # smaze branch (localni)
+
+	git push -d <remote-name> <existing-branch-name> # smaze branch (remote)
+
+PROVERIT
+# Create a new branch from the previous commit's hash
+git branch develop 04c900cgit 
+--
