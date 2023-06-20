@@ -37,6 +37,11 @@ SWITCH
 
 	git switch -c <non_existing_branch> # vytvorni novou vetev a prepne do ni
 
+RENAME
+    # move into branch which we want to rename
+    git checkout <branch-name-for-rename>
+	git branch -m <new-branch-name>
+
 DELETE
 	git branch -d <existing-branch-name> # smaze branch (localni)
 
