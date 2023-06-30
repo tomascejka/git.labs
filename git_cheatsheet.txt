@@ -61,3 +61,7 @@ PROVERIT
 # Create a new branch from the previous commit's hash
 git branch develop 04c900cgit 
 --
+
+MERGE CONFLICT
+	# process merge from branch (see MERGE) and create conflicts, 
+	git mergetool
