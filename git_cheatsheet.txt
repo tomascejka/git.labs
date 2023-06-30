@@ -32,6 +32,16 @@ CREATE
 	$ git push -u origin <branch-name>
 	$ git push --set-upstream origin <branch-name>
 
+MERGE
+	$ git checkout <new-branch>
+	# ...develop some code...
+
+	$ git add .
+	$ git commit –m "Some commit message"
+	$ git checkout <master>
+	# Switched to branch 'master'
+	$ git merge <new-branch>
+
 SWITCH	
 	git switch <existing_branch> # prepne do existujici vetve
 
