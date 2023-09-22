@@ -1,0 +1,30 @@
+INIT:
+	branches (current state of local repo, where C means 'commit')
+		- main (C1, C2, C3)
+		- feature (C4, C5, C6)
+
+FLOW:
+	-- rebase provadej v ne-public branchi (zde feature)
+	git switch feature
+	git rebase -i HEAD~3 (znamena kolik poslednich komitu, zde 3, tzn. C4+5+6) 
+		otevre se editor vim (insert)
+		u radek C4 a C5 nahradis pick slovem squash
+		uloz a uzavri vim (escape, :, wq!)
+		a posledni commit (resp. message) je slozen ze 3 poslednich (C4,C5,C6) message
+	git rebase master
+		kdyz nastane konflikt, spust 
+			git mergetool (vyres jeden po druhem/vsechny)
+			git rebase --continue (dokoncis rebase)
+	-- do main vetve zamerguj uz rebased/squashed branch
+	git switch master
+	git merge feature
+	git log
+		pribyly preskladane comity z feature branche na vrcholu (kontinualni historie)
+		a zaroven comity z feature branche se tvari jako jedna message (prehlednost)
+		mel bys videt (*=commit message):
+			* C4
+			  C5
+			  C6
+			* C3
+			* C2
+			* C1
