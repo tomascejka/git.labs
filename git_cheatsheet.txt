@@ -54,7 +54,6 @@ RENAME
 
 DELETE
 	git branch -d <existing-branch-name> # smaze branch (localni)
-
 	git push -d <remote-name> <existing-branch-name> # smaze branch (remote)
 
 PROVERIT
