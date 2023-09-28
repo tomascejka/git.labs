@@ -38,9 +38,18 @@ MERGE
 
 	$ git add .
 	$ git commit –m "Some commit message"
-	$ git checkout <master>
-	# Switched to branch 'master'
-	$ git merge <new-branch>
+	$ git checkout <main>
+	# Switched to branch 'main'
+	$ git merge <feature-branch>
+
+SQUASH (vice komitu sjednoti do jednoho)
+	# za pouziti merge
+	$ git merge --squash feature/login
+
+	# za pouziti rebase (a chci sjednotit posledni 3 komity na HEAD-u)
+	$ git switch feature/login
+	$ git rebase -i HEAD~3
+
 
 SWITCH	
 	git switch <existing_branch> # prepne do existujici vetve
