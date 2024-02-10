@@ -25,6 +25,9 @@ CREATE
 	# create and switch to the new branch
 	$ git checkout -b <new-branch-name>
 
+	# create local branch from remote one
+	$ git checkout -b <new_branch_name> <remote_name>/<remote_branch_name>
+
 	# create branch based on a specific revision hash, vytvorni novou vetev ze specifickeho komitu:
 	$ git checkout -b <new-branch-name> <commit-hash>
 
