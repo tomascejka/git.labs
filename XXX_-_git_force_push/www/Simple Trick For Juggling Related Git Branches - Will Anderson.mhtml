@@ -1,0 +1,1190 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://willi.am/blog/2018/03/25/simple-trick-for-juggling-related-git-branches/
+Subject: Simple Trick For Juggling Related Git Branches - Will Anderson
+Date: Fri, 16 Feb 2024 16:47:08 +0100
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--SdpwKyjk5JeqXmSdJYitxceTUQ6DagEe5uAHFMyxfP----"
+
+
+------MultipartBoundary--SdpwKyjk5JeqXmSdJYitxceTUQ6DagEe5uAHFMyxfP----
+Content-Type: text/html
+Content-ID: <frame-D7864032014E65D0BD53E1E1663AB7CC@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://willi.am/blog/2018/03/25/simple-trick-for-juggling-related-git-branches/
+
+<!DOCTYPE html><html><head><meta http-equiv=3D"Content-Type" content=3D"tex=
+t/html; charset=3DUTF-8">
+=09
+	<title>Simple Trick For Juggling Related Git Branches - Will Anderson</tit=
+le>
+	<meta name=3D"author" content=3D"Will Anderson">
+
+=09
+	<meta name=3D"description" content=3D"At my job, it=E2=80=99s not uncommon=
+ to work on a change that builds on another change which is still in code r=
+eview. Sometimes a coworker is adding a =E2=80=A6">
+=09
+	<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1=
+, maximum-scale=3D1">
+
+    <meta name=3D"twitter:card" content=3D"summary">
+    <meta name=3D"twitter:site" content=3D"@itsananderson">
+    <meta name=3D"twitter:title" content=3D"Simple Trick For Juggling Relat=
+ed Git Branches - Will Anderson">
+    <meta name=3D"twitter:description" content=3D"At my job, it=E2=80=99s n=
+ot uncommon to work on a change that builds on another change which is stil=
+l in code review. Sometimes a coworker is adding a =E2=80=A6">
+
+	<link href=3D"http://william-backend.azurewebsites.net/feed/" rel=3D"alter=
+nate" title=3D"Will Anderson" type=3D"application/atom+xml">
+	<link rel=3D"canonical" href=3D"https://willi.am/blog/2018/03/25/simple-tr=
+ick-for-juggling-related-git-branches/">
+	<link href=3D"https://willi.am/favicon.ico" rel=3D"shortcut icon">
+	<link href=3D"https://willi.am/stylesheets/screen.css" media=3D"screen, pr=
+ojection" rel=3D"stylesheet" type=3D"text/css">
+	<!--[if lt IE 9]><script src=3D"//html5shiv.googlecode.com/svn/trunk/html5=
+.js"></script><![endif]-->
+=09
+=09
+</head>
+
+
+<body>
+	<header id=3D"header" class=3D"inner"><h1><a href=3D"https://willi.am/">Wi=
+ll Anderson</a></h1>
+<nav id=3D"main-nav"><ul class=3D"main">
+	<li><a href=3D"https://willi.am/work-with-me">Work With Me</a></li>
+	<li><a href=3D"https://willi.am/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id=3D"mobile-nav">
+	<div class=3D"alignleft menu">
+		<a class=3D"button">Menu</a>
+		<div class=3D"container"><ul class=3D"main">
+	<li><a href=3D"https://willi.am/work-with-me">Work With Me</a></li>
+	<li><a href=3D"https://willi.am/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class=3D"alignright search">
+		<a class=3D"button"></a>
+		<div class=3D"container">
+			<form action=3D"https://www.google.com/search" method=3D"get">
+				<input type=3D"text" name=3D"q" results=3D"0">
+			=09
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id=3D"sub-nav" class=3D"alignright">
+	<div class=3D"social">
+	=09
+	=09
+	=09
+		<a class=3D"twitter" href=3D"http://twitter.com/itsananderson" title=3D"T=
+witter">Twitter</a>
+	=09
+	=09
+		<a class=3D"github" href=3D"https://github.com/itsananderson" title=3D"Gi=
+tHub">GitHub</a>
+	=09
+   =20
+	=09
+	=09
+	=09
+	=09
+	=09
+		<a class=3D"rss" href=3D"http://william-backend.azurewebsites.net/feed/" =
+title=3D"RSS">RSS</a>
+	=09
+   =20
+	</div>
+	<form class=3D"search" action=3D"https://www.google.com/search" method=3D"=
+get">
+		<input class=3D"alignright" type=3D"text" name=3D"q" results=3D"0">
+	=09
+	</form>
+</nav>
+
+</header>
+=09
+	=09
+=09
+	<div id=3D"content" class=3D"inner"><article class=3D"post">
+	<h2 class=3D"title">Simple Trick for Juggling Related Git Branches</h2>
+	<div class=3D"entry-content">
+		<p><link href=3D"http://vjs.zencdn.net/6.6.3/video-js.css" rel=3D"stylesh=
+eet"></p>
+
+<p>At my job, it=E2=80=99s not uncommon to work on a change that builds on =
+another change which is still in code review. Sometimes a coworker is addin=
+g a component that I want to consume, and other times I=E2=80=99m just brea=
+king my own work into multiple stages to simplify code review.</p>
+
+<p>We squash commit to master rather than merging development branches, so =
+whenever the code I depend on lands in master, I do an interactive rebase. =
+This removes the unsquashed commits and cleans up my development branch. I =
+also do a similar rebase if the code I=E2=80=99m building on is updated whi=
+le it=E2=80=99s still in development.</p>
+
+<p>In either case, it can sometimes be tedious to figure out which commits =
+in my branch are mine, and which commits I=E2=80=99m building on. This is e=
+specially annoying if I=E2=80=99m building on my own branch, because then a=
+ll the commit authors looks the same. To solve this, I=E2=80=99ve started l=
+eaving a marker for myself in the form of an empy commit to delineate my ch=
+anges.</p>
+
+<figure class=3D"code"><div class=3D"highlight"><table><tbody><tr><td class=
+=3D"gutter"><pre class=3D"line-numbers"><span class=3D"line-number">1</span=
+>
+</pre></td><td class=3D"code"><pre><code class=3D""><span class=3D"line">gi=
+t commit --allow-empty -m "=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D"</span><=
+/code></pre></td></tr></tbody></table></div></figure>
+
+
+<p>This way when I rebase, I get a nice little marker in the interactive re=
+base screen that tells me where to start throwing away commits.</p>
+
+<p><video id=3D"my-video" class=3D"video-js" controls=3D"" preload=3D"auto"=
+ width=3D"800" height=3D"450" poster=3D"https://itsananderson.blob.core.win=
+dows.net/post-videos/rebase-with-marker-after-merge.png" data-setup=3D"{}">
+  <source src=3D"https://itsananderson.blob.core.windows.net/post-videos/re=
+base-with-marker-after-merge.mp4" type=3D"video/mp4">
+  <source src=3D"https://itsananderson.blob.core.windows.net/post-videos/re=
+base-with-marker-after-merge.webm" type=3D"video/webm">
+</video></p>
+
+<p>Because the commit is empty, the rebase command will automatically ignor=
+e it by commenting out the commit. If I=E2=80=99m done with the marker, I=
+=E2=80=99ll remove it or just leave it commented out. Otherwise, I uncommen=
+t that line to keep the marker commit around after the rebase. Either way, =
+since we squash commit to master, the empty commit eventually disappears an=
+d doesn=E2=80=99t clutter up my Git history.</p>
+
+<p>This is also fairly trivial to even if you have an in-progress branch th=
+at you later decide to rebase onto another in-progress branch. Here=E2=80=
+=99s how I do it:</p>
+
+<p><video id=3D"my-video" class=3D"video-js" controls=3D"" preload=3D"auto"=
+ width=3D"800" height=3D"450" poster=3D"https://itsananderson.blob.core.win=
+dows.net/post-videos/rebase-existing-branch-with-marker.png" data-setup=3D"=
+{}">
+  <source src=3D"https://itsananderson.blob.core.windows.net/post-videos/re=
+base-existing-branch-with-marker.mp4" type=3D"video/mp4">
+  <source src=3D"https://itsananderson.blob.core.windows.net/post-videos/re=
+base-existing-branch-with-marker.webm" type=3D"video/webm">
+</video></p>
+
+<p>That=E2=80=99s pretty much it. I=E2=80=99ve found this to be a helpful w=
+ay to leave myself breadcrumbs, especially when I haven=E2=80=99t touched a=
+ branch for some time.</p>
+
+
+
+
+		<div style=3D"margin-top: 40px; background-color: #ffffdc; border: 1px so=
+lid #ffd9aa; padding: 5px;">
+			I am now accepting new clients for part-time consulting and software dev=
+elopment projects.
+			<a href=3D"https://willi.am/work-with-me">Learn more</a>
+		</div>
+	</div>
+
+
+<div class=3D"meta">
+	<div class=3D"date">
+
+
+
+
+
+
+
+
+ =20
+
+
+<time datetime=3D"2018-03-25T13:47:12-07:00" pubdate=3D"" data-updated=3D"t=
+rue">Mar 25<span>th</span>, 2018</time></div>
+	<div class=3D"tags">
+
+
+	<a class=3D"category" href=3D"https://willi.am/blog/categories/git/">Git</=
+a>
+
+
+</div>
+=09
+</div>
+</article>
+
+	<div class=3D"share">
+	<p style=3D"text-align: center">
+		I haven't configured comments for this blog, but if you want to get in to=
+uch, you can find me on <a href=3D"https://twitter.com/itsananderson">Twitt=
+er</a>
+	</p>
+	<!--<div class=3D"addthis_toolbox addthis_default_style ">
+	=09
+	=09
+		<a class=3D"addthis_button_tweet"></a>
+	=09
+	=09
+	=09
+	</div>
+	-->
+</div>
+
+
+
+</div>
+	<footer id=3D"footer" class=3D"inner">Copyright =C2=A9 2020
+
+    Will Anderson
+
+</footer>
+=09
+
+
+
+
+
+
+
+
+</body></html>
+------MultipartBoundary--SdpwKyjk5JeqXmSdJYitxceTUQ6DagEe5uAHFMyxfP----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://willi.am/stylesheets/screen.css
+
+@charset "utf-8";
+
+@font-face { font-family: FontAwesome; src: url("/font/fontawesome-webfont.=
+woff") format("woff"), url("/font/fontawesome-webfont.ttf") format("truetyp=
+e"); font-weight: normal; font-style: normal; }
+
+* { margin: 0px; padding: 0px; }
+
+body { font-family: HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica=
+ Neue", Helvetica, Arial, sans-serif; font-weight: 300; font-size: 14px; ba=
+ckground: rgb(255, 255, 255); color: rgb(102, 102, 102); }
+
+@media screen and (max-width: 1040px) {
+  body { margin: 0px 20px; }
+}
+
+@media screen and (max-width: 600px) {
+  body { font-size: 13px; }
+}
+
+h1 { font-size: 1.8em; }
+
+h2 { font-size: 1.5em; }
+
+h3 { font-size: 1.3em; }
+
+a { text-decoration: none; outline-width: 0px; color: rgb(37, 143, 184); }
+
+.alignleft { float: left; }
+
+.alignright { float: right; }
+
+.clearfix { }
+
+.clearfix::after { content: ""; display: table; clear: both; }
+
+.inner { width: 1000px; margin: 0px auto; }
+
+@media screen and (max-width: 1040px) {
+  .inner { width: 100%; }
+}
+
+.pullquote-right::before, .pullquote-left::before { padding: 0px; border: n=
+one; content: attr(data-pullquote); float: right; width: 45%; margin: 0.5em=
+ 0px 1em 1.5em; position: relative; top: 7px; font-size: 1.4em; line-height=
+: 1.45em; }
+
+.pullquote-left::before { float: left; margin: 0.5em 1.5em 1em 0px; }
+
+#header { height: 30px; padding: 30px 0px; border-bottom: 1px solid rgb(221=
+, 221, 221); line-height: 30px; }
+
+@media screen and (max-width: 1040px) {
+  #header { height: auto; position: relative; padding-bottom: 10px; }
+}
+
+#header a { color: rgb(102, 102, 102); transition: color 0.3s ease 0s; }
+
+#header a:hover { color: rgb(37, 143, 184); }
+
+#header h1 { float: left; font-weight: 300; font-size: 30px; }
+
+@media screen and (max-width: 1040px) {
+  #header h1 { float: none; }
+}
+
+#main-nav { float: left; }
+
+@media screen and (max-width: 1040px) {
+  #main-nav { float: none; margin-left: 0px; margin-top: 15px; }
+}
+
+@media screen and (max-width: 600px) {
+  #main-nav > ul { display: none; }
+}
+
+#main-nav > ul > li { margin-left: 30px; display: inline-block; vertical-al=
+ign: middle; zoom: 1; }
+
+@media screen and (max-width: 1040px) {
+  #main-nav > ul > li { margin-left: 0px; margin-right: 50px; }
+  #main-nav > ul > li:last-of-type { margin-right: 0px; }
+}
+
+#main-nav > ul > li:hover > a { color: rgb(37, 143, 184); }
+
+#main-nav > ul > li > a { padding: 38px 0px; margin-top: -38px; }
+
+#main-nav > ul > li > a::after { content: "=EF=81=B8"; color: rgb(204, 204,=
+ 204); font: 12px FontAwesome; padding-left: 10px; }
+
+#main-nav > ul > li > a:only-child::after { content: ""; }
+
+@media screen and (max-width: 1040px) {
+  #main-nav > ul > li > a { padding: 18px 0px; }
+}
+
+#main-nav > ul ul { position: absolute; top: 60px; left: -15px; z-index: 10=
+; white-space: nowrap; background: rgb(221, 221, 221); border: 1px solid rg=
+b(204, 204, 204); list-style: none; display: none; box-shadow: rgba(0, 0, 0=
+, 0.1) 0px 4px 8px; border-radius: 0px 0px 5px 5px; }
+
+@media screen and (max-width: 1040px) {
+  #main-nav > ul ul { top: 40px; }
+}
+
+#main-nav > ul ul ul { border-radius: 0px 5px 5px; }
+
+#main-nav > ul ul li { border-top: 1px solid rgb(255, 255, 255); border-bot=
+tom: 1px solid rgb(204, 204, 204); }
+
+#main-nav > ul ul li:hover { background: rgb(213, 213, 213); }
+
+#main-nav > ul ul li:first-of-type { border-top: none; }
+
+#main-nav > ul ul li:first-of-type ul { border-radius: 0px 0px 5px 5px; }
+
+#main-nav > ul ul li:last-of-type { border-bottom: none; }
+
+#main-nav > ul ul li > a { display: block; padding: 5px 15px; }
+
+#main-nav > ul ul li > a::after { content: "=EF=81=94"; color: rgb(153, 153=
+, 153); font: 12px FontAwesome; padding-left: 10px; }
+
+#main-nav > ul ul li > a:hover { color: rgb(102, 102, 102); }
+
+#main-nav > ul ul li > a:only-child::after { content: ""; }
+
+#main-nav > ul ul ul { top: 0px; left: 100%; }
+
+#main-nav > ul li { position: relative; }
+
+#main-nav > ul li:hover > ul { display: block; }
+
+#main-nav select { display: none; margin-bottom: 10px; }
+
+@media screen and (max-width: 600px) {
+  #main-nav select { display: block; }
+}
+
+#mobile-nav { display: none; height: 37px; position: relative; }
+
+@media screen and (max-width: 600px) {
+  #mobile-nav { display: block; }
+}
+
+#mobile-nav a { display: block; }
+
+#mobile-nav .button { cursor: pointer; }
+
+#mobile-nav .container { display: none; }
+
+#mobile-nav .menu { position: relative; width: 100%; }
+
+#mobile-nav .menu .button { background: rgb(242, 242, 242); border: 1px sol=
+id rgb(221, 221, 221); color: rgb(153, 153, 153); padding: 0px 60px 0px 10p=
+x; position: relative; border-radius: 5px; }
+
+#mobile-nav .menu .button:hover { color: rgb(153, 153, 153); }
+
+#mobile-nav .menu .button.on { color: rgb(102, 102, 102); border-radius: 5p=
+x 5px 5px 0px; }
+
+#mobile-nav .menu .button.on::before { content: "=EF=81=B7"; }
+
+#mobile-nav .menu .button::before { content: "=EF=81=B8"; color: rgb(221, 2=
+21, 221); font: 16px / 30px FontAwesome; position: absolute; top: 0px; righ=
+t: 40px; }
+
+#mobile-nav .menu .container { background: rgb(242, 242, 242); border-right=
+: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221)=
+; border-left: 1px solid rgb(221, 221, 221); border-image: initial; border-=
+top: none; position: absolute; top: 31px; z-index: 1; border-radius: 0px 0p=
+x 5px 5px; }
+
+#mobile-nav .menu .container ul { list-style: none; }
+
+#mobile-nav .menu .container ul ul { margin-left: 20px; }
+
+#mobile-nav .menu .container a { padding: 0px 10px; }
+
+#mobile-nav .search { position: absolute; top: 0px; right: 0px; }
+
+#mobile-nav .search .button { background: rgb(221, 221, 221); width: 30px; =
+height: 30px; position: absolute; top: 1px; right: -1px; border-radius: 0px=
+ 5px 5px 0px; }
+
+#mobile-nav .search .button::before { content: "=EF=80=82"; color: rgb(242,=
+ 242, 242); font: 20px / 30px FontAwesome; position: absolute; top: 0px; le=
+ft: 7px; }
+
+#mobile-nav .search .button.on { background: rgb(204, 204, 204); }
+
+#mobile-nav .search .button.on::before { content: "=EF=80=8D"; }
+
+#mobile-nav .search .container { position: absolute; right: 51px; z-index: =
+1; }
+
+#mobile-nav .search input[type=3D"text"] { background: rgb(255, 255, 255); =
+border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221,=
+ 221, 221); border-left: 1px solid rgb(221, 221, 221); border-image: initia=
+l; border-right: none; color: rgb(153, 153, 153); font: 13px HelveticaNeue-=
+Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-ser=
+if; height: 30px; width: 100%; padding: 0px 10px; border-radius: 5px 0px 0p=
+x 5px; }
+
+@media screen and (max-width: 1040px) {
+  #sub-nav { position: absolute; top: 30px; right: 0px; }
+}
+
+@media screen and (max-width: 600px) {
+  #sub-nav { display: none; }
+}
+
+#sub-nav .search { float: left; margin-top: 1px; position: relative; }
+
+@media screen and (max-width: 1040px) {
+  #sub-nav .search { float: none; margin-top: 15px; }
+}
+
+#sub-nav .search::before { content: "=EF=80=82"; color: rgb(204, 204, 204);=
+ font: 18px / 30px FontAwesome; position: absolute; top: 0px; right: 125px;=
+ }
+
+#sub-nav .search input[type=3D"text"] { background: rgb(242, 242, 242); col=
+or: rgb(153, 153, 153); border: 1px solid rgb(221, 221, 221); font: 13px He=
+lveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Ari=
+al, sans-serif; padding: 6px 15px 6px 35px; width: 100px; transition: all 0=
+.3s ease 0s; border-radius: 15px; }
+
+#sub-nav .search input[type=3D"text"]:focus, #sub-nav .search input[type=3D=
+"text"]:active { background: rgb(255, 255, 255); border-top: 1px solid rgb(=
+204, 204, 204); color: rgb(102, 102, 102); outline: none; }
+
+#sub-nav .social { float: left; margin-right: 15px; }
+
+@media screen and (max-width: 1040px) {
+  #sub-nav .social { float: none; margin-right: 0px; }
+  #sub-nav .social a:last-of-type { margin-right: 0px; }
+}
+
+#sub-nav .social a { border-radius: 50%; display: inline-block; vertical-al=
+ign: middle; zoom: 1; text-indent: -9999px; margin-right: 15px; opacity: 0.=
+5; width: 28px; height: 28px; transition: all 0.3s ease 0s; }
+
+#sub-nav .social a:hover { opacity: 1; }
+
+#sub-nav .social a.facebook { background: url("/images/social/facebook.png?=
+1475599307") center center no-repeat rgb(59, 89, 152); border: 1px solid rg=
+b(59, 89, 152); }
+
+#sub-nav .social a.facebook:hover { border: 1px solid rgb(45, 67, 115); }
+
+#sub-nav .social a.google { background: url("/images/social/google.png?1475=
+599307") center center no-repeat rgb(200, 61, 32); border: 1px solid rgb(20=
+0, 61, 32); }
+
+#sub-nav .social a.google:hover { border: 1px solid rgb(156, 48, 25); }
+
+#sub-nav .social a.twitter { background: url("/images/social/twitter.png?14=
+75599307") center center no-repeat rgb(85, 207, 248); border: 1px solid rgb=
+(85, 207, 248); }
+
+#sub-nav .social a.twitter:hover { border: 1px solid rgb(36, 193, 246); }
+
+#sub-nav .social a.github { background: url("/images/social/github.png?1475=
+599307") center center no-repeat rgb(175, 182, 202); border: 1px solid rgb(=
+175, 182, 202); }
+
+#sub-nav .social a.github:hover { border: 1px solid rgb(144, 154, 182); }
+
+#sub-nav .social a.coderwall { background: url("/images/social/coderwall.pn=
+g?1475599307") center center no-repeat rgb(58, 114, 159); border: 1px solid=
+ rgb(58, 114, 159); }
+
+#sub-nav .social a.coderwall:hover { border: 1px solid rgb(44, 87, 122); }
+
+#sub-nav .social a.pinboard { background: url("/images/social/pinboard.png?=
+1475599307") center center no-repeat rgb(0, 102, 200); border: 1px solid rg=
+b(58, 114, 159); }
+
+#sub-nav .social a.pinboard:hover { border: 1px solid rgb(0, 82, 204); }
+
+#sub-nav .social a.linkedin { background: url("/images/social/linkedin.png?=
+1475599307") center center no-repeat rgb(0, 90, 135); border: 1px solid rgb=
+(0, 90, 135); }
+
+#sub-nav .social a.linkedin:hover { border: 1px solid rgb(0, 56, 84); }
+
+#sub-nav .social a.pinterest { background: url("/images/social/pinterest.pn=
+g?1475599307") center center no-repeat rgb(190, 64, 55); border: 1px solid =
+rgb(190, 64, 55); }
+
+#sub-nav .social a.pinterest:hover { border: 1px solid rgb(150, 51, 44); }
+
+#sub-nav .social a.delicious { background: url("/images/social/delicious.pn=
+g?1475599307") center center no-repeat rgb(50, 113, 203); border: 1px solid=
+ rgb(50, 113, 203); }
+
+#sub-nav .social a.delicious:hover { border: 1px solid rgb(40, 90, 162); }
+
+#sub-nav .social a.rss { background: url("/images/social/rss.png?1475599307=
+") center center no-repeat rgb(239, 117, 34); border: 1px solid rgb(239, 11=
+7, 34); }
+
+#sub-nav .social a.rss:hover { border: 1px solid rgb(207, 93, 15); }
+
+#sub-nav .social a.instagram { background: url("/images/social/instagram.pn=
+g?1475599307") center center no-repeat rgb(64, 110, 149); border: 1px solid=
+ rgb(64, 110, 149); }
+
+#sub-nav .social a.instagram:hover { border: 1px solid rgb(49, 84, 113); }
+
+#pagenavi { padding: 20px 0px; height: 20px; line-height: 20px; position: r=
+elative; border-top: 1px solid rgb(255, 255, 255); border-bottom: 1px solid=
+ rgb(221, 221, 221); }
+
+#pagenavi a:hover { text-decoration: underline; }
+
+#pagenavi .prev, #pagenavi .next { position: absolute; }
+
+#pagenavi .prev { padding-left: 30px; left: 0px; }
+
+#pagenavi .prev::before { content: "=EF=81=A0"; font: 1.3em FontAwesome; po=
+sition: absolute; left: 0px; }
+
+#pagenavi .next { padding-right: 30px; right: 0px; }
+
+#pagenavi .next::before { content: "=EF=81=A1"; font: 1.3em FontAwesome; po=
+sition: absolute; right: 0px; }
+
+#pagenavi .center { text-align: center; width: 100%; display: block; }
+
+@media screen and (max-width: 400px) {
+  #pagenavi .center { display: none; }
+}
+
+article { border-bottom: 1px solid rgb(221, 221, 221); border-top: 1px soli=
+d rgb(255, 255, 255); padding: 30px 0px; position: relative; }
+
+@media screen and (max-width: 800px) {
+  article { padding-bottom: 15px; }
+}
+
+@media screen and (max-width: 600px) {
+  article { padding: 15px 0px; }
+}
+
+article h2.title { font-size: 1.8em; font-weight: 300; line-height: 35px; m=
+argin-bottom: 20px; }
+
+article h2.title a { color: rgb(102, 102, 102); }
+
+article .entry-content { line-height: 2; text-align: justify; }
+
+article .entry-content a:hover { text-decoration: underline; }
+
+article .entry-content .more-link { display: block; margin-top: 16px; paddi=
+ng-left: 30px; position: relative; }
+
+article .entry-content .more-link::before { content: "=EF=81=A1"; font: 1.3=
+em / 1.6em FontAwesome; position: absolute; left: 0px; }
+
+article .entry-content p, article .entry-content blockquote, article .entry=
+-content ul, article .entry-content ol, article .entry-content dl, article =
+.entry-content table, article .entry-content iframe, article .entry-content=
+ h1, article .entry-content h2, article .entry-content h3, article .entry-c=
+ontent h4, article .entry-content h5, article .entry-content h6, article .e=
+ntry-content .video-container { margin-top: 10px; }
+
+article .entry-content ul, article .entry-content ol, article .entry-conten=
+t dl { margin-left: 20px; }
+
+article .entry-content ul ul, article .entry-content ul ol, article .entry-=
+content ul dl, article .entry-content ol ul, article .entry-content ol ol, =
+article .entry-content ol dl, article .entry-content dl ul, article .entry-=
+content dl ol, article .entry-content dl dl { margin-top: 0px; }
+
+article .entry-content strong { font-weight: bold; }
+
+article .entry-content em { font-style: italic; }
+
+article .entry-content p { margin-top: 10px; }
+
+article .entry-content h2 { font-weight: 300; border-bottom: 1px solid rgb(=
+221, 221, 221); position: relative; }
+
+article .entry-content h2::before { content: ""; position: absolute; bottom=
+: -2px; border-bottom: 1px solid rgb(255, 255, 255); width: 100%; }
+
+article .entry-content img, article .entry-content video { max-width: 100%;=
+ height: auto; }
+
+article .entry-content blockquote { background: rgb(238, 238, 238); border-=
+left: 5px solid rgb(204, 204, 204); padding: 15px 20px; margin-top: 10px; }
+
+article .entry-content blockquote > p:first-of-type { margin-top: 0px; }
+
+article .entry-content iframe { border: none; }
+
+article .entry-content table { background: rgb(221, 221, 221); border: 1px =
+solid rgb(204, 204, 204); border-spacing: 0px; margin-top: 10px; }
+
+article .entry-content table th { background: rgb(204, 204, 204); padding: =
+0px 15px; }
+
+article .entry-content table td { text-align: center; }
+
+article .entry-content table tr:nth-of-type(2n) { background: rgb(213, 213,=
+ 213); }
+
+article .entry-content .caption { display: block; font-size: 0.9em; color: =
+rgb(153, 153, 153); padding-left: 25px; position: relative; }
+
+article .entry-content .caption::before { content: "=EF=81=80"; color: rgb(=
+204, 204, 204); font: 1.3em / 1.6em FontAwesome; position: absolute; left: =
+0px; }
+
+article .entry-content .video-container { position: relative; padding-botto=
+m: 56.25%; padding-top: 30px; height: 0px; overflow: hidden; }
+
+article .entry-content .video-container iframe, article .entry-content .vid=
+eo-container object, article .entry-content .video-container embed { positi=
+on: absolute; top: 0px; left: 0px; width: 100%; height: 100%; margin-top: 0=
+px; }
+
+.share { padding: 15px 0px; border-top: 1px solid rgb(255, 255, 255); borde=
+r-bottom: 1px solid rgb(221, 221, 221); }
+
+.post h2.title, .post .entry-content { margin-left: 200px; }
+
+@media screen and (max-width: 800px) {
+  .post h2.title, .post .entry-content { margin-left: 0px; }
+}
+
+.post .meta { position: absolute; top: 85px; line-height: 2; font-size: 0.9=
+em; color: rgb(153, 153, 153); width: 170px; }
+
+@media screen and (max-width: 800px) {
+  .post .meta { margin-top: 15px; position: static; width: auto; }
+}
+
+.post .meta a { color: rgb(153, 153, 153); transition: all 0.3s ease 0s; }
+
+.post .meta a:hover { color: rgb(102, 102, 102); }
+
+.post .meta .date, .post .meta .tags, .post .meta .comments { padding-left:=
+ 30px; position: relative; }
+
+.post .meta .date::before, .post .meta .tags::before, .post .meta .comments=
+::before { color: rgb(204, 204, 204); font: 1.3em / 1.6em FontAwesome; posi=
+tion: absolute; left: 0px; }
+
+@media screen and (max-width: 800px) {
+  .post .meta .date, .post .meta .tags, .post .meta .comments { display: in=
+line-block; vertical-align: middle; zoom: 1; margin-right: 30px; }
+}
+
+.post .meta .date::before { content: "=EF=81=B3"; }
+
+.post .meta .tags::before { content: "=EF=80=AC"; }
+
+.post .meta .comments::before { content: "=EF=81=B5"; }
+
+.archives { position: relative; }
+
+.archives:last-of-type::before { content: ""; position: absolute; bottom: 0=
+px; width: 200px; border-top: 1px solid rgb(221, 221, 221); }
+
+.archives .year { line-height: 35px; width: 200px; position: absolute; top:=
+ 0px; padding-top: 15px; border-top: 1px solid rgb(255, 255, 255); }
+
+.archives .year::before { content: ""; position: absolute; top: -2px; width=
+: 100%; border-top: 1px solid rgb(221, 221, 221); }
+
+@media screen and (max-width: 600px) {
+  .archives .year { position: relative; width: 100%; }
+}
+
+.archives article { margin-left: 200px; padding: 15px 0px; }
+
+@media screen and (max-width: 600px) {
+  .archives article { margin-left: 0px; }
+  .archives article:first-of-type { border-top: none; padding-top: 30px; }
+}
+
+.archives article .title { margin-bottom: 0px; }
+
+.archives article .meta { line-height: 2; font-size: 0.9em; color: rgb(153,=
+ 153, 153); margin-top: 15px; }
+
+@media screen and (max-width: 600px) {
+  .archives article .meta { display: none; }
+}
+
+.archives article .meta a { color: rgb(153, 153, 153); transition: all 0.3s=
+ ease 0s; }
+
+.archives article .meta a:hover { color: rgb(102, 102, 102); }
+
+.archives article .meta .date, .archives article .meta .tags, .archives art=
+icle .meta .comments { padding-left: 30px; position: relative; }
+
+.archives article .meta .date::before, .archives article .meta .tags::befor=
+e, .archives article .meta .comments::before { color: rgb(204, 204, 204); f=
+ont: 1.3em / 1.6em FontAwesome; position: absolute; left: 0px; }
+
+@media screen and (max-width: 600px) {
+  .archives article .meta .date, .archives article .meta .tags, .archives a=
+rticle .meta .comments { display: inline-block; vertical-align: middle; zoo=
+m: 1; margin-right: 30px; }
+}
+
+.archives article .meta .date::before { content: "=EF=81=B3"; }
+
+.archives article .meta .tags::before { content: "=EF=80=AC"; }
+
+.archives article .meta .comments::before { content: "=EF=81=B5"; }
+
+#comment { padding: 30px 0px; border-top: 1px solid rgb(255, 255, 255); bor=
+der-bottom: 1px solid rgb(221, 221, 221); }
+
+#comment h2.title { font-size: 25px; font-weight: 300; line-height: 35px; m=
+argin-bottom: 20px; }
+
+footer { padding: 15px 0px; border-top: 1px solid rgb(255, 255, 255); text-=
+align: center; font-size: 0.9em; }
+
+article code, article pre { background: rgb(221, 221, 221); border: 1px sol=
+id rgb(204, 204, 204); font-family: Menlo, Monaco, "Andale Mono", "lucida c=
+onsole", "Courier New", monospace; }
+
+article code { font-size: 0.9em; padding: 1px 3px; margin: 0px 3px; border-=
+radius: 5px; }
+
+article pre { line-height: 1.5; margin-top: 10px; padding: 5px 15px; overfl=
+ow-x: auto; border-radius: 5px; }
+
+article pre code { background: none; border: none; padding: 0px; margin: 0p=
+x; border-radius: 0px; }
+
+figure.code { background: rgb(221, 221, 221); border: 1px solid rgb(204, 20=
+4, 204); margin-top: 10px; padding: 5px 15px; border-radius: 5px; }
+
+figure.code figcaption { font-size: 0.9em; position: relative; }
+
+figure.code figcaption span { margin: -5px -15px 0px; padding: 5px 15px; di=
+splay: block; background: -webkit-linear-gradient(top, rgb(204, 204, 204), =
+rgb(221, 221, 221)); }
+
+figure.code figcaption span:empty { display: none; }
+
+figure.code figcaption a { position: absolute; top: 5px; right: 0px; }
+
+figure.code code, figure.code pre { background: none; border: none; padding=
+: 0px; margin: 0px; border-radius: 0px; }
+
+figure.code .highlight { overflow-x: auto; }
+
+figure.code .line-numbers { border-right: 1px solid rgb(204, 204, 204); fon=
+t-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", mo=
+nospace; padding-right: 15px; text-align: right; }
+
+figure.code table { border: none; text-align: left; margin-top: 0px; }
+
+figure.code table td { text-align: left; }
+
+figure.code td.code { width: 100%; padding-left: 15px; overflow-x: auto; }
+
+.entry-content .gist { background: rgb(221, 221, 221); color: rgb(102, 102,=
+ 102); padding: 30px 15px 5px; margin-top: 10px; border: 1px solid rgb(204,=
+ 204, 204); position: relative; overflow: hidden; border-radius: 5px; }
+
+.entry-content .gist .gist-file { margin: 0px; }
+
+.entry-content .gist .gist-file .gist-data { background: none; border: none=
+; }
+
+.entry-content .gist .gist-file .gist-data pre { line-height: inherit; text=
+-align: left; }
+
+.entry-content .gist .gist-file .gist-meta { font: 300 0.9em / 1.5 Helvetic=
+aNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sa=
+ns-serif; margin: 0px -16px -6px; padding: 5px 15px; background: -webkit-li=
+near-gradient(top, rgb(221, 221, 221), rgb(204, 204, 204)); }
+
+.entry-content .gist .gist-file .gist-meta a { color: rgb(37, 143, 184); }
+
+.entry-content .gist .gist-file .gist-meta a:first-of-type { position: abso=
+lute; top: 5px; right: 15px; z-index: 1; }
+
+.entry-content .gist .gist-file .gist-meta a:nth-of-type(2) { position: abs=
+olute; top: 0px; left: 0px; padding: 5px 15px; width: 100%; background: -we=
+bkit-linear-gradient(top, rgb(204, 204, 204), rgb(221, 221, 221)); }
+
+figure.code .c, .gist-highlight .c { color: rgb(147, 161, 161) !important; =
+font-style: italic !important; }
+
+figure.code .cm, .gist-highlight .cm { color: rgb(147, 161, 161) !important=
+; font-style: italic !important; }
+
+figure.code .cp, .gist-highlight .cp { color: rgb(147, 161, 161) !important=
+; font-style: italic !important; }
+
+figure.code .c1, .gist-highlight .c1 { color: rgb(147, 161, 161) !important=
+; font-style: italic !important; }
+
+figure.code .cs, .gist-highlight .cs { color: rgb(147, 161, 161) !important=
+; font-weight: bold !important; font-style: italic !important; }
+
+figure.code .err, .gist-highlight .err { color: rgb(220, 50, 47) !important=
+; background: none !important; }
+
+figure.code .k, .gist-highlight .k { color: rgb(203, 75, 22) !important; }
+
+figure.code .o, .gist-highlight .o { color: rgb(88, 110, 117) !important; f=
+ont-weight: bold !important; }
+
+figure.code .p, .gist-highlight .p { color: rgb(88, 110, 117) !important; }
+
+figure.code .ow, .gist-highlight .ow { color: rgb(42, 161, 152) !important;=
+ font-weight: bold !important; }
+
+figure.code .gd, .gist-highlight .gd { display: inline-block; color: rgb(88=
+, 110, 117) !important; background-color: rgb(244, 197, 182) !important; }
+
+figure.code .gd .x, .gist-highlight .gd .x { display: inline-block; color: =
+rgb(88, 110, 117) !important; background-color: rgb(241, 177, 164) !importa=
+nt; }
+
+figure.code .ge, .gist-highlight .ge { color: rgb(88, 110, 117) !important;=
+ font-style: italic !important; }
+
+figure.code .gh, .gist-highlight .gh { color: rgb(147, 161, 161) !important=
+; }
+
+figure.code .gi, .gist-highlight .gi { display: inline-block; color: rgb(88=
+, 110, 117) !important; background-color: rgb(229, 227, 181) !important; }
+
+figure.code .gi .x, .gist-highlight .gi .x { display: inline-block; color: =
+rgb(88, 110, 117) !important; background-color: rgb(205, 208, 136) !importa=
+nt; }
+
+figure.code .gs, .gist-highlight .gs { color: rgb(88, 110, 117) !important;=
+ font-weight: bold !important; }
+
+figure.code .gu, .gist-highlight .gu { color: rgb(108, 113, 196) !important=
+; }
+
+figure.code .kc, .gist-highlight .kc { color: rgb(133, 153, 0) !important; =
+font-weight: bold !important; }
+
+figure.code .kd, .gist-highlight .kd { color: rgb(38, 139, 210) !important;=
+ }
+
+figure.code .kp, .gist-highlight .kp { color: rgb(203, 75, 22) !important; =
+font-weight: bold !important; }
+
+figure.code .kr, .gist-highlight .kr { color: rgb(211, 54, 130) !important;=
+ font-weight: bold !important; }
+
+figure.code .kt, .gist-highlight .kt { color: rgb(42, 161, 152) !important;=
+ }
+
+figure.code .n, .gist-highlight .n { color: rgb(38, 139, 210) !important; }
+
+figure.code .na, .gist-highlight .na { color: rgb(38, 139, 210) !important;=
+ }
+
+figure.code .nb, .gist-highlight .nb { color: rgb(133, 153, 0) !important; =
+}
+
+figure.code .nc, .gist-highlight .nc { color: rgb(211, 54, 130) !important;=
+ }
+
+figure.code .no, .gist-highlight .no { color: rgb(181, 137, 0) !important; =
+}
+
+figure.code .nl, .gist-highlight .nl { color: rgb(133, 153, 0) !important; =
+}
+
+figure.code .ne, .gist-highlight .ne { color: rgb(38, 139, 210) !important;=
+ font-weight: bold !important; }
+
+figure.code .nf, .gist-highlight .nf { color: rgb(38, 139, 210) !important;=
+ font-weight: bold !important; }
+
+figure.code .nn, .gist-highlight .nn { color: rgb(181, 137, 0) !important; =
+}
+
+figure.code .nt, .gist-highlight .nt { color: rgb(38, 139, 210) !important;=
+ font-weight: bold !important; }
+
+figure.code .nx, .gist-highlight .nx { color: rgb(181, 137, 0) !important; =
+}
+
+figure.code .vg, .gist-highlight .vg { color: rgb(38, 139, 210) !important;=
+ }
+
+figure.code .vi, .gist-highlight .vi { color: rgb(38, 139, 210) !important;=
+ }
+
+figure.code .nv, .gist-highlight .nv { color: rgb(38, 139, 210) !important;=
+ }
+
+figure.code .mf, .gist-highlight .mf { color: rgb(42, 161, 152) !important;=
+ }
+
+figure.code .m, .gist-highlight .m { color: rgb(42, 161, 152) !important; }
+
+figure.code .mh, .gist-highlight .mh { color: rgb(42, 161, 152) !important;=
+ }
+
+figure.code .mi, .gist-highlight .mi { color: rgb(42, 161, 152) !important;=
+ }
+
+figure.code .s, .gist-highlight .s { color: rgb(42, 161, 152) !important; }
+
+figure.code .sd, .gist-highlight .sd { color: rgb(42, 161, 152) !important;=
+ }
+
+figure.code .s2, .gist-highlight .s2 { color: rgb(42, 161, 152) !important;=
+ }
+
+figure.code .se, .gist-highlight .se { color: rgb(220, 50, 47) !important; =
+}
+
+figure.code .si, .gist-highlight .si { color: rgb(38, 139, 210) !important;=
+ }
+
+figure.code .sr, .gist-highlight .sr { color: rgb(42, 161, 152) !important;=
+ }
+
+figure.code .s1, .gist-highlight .s1 { color: rgb(42, 161, 152) !important;=
+ }
+
+#banner { color: rgb(153, 153, 153); padding: 30px 0px; line-height: 30px; =
+text-align: center; position: relative; display: none; border-top: 1px soli=
+d rgb(255, 255, 255); border-bottom: 1px solid rgb(221, 221, 221); }
+
+#banner:hover a { color: rgb(37, 143, 184); }
+
+#banner a { color: rgb(153, 153, 153); transition: all 0.3s ease 0s; }
+
+#banner a:hover { text-decoration: underline; }
+
+#banner small { position: absolute; right: 0px; bottom: 0px; }
+
+#banner .loading { background: url("/images/loading_pacman.gif?1475599307")=
+ center center no-repeat; text-indent: -9999px; }
+
+#banner .container { height: 30px; overflow: hidden; position: relative; di=
+splay: none; }
+
+#banner .container .feed { list-style: none; position: absolute; top: 0px; =
+width: 100%; }
+
+#banner .container .feed li { position: relative; }
+
+#banner .container .feed li small { position: absolute; right: 0px; }
+
+.fancybox-wrap, .fancybox-skin, .fancybox-outer, .fancybox-inner, .fancybox=
+-image, .fancybox-wrap iframe, .fancybox-wrap object, .fancybox-nav, .fancy=
+box-nav span, .fancybox-tmp { padding: 0px; margin: 0px; border: 0px; outli=
+ne: none; vertical-align: top; }
+
+.fancybox-wrap { position: absolute; top: 0px; left: 0px; z-index: 8020; }
+
+.fancybox-skin { position: relative; background: rgb(249, 249, 249); color:=
+ rgb(68, 68, 68); text-shadow: none; border-radius: 4px; }
+
+.fancybox-opened { z-index: 8030; }
+
+.fancybox-opened .fancybox-skin { box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 2=
+5px; }
+
+.fancybox-outer, .fancybox-inner { position: relative; }
+
+.fancybox-inner { overflow: hidden; }
+
+.fancybox-type-iframe .fancybox-inner { }
+
+.fancybox-error { color: rgb(68, 68, 68); font: 14px / 20px "Helvetica Neue=
+", Helvetica, Arial, sans-serif; margin: 0px; padding: 15px; white-space: n=
+owrap; }
+
+.fancybox-image, .fancybox-iframe { display: block; width: 100%; height: 10=
+0%; }
+
+.fancybox-image { max-width: 100%; max-height: 100%; }
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next spa=
+n { background-image: url("fancybox_sprite.png"); }
+
+#fancybox-loading { position: fixed; top: 50%; left: 50%; margin-top: -22px=
+; margin-left: -22px; background-position: 0px -108px; opacity: 0.8; cursor=
+: pointer; z-index: 8060; }
+
+#fancybox-loading div { width: 44px; height: 44px; background: url("fancybo=
+x_loading.gif") center center no-repeat; }
+
+.fancybox-close { position: absolute; top: -18px; right: -18px; width: 36px=
+; height: 36px; cursor: pointer; z-index: 8040; }
+
+.fancybox-nav { position: absolute; top: 0px; width: 40%; height: 100%; cur=
+sor: pointer; text-decoration: none; background: url("blank.gif") transpare=
+nt; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); z-index: 8040; }
+
+.fancybox-prev { left: 0px; }
+
+.fancybox-next { right: 0px; }
+
+.fancybox-nav span { position: absolute; top: 50%; width: 36px; height: 34p=
+x; margin-top: -18px; cursor: pointer; z-index: 8040; visibility: hidden; }
+
+.fancybox-prev span { left: 10px; background-position: 0px -36px; }
+
+.fancybox-next span { right: 10px; background-position: 0px -72px; }
+
+.fancybox-nav:hover span { visibility: visible; }
+
+.fancybox-tmp { position: absolute; top: -99999px; left: -99999px; visibili=
+ty: hidden; max-width: 99999px; max-height: 99999px; overflow: visible !imp=
+ortant; }
+
+.fancybox-lock { width: auto; overflow: hidden !important; }
+
+.fancybox-lock body { overflow: hidden !important; }
+
+.fancybox-lock-test { overflow-y: hidden !important; }
+
+.fancybox-overlay { position: absolute; top: 0px; left: 0px; overflow: hidd=
+en; display: none; z-index: 8010; background: url("fancybox_overlay.png"); =
+}
+
+.fancybox-overlay-fixed { position: fixed; bottom: 0px; right: 0px; }
+
+.fancybox-lock .fancybox-overlay { overflow: auto scroll; }
+
+.fancybox-title { visibility: hidden; font: 13px / 20px "Helvetica Neue", H=
+elvetica, Arial, sans-serif; position: relative; text-shadow: none; z-index=
+: 8050; }
+
+.fancybox-opened .fancybox-title { visibility: visible; }
+
+.fancybox-title-float-wrap { position: absolute; bottom: 0px; right: 50%; m=
+argin-bottom: -35px; z-index: 8050; text-align: center; }
+
+.fancybox-title-float-wrap .child { display: inline-block; margin-right: -1=
+00%; padding: 2px 20px; background: rgba(0, 0, 0, 0.8); border-radius: 15px=
+; text-shadow: rgb(34, 34, 34) 0px 1px 2px; color: rgb(255, 255, 255); font=
+-weight: bold; line-height: 24px; white-space: nowrap; }
+
+.fancybox-title-outside-wrap { position: relative; margin-top: 10px; color:=
+ rgb(255, 255, 255); }
+
+.fancybox-title-inside-wrap { padding-top: 10px; }
+
+.fancybox-title-over-wrap { position: absolute; bottom: 0px; left: 0px; col=
+or: rgb(255, 255, 255); padding: 10px; background: rgba(0, 0, 0, 0.8); }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen a=
+nd (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ra=
+tio: 1.5) {
+  #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next s=
+pan { background-image: url("fancybox_sprite@2x.png"); background-size: 44p=
+x 152px; }
+  #fancybox-loading div { background-image: url("fancybox_loading@2x.gif");=
+ background-size: 24px 24px; }
+}
+------MultipartBoundary--SdpwKyjk5JeqXmSdJYitxceTUQ6DagEe5uAHFMyxfP----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://willi.am/images/social/twitter.png?1475599307
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEUAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEDAwMLCwsfHx87OztgYGCZ
+mZnDw8Pk5OTw8PD39/f8/Pz9/f3+/v7/////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+///////ceRldAAAAOXRSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAQMIDBEYHSEhIiQlKzM+SVdgbXN7
+homOkpeco6mxucHO2OLy9v5W4iUbAAAABnRFWHRUaXRsZQCo7tInAAAAB3RFWHRBdXRob3IAqa7M
+SAAAAAx0RVh0RGVzY3JpcHRpb24AEwkhIwAAAAp0RVh0Q29weXJpZ2h0AKwPzDoAAAAHdEVYdEUt
+bWFpbAB9CJvVAAAABHRFWHRVUkwAeKPTDwAAAGpJREFUGNONj0sKACEMQ916hroYpSII3QhTyP0v
+NvUzH2Zldn0kIXX+J7cPDgUqvYBOQCETUAw+A8iCTB2EJGwGcwCngQqVhiHlHllHV5kdrDeIBiRZ
+ySLadzC0fRIWSU+graWUh0XL5nMXzj8cIubJnYAAAAAASUVORK5CYII=
+
+------MultipartBoundary--SdpwKyjk5JeqXmSdJYitxceTUQ6DagEe5uAHFMyxfP----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://willi.am/images/social/github.png?1475599307
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEUAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAABAQEFBQUPDw8cHBw2NjZmZmZ+fn6goKC4uLjOzs7h4eHr6+vz
+8/P39/f6+vr7+/v8/Pz9/f39/f3+/v7+/v7/////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//////+uxkaYAAAAPHRSTlMAAAAAAAAAAAAAAAEDBgoPFR4iJyouMjIzMzI0NjtASVRbZG51fYSM
+mKGrsLi8wsfM0dbZ3eLm7PL1+/2MpSaJAAAABnRFWHRUaXRsZQCo7tInAAAAB3RFWHRBdXRob3IA
+qa7MSAAAAAx0RVh0RGVzY3JpcHRpb24AEwkhIwAAAAp0RVh0Q29weXJpZ2h0AKwPzDoAAAAHdEVY
+dEUtbWFpbAB9CJvVAAAABHRFWHRVUkwAeKPTDwAAAIJJREFUGNNt0L0KxSAMBWCnzJ0PiEggoIND
+oIgl7/9c9afoHW62fJyQEEdEAM2Cv4gc0ZVriswsemOB2lfPAmwwnsC7t4IBcuD+B4jlQJXgQvBH
+JIQ+4pH06V1TobEFkoERknnwvENLa2aJPuiZ0tRq3tDprtZ+IWpVTdgAePa8vvACXA8iJ8muZz0A
+AAAASUVORK5CYII=
+
+------MultipartBoundary--SdpwKyjk5JeqXmSdJYitxceTUQ6DagEe5uAHFMyxfP----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://willi.am/images/social/rss.png?1475599307
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAwFBMVEUAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAADAwMSEhI5OTmOjo7Nzc3z8/P/////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+///+/v7XL34KAAAAOXRSTlMAAAAAAAAAAAIHFzpvuOL4/v38+ffy8e3p19DCt6uin5WSjouGhYJ+
+e3dya2VfUk1GQDw0LyYiHR5MutCkAAAABnRFWHRUaXRsZQCo7tInAAAAB3RFWHRBdXRob3IAqa7M
+SAAAAAx0RVh0RGVzY3JpcHRpb24AEwkhIwAAAAp0RVh0Q29weXJpZ2h0AKwPzDoAAAAHdEVYdEUt
+bWFpbAB9CJvVAAAABHRFWHRVUkwAeKPTDwAAAKtJREFUGNNFz9sOgjAMBuDd/PcepizhZMQNjCLM
+MZq+/4vZiUiT7eLL+rdT3j3GGVspx4dz3k0bNJxK13GFoS5MItP/QA75Sgs1C4SnJyDkqyjLnFUB
+dBHp/6G6BUSMzFfeFiehCiRd9RIaS5EOQbOOXwA66ZpQJVY0lDdCmZ6PzDmp/sjsEDUbIsPGy19S
+IiTxLdf+qWKxy0bgmraQkFZhvr9kVW9dwGBb/wFfnB+n9XlT2AAAAABJRU5ErkJggg==
+
+------MultipartBoundary--SdpwKyjk5JeqXmSdJYitxceTUQ6DagEe5uAHFMyxfP----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://vjs.zencdn.net/6.6.3/video-js.css
+
+@charset "utf-8";
+=0A
+------MultipartBoundary--SdpwKyjk5JeqXmSdJYitxceTUQ6DagEe5uAHFMyxfP------
